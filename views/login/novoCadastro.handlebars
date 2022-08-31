@@ -1,0 +1,18 @@
+<h2>REALIZe CADASTRO</h2>
+    <hr>
+    <a href="/login/Usuario/add"><button>CADASTRO</button></a>
+     <a href="/login/logar"><button>LOGAR</button></a>
+
+
+   {{#each usuario}}
+    <h4>
+        <hr>
+        Nome: {{nome}} <br>
+        Emaiil: {{email}} <br>
+        Senha: {{senha}} <br>
+        CPF: {{cpf}} <br>
+    </h4>
+     {{else}}
+
+
+     {{/each}}
