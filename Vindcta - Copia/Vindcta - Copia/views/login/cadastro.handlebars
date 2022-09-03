@@ -1,0 +1,27 @@
+{{#each error}}
+<smal> {{text}}<br> </small>
+{{else}}
+
+{{/each}}
+<form action="/login/cadastro/novo" method="post">
+    <p>Nome de usuario:</p>
+     <input type="text" name="nome">
+
+
+     <p>Email:</p>
+    <input type="email" name="email">
+
+
+    <p>Senha:</p>
+    <input type="password" name="senha">
+    
+    <p>Confirme sua senha:</p>
+    <input type="password" name="senha1">
+
+    <p>CPF:</p>
+    <input type="text" name="cpf">
+
+    
+    <button type="submit">Logar</button>
+</form>
+
