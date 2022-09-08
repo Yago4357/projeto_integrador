@@ -149,6 +149,7 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
   transition: all 200ms;
+  margin-bottom: 24px;
 }
 input[type="submit"]:hover{
   border-color: var(--color_all);

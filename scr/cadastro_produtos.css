@@ -1,0 +1,43 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+*:focus {
+    outline: 0;
+}
+
+.cad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form{
+    border: 1px solid black;
+    width: 90%;
+    padding: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem; 
+}
+
+input{
+    width: 250px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 24px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+span{
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 12px;
+}
+span:hover{
+    cursor: pointer;
+}

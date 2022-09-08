@@ -33,10 +33,8 @@ server.listen(app.get('port'), ()=>{
 
 //BancoSQL
 (async () => {
-    console.log('Começou!');
  
-    const usuariodb = await banco.selectCustomers();
-    console.log(usuariodb);  
+    const usuariodb = await banco.Usuario();
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 app.post('/login', (req,res) =>{
@@ -54,5 +52,23 @@ app.post('/login', (req,res) =>{
     
     res.send('Falhou')
     
+})
+app.post('/cadP', (req,res)=>{
+    (async () => {
+        var nomeP = req.body.nomeP;
+        var forn = req.body.forn;
+        var valor = req.body.valor;
+        var qtd = req.body.qtd;
+        console.log('Começou!');
+        
+        console.log('INSERT INTO Produto');
+        const result = await banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
+        res.send('Inserido');
+        console.log(result);
+     
+        /*console.log('SELECT * FROM Produto');
+        const Produto = await banco.Produto();
+        console.log(Produto);* */
+    })();
 })
 })();
