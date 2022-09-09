@@ -54,21 +54,20 @@ app.post('/login', (req,res) =>{
     
 })
 app.post('/cadP', (req,res)=>{
-    (async () => {
+    console.log('Começou o rock!');
         var nomeP = req.body.nomeP;
         var forn = req.body.forn;
         var valor = req.body.valor;
         var qtd = req.body.qtd;
-        console.log('Começou!');
+        console.log('Começou o rock 2!');
         
         console.log('INSERT INTO Produto');
-        const result = await banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
-        res.send('Inserido');
-        console.log(result);
-     
+        const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
+        res.send('Inserido')
+        console.log(result)
+        //alert("Produto cadastrado!");
         /*console.log('SELECT * FROM Produto');
         const Produto = await banco.Produto();
-        console.log(Produto);* */
-    })();
+        console.log(Produto);*/
 })
 })();

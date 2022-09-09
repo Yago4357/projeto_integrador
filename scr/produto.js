@@ -1,4 +1,3 @@
-
 function Cadastrar(){
     console.log("Conectou 1");
     var nomeP = document.getElementById('nome').value;
@@ -12,7 +11,9 @@ function Cadastrar(){
         valor:valor,
         qtd:qtd
      }));
-
+    
+     console.log("rock3");
+    
     fetch("cadP",{
     method:'POST',
     body: JSON.stringify({
@@ -21,16 +22,31 @@ function Cadastrar(){
         valor:valor,
         qtd:qtd
     }),
+   
     headers: {"content-type" : "application/json"}
-    }
-    /*.then(async (res)=>{
-        var teste = await res.text();
+    }) 
+    
+    .then(async (response)=>{
+        var statusprod = await response.text();
+        console.log(statusprod);
+        if(statusprod == 'Inserido'){
+            alert("Produto cadastrado!")
+            location.href = 'TelaIni.html'
+        }
+     
+     })
+};
+    /*.then(async (resp)=>{
+        var teste = await resp.text();
         console.log(teste);
-        const Produto = await banco.Produto();
-        console.log(Produto);
-     })*/
-);
+        if( teste == 'Inserido'){
+        alert("Produto: Cadastrado!!");
+        location.href = 'cadastro_produto.html'
+        }})*/
+    
 
+
+//}));
 /*(async () => {
     console.log('Começou!');
     
@@ -42,7 +58,7 @@ function Cadastrar(){
     const Produto = await banco.Produto();
     console.log(Produto);
 })();*/
-};
+
 /*function cadastrarProd(){
     console.log("Conectou 1");
     var nomeP = document.getElementById('nome').value;
