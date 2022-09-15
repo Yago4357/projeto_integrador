@@ -14,13 +14,14 @@ td{
 }
 
 th, td{
+    border-bottom: none;
     text-align: center;
-    width: 44rem;
-    height: 3rem;
+    width: 40rem;
     border: 2px solid var(--color_all);
 }
 
 th{
+    height: 3.4rem;
     background-color: #FF984E;
     border-top: none;
 }
@@ -30,6 +31,10 @@ th{
     border-right: none;
 }
 
+td{
+    border-bottom: none;
+    height: 3rem;
+}
 .tb_ini{
     border-top-left-radius: 8px;
     border-left: none;
@@ -47,18 +52,16 @@ cabeca{
 }
 
 table{
-    overflow: auto;
+    margin-left: 35px;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
     width: 95%;
-    height: 55ch;
+    height: 54ch;
     border-radius: 1rem;
     background: var(--form_background);
-    margin: 20px;
-    overflow-x: hidden;
 }
 
 *{
@@ -67,18 +70,20 @@ table{
 }
 
 tbody{
-    height: 492px;
+    height: 480px;
 }
 
 body {
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
-    height: 100vh;
-    overflow: hidden;
+    height: 100vh;  
 }
 
 .botao{
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 30px;
     cursor: pointer;
     background-color: #FF984E;
     height: 3rem;
@@ -97,7 +102,10 @@ body {
   }
 
 .center h1{
-
+    margin-top: 14px;
+    align-content: center;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
     color: var(--text_color);
   }
 
