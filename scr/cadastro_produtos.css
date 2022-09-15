@@ -1,5 +1,6 @@
 *{
     font-family: 'Roboto', sans-serif;
+    
 }
 *:focus {
     outline: 0;
@@ -13,10 +14,11 @@
 }
 
 form{
-    border: 1px solid black;
+    border: 1px solid #4F4F4F;
     width: 90%;
     padding: 24px;
-    border-radius: 4px;
+    border-right: none;
+    border-left: none; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,20 +26,43 @@ form{
 }
 
 input{
+    position: relative;
+    left: 24px;
     width: 250px;
     height: 32px;
     font-size: 14px;
     font-weight: bold;
-    margin-left: 24px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #FF984E;
+}
+.remover_item{
+    width: 50px;
+    height: 5px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 5rem;
+    background-color: rgb(255, 77, 77);
+    position: relative;
+    top: 3px;
 }
 
 span{
     font-size: 32px;
-    font-weight: 400;
     margin-top: 12px;
+    font-weight: lighter;
+    color: #FF984E;
 }
 span:hover{
     cursor: pointer;
+}
+
+.send{
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #FF984E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
