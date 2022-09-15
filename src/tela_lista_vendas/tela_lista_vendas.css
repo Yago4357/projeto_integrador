@@ -1,27 +1,45 @@
 :root{
-    --background: 180deg, #3a3a3a 0%, rgb(49, 49, 49) 100%;
-    --color_all: #191919;
-    --text_color: #e6e6e6;
-    --form_background: #3a3a3a;
+    --background: 180deg, #FFFFFF;
+    --color_all: #FF984E;
+    --text_color: #FFFFFF;
+    --form_background: #FFFFFF;
     --border_color: none; 
-    --switch_bg_color: #848484;
+    --switch_bg_color: #FFFFFF;
     --switch_bg_color_enabled: rgb(104, 104, 104);
     --switch_bg_color_disabled: #9c9c9c;
   }
+
+td{
+    color: #848484; 
+}
 
 th, td{
     text-align: center;
     width: 44rem;
     height: 3rem;
-    border-top: 1px solid var(--color_all);
-    border-bottom: 2px solid var(--color_all);
+    border: 2px solid var(--color_all);
+}
+
+th{
+    background-color: #FF984E;
+    border-top: none;
+}
+
+.tb_final{
+    border-top-right-radius: 8px;
+    border-right: none;
+}
+
+.tb_ini{
+    border-top-left-radius: 8px;
+    border-left: none;
 }
 
 table{
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
-    border: 2px solid var(--color_all);
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
     width: 95%;
     height: 55ch;
@@ -45,10 +63,11 @@ body {
 
 .botao{
     cursor: pointer;
-    background-color: #191919;
+    background-color: #FF984E;
     height: 3rem;
     width: 20rem;
     border-radius: 44px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
 }
 
 .center{
