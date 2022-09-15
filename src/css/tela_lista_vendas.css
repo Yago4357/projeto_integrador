@@ -35,7 +35,19 @@ th{
     border-left: none;
 }
 
+
+cabeca{
+    text-decoration: underline;
+    border-collapse: collapse;
+}
+
+.corpo{
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
 table{
+    overflow: auto;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
@@ -46,11 +58,16 @@ table{
     border-radius: 1rem;
     background: var(--form_background);
     margin: 20px;
+    overflow-x: hidden;
 }
 
 *{
     font-size: 18px;
     font-family: "Poppins", sans-serif;
+}
+
+tbody{
+    height: 492px;
 }
 
 body {
