@@ -20,6 +20,32 @@ th, td{
     border: 2px solid var(--color_all);
 }
 
+
+cabeca{
+    text-decoration: underline;
+    border-collapse: collapse;
+}
+
+.corpo{
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+tbody{
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(var(--background));
+    height: 495px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(var(--background));
+    height: 100vh;
+    overflow: auto;
+}
+
 th{
     color: #FFFFFF;
     background-color: #FF984E;
@@ -47,6 +73,7 @@ table{
     border-radius: 1rem;
     background: var(--form_background);
     margin: 20px;
+    overflow: hidden;
 }
 
 *{

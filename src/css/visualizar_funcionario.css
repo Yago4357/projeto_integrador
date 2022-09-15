@@ -23,6 +23,7 @@ th{
 }
 
 table{
+    table-layout: fixed;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
@@ -33,6 +34,7 @@ table{
     border-radius: 1rem;
     background: var(--form_background);
     margin: 20px;
+    overflow-x: auto;
 }
 
 *{
@@ -40,12 +42,29 @@ table{
     font-family: "Poppins", sans-serif;
 }
 
+cabeca{
+    text-decoration: underline;
+    border-collapse: collapse;
+}
+
+.corpo{
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+tbody{
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(var(--background));
+    height: 495px;
+}
+
 body {
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .botao{
