@@ -1,8 +1,8 @@
 :root{
-    --background: 180deg, #3a3a3a 0%, rgb(49, 49, 49) 100%;
+    --background: 180deg, #848484 0%;
     --color_all: #191919;
     --text_color: #e6e6e6;
-    --form_background: #3a3a3a;
+    --form_background: #848484;
     --border_color: none; 
     --switch_bg_color: #848484;
     --switch_bg_color_enabled: rgb(104, 104, 104);
@@ -13,7 +13,6 @@ th, td{
     text-align: center;
     width: 44rem;
     height: 3rem;
-    border-top: 1px solid var(--color_all);
     border-bottom: 2px solid var(--color_all);
 }
 
@@ -45,7 +44,7 @@ body {
 
 .botao{
     cursor: pointer;
-    background-color: #191919;
+    background-color: #848484;
     height: 3rem;
     width: 20rem;
     border-radius: 44px;
