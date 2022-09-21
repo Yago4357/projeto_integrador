@@ -19,8 +19,10 @@ function Validar(){
      .then(async (resp)=>{
         var status = await resp.text();
         console.log(status);
+        
         if(status == 'Conectado'){
             location.href = 'TelaIni.html'
+            
         }else{
             alert("Usuario ou senha incorretos!")
             location.href = 'index.html'
