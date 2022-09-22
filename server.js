@@ -17,11 +17,11 @@ app.use(session({secret:'123',
     cookie:({max:1})
 }));
 
-const produto =  banco.Produto();
 
-console.log(produto)
+
 app.set('view engine', 'ejs')
 app.get('/visualizarProd', async(req, res,)=>{ 
+    const produto = banco.Produto();
  res.render('visualizarProd', {Produto: await produto})
 })
 
@@ -55,7 +55,6 @@ server.listen(app.get('port'), ()=>{
 (async () => {
  
     const usuariodb = await banco.Usuario();
-    const prod = await banco.Produto(); 
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 app.post('/login', (req,res) =>{
@@ -76,6 +75,7 @@ app.post('/login', (req,res) =>{
     
 })
 app.post('/cadP', (req,res)=>{
+    const produto = banco.Produto();
     console.log('Começou o rock!');
         var nomeP = req.body.nomeP;
         var forn = req.body.forn;
@@ -86,13 +86,13 @@ app.post('/cadP', (req,res)=>{
         console.log('INSERT INTO Produto');
         const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
         res.send('Inserido')
-        console.log(result)
         //alert("Produto cadastrado!");
         /*console.log('SELECT * FROM Produto');
         const Produto = await banco.Produto();
         console.log(Produto);*/
 })
 app.post('/cadU', (req,res)=>{
+    const produto = banco.Produto();
     console.log('Começou o rocknroll!');
         var nomeU = req.body.nomeU;
         var cpf = req.body.cpf;
@@ -106,6 +106,7 @@ app.post('/cadU', (req,res)=>{
         const result =  banco.insertUsuario({Nome: nomeU , CPF:cpf , contato:contato, senha:senha });
         res.send('Cadastrado')
         console.log(result)
+        
     }else{
         alert("SENHAS DIFERENTES!")
     }
@@ -116,14 +117,11 @@ app.post('/cadU', (req,res)=>{
         console.log(Produto);*/
 })
 app.post('/TESTE', (req,res)=>{
+    const produto = banco.Produto();
     var id = req.body.idP;
-    for(pd of prod){
-    if(id == pd.Idprod){
         result = banco.deleteProduto(id);
         res.send('Deletado');
-        console.log(`Produto com o id:${id} foi apagado!`);
-    }
-    }
+        console.log(`Produto com o id:${id} foi apagado!`);   
 })
 app.post('/Att', (req,res)=>{
     var id=req.body.idP
@@ -134,7 +132,8 @@ app.post('/Att', (req,res)=>{
     console.log(quantidade)
     result = banco.updateProduto(id,{ Nome: nome, Fornecedor: fornecedor, Valor: valor, Quantidade: quantidade});
     res.send('att');
-
+    
+    
 })
 })();
   

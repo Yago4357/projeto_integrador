@@ -26,9 +26,8 @@ function updateProd(clicked_id){
 
 
     .then(async(resp)=>{
-        var updat = await resp.text();
-        console.log(delet);
-        if(updat == 'att'){
+        var update = await resp.text();
+        if(update == 'att'){
             alert('Produto atualizado!');
             location.href='visualizarProd';
         }else{
