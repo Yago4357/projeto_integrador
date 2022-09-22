@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Visualizar Produtos
+    </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./excluirItem.js"></script><!--Trocar o caminho -->
+    <script src="./atualizarProd.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <br /> 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome </th>
+            <th>Fornecedor</th>
+            <th>Valor</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i = 0; i< Produto.length; i++) {%>
+          <tr>
+            <td><%= //console.log(Produto)%></td>
+            <td><%= Produto[i].Idprod%></td>
+            <td><%= Produto[i].Nome%></td>
+            <td><%= Produto[i].Fornecedor%></std>
+            <td><%= Produto[i].Valor%></td>
+            <td><%= Produto[i].Quantidade%>
+            <input type="submit" value="Deletar" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)">
+            <button id=<%=Produto[i].Idprod%> onclick="updateProd(this.id)">Modificar</button></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table> 
+    </div>
+  </body>
+</html>
