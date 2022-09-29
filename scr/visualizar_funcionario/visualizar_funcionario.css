@@ -9,20 +9,20 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
-th, td{
+#th, #td{
     border: 2px solid var(--color_all);
     text-align: center;
     width: 44rem;
     height: 3rem;
 }
 
-th{
+#th{
     color: #FFFFFF;
     background-color: #FF984E;
     border: none;
 }
 
-table{
+#table{
     table-layout: fixed;
     table-layout: auto;
     display: grid;
@@ -42,24 +42,16 @@ table{
     font-family: "Poppins", sans-serif;
 }
 
-cabeca{
-    text-decoration: underline;
-    border-collapse: collapse;
-}
-
 .corpo{
     overflow-y: auto;
     overflow-x: auto;
-}
-
-tbody{
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
     height: 495px;
 }
 
-body {
+#body {
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
