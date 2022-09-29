@@ -23,9 +23,6 @@ function Validar(){
         if(status == 'Conectado'){
             location.href = 'TelaIni.html'
             
-        }else{
-            alert("Usuario ou senha incorretos!")
-            location.href = 'index.html'
         }
      });
 
