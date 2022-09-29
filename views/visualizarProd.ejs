@@ -10,36 +10,36 @@
     <script src="./excluirItem.js"></script><!--Trocar o caminho -->
     <script src="./atualizarProd.js"></script>
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
-    <script></script>
   </head>
-  <body>
-    <div class="container mt-4">
-      <br /> 
-      <table class="table">
-        <thead>
-          <tr class="cabeca">
-            <th class="c1">ID</th>
-            <th class="c2">Nome </th>
-            <th class="c3">Fornecedor</th>
-            <th class="c4">Valor</th>
-            <th class="c5">Quantidade</th>
-          </tr>
+
+  <%- include('../scr/navbar/navbar.html') -%>
+ 
+  <body id="body">
+    <div id="center" class="center">
+        <table id="table" class="scroll">
+            <thead>
+            <tr id class="cabeca">
+                <th id="the" class="tb_ini">ID</th>
+                <th id="the">Nome</th>
+                <th id="the"><span class="the">Fornecedor</span></th>
+                <th id="the"><span class="thee">Valor</span></th>
+                <th id="the" class="tb_final"><span class="theee">Quantidade</span></th>
+            </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody" class="corpo">
           <% for(var i = 0; i< Produto.length; i++) {%>
-          <tr class="itens">
-                <td class="i1"><%= Produto[i].Idprod%></td>
-                <td class="i2"><%= Produto[i].Nome%></td>
-                <td class="i3"><%= Produto[i].Fornecedor%></std>
-                <td class="i4"><%= Produto[i].Valor%></td>
-                <td class="i5"><%= Produto[i].Quantidade%>
-                <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button>
-                <button class="modify" id=<%=Produto[i].Idprod%> onclick="updateProd(this.id)"></button></td>
-              </tr>
-              <%}%>
-          </tr>
-        </tbody>
-      </table> 
-    </div>
-  </body>
+            <tr class="itens">
+                  <td id="td" class="tb_ini"><%= Produto[i].Idprod%></td>
+                  <td id="td" ><%= Produto[i].Nome%></td>
+                  <td id="td" ><%= Produto[i].Fornecedor%></std>
+                  <td id="td" ><%= Produto[i].Valor%></td>
+                  <td id="td" class="tb_final"><%= Produto[i].Quantidade%>
+                  <button class="modify" id="222<%=Produto[i].Idprod%>" onclick="window.location.href='atualizarProd?id=<%=Produto[i].Idprod%>'"></button>
+                  <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button></td> 
+                 
+                </tr>
+                <%}%>
+</tbody>
+</body>
+
 </html>
