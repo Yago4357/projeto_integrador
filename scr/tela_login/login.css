@@ -13,8 +13,6 @@
   --form_background: #FFFFFF;
   --border_color: none; 
   --switch_bg_color: #FFFFFF;
-  --switch_bg_color_enabled: rgb(104, 104, 104);
-  --switch_bg_color_disabled: #9c9c9c;
 }
 
 #body{
@@ -31,7 +29,7 @@
   transform: translate(-50%, -50%);
   width: 700px;
   background: var(--form_background);
-  border: 2px solid #191919;
+  border: 2px solid var(--color_all);
   border-radius: 10px;
 }
 
