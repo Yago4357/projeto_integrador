@@ -15,6 +15,15 @@
     border-bottom: 2px solid var(--color_all);
 }
 
+#h2, #h1, #h3{
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+#h2{
+    font-size: 25px;
+}
+
 #table{
     table-layout: auto;
     display: grid;
@@ -42,8 +51,11 @@
 }
 
 .botao{
+    display: flex;
     cursor: pointer;
     background-color: var(--color_all);
+    justify-content: center;
+    align-items: center;
     height: 3rem;
     width: 20rem;
     border-radius: 44px;
@@ -66,24 +78,15 @@
     color: var(--text_color);
   }
 
-.botao_class h1{
+.botao_class h1{   
     color: white;
-    position: relative;
-    top: 5px;
 }
 
 .botao_class{
     display: flex;
-    gap: 50%;
+    justify-content: space-between
 }
-.Carrinho{
-    border-bottom: 1px;
-    border-top-width: 0px;
-    font-size: 30px;
-    text-align: center;
-    margin-left: 4rem;
-    font-family: "Poppins", sans-serif;
-}
+
 
 .produto{
     display: flex;
@@ -106,8 +109,8 @@
     justify-content: center;
     align-items: center;
     color: white;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 0.9rem;
+    border-bottom-right-radius: 0.9rem;
     height: 2rem;
     background: #979797;
     cursor: pointer;
@@ -120,18 +123,16 @@
 
 .center h2{
     margin-left: 2rem;
+
 }
 
 .titulo{
     font-size: 30px;
 }
 
-.img_produto{
-   background-image: url(https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/m/c/mcr-adh-rgb016.jpg);
-   width: 100%;
-   height: 50%;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: 0 -100px;
-   border-radius: 1rem;
+.informacoes{
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
