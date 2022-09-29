@@ -3691,13 +3691,7 @@ textarea.form-control-lg {
   height: 52px;
 }
 .item1:hover,  .item2:hover, .item3:hover{
-  background-color: rgb(190, 123, 0);
-}
-.item2:hover{
-  border-top: 1px solid white;
-}
-.item3:hover{
-  border-top: 1px solid white;
+  color: rgb(224, 224, 224);
 }
 
 .nav-item{

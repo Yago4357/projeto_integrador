@@ -97,6 +97,10 @@
     gap: 50%;
     
 }
+#bVoltar{
+    position: relative;
+    left: 20px;
+}
 .Carrinho{
     border-bottom: 1px;
     border-top-width: 0px;
