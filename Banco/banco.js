@@ -12,7 +12,7 @@
     });*/
     function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:8882@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
