@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="./excluirItem.js"></script><!--Trocar o caminho -->
     <script src="./atualizarProd.js"></script>
-    <link rel="stylesheet" href="visualizarProd.css">
+    <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
     <script></script>
   </head>
   <body>
@@ -28,17 +28,15 @@
         <tbody>
           <% for(var i = 0; i< Produto.length; i++) {%>
           <tr class="itens">
-                <td class="i2"><%= Produto[i].Idprod%></td>
-                <td class="i3"><%= Produto[i].Nome%></td>
-                <td class="i4"><%= Produto[i].Fornecedor%></std>
-                <td class="i5"><%= Produto[i].Valor%></td>
-                <td class="i6"><%= Produto[i].Quantidade%>
-                <input type="submit" value="Deletar" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)">
-                <button id=<%=Produto[i].Idprod%> onclick="updateProd(this.id)">Modificar</button></td>
+                <td class="i1"><%= Produto[i].Idprod%></td>
+                <td class="i2"><%= Produto[i].Nome%></td>
+                <td class="i3"><%= Produto[i].Fornecedor%></std>
+                <td class="i4"><%= Produto[i].Valor%></td>
+                <td class="i5"><%= Produto[i].Quantidade%>
+                <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button>
+                <button class="modify" id=<%=Produto[i].Idprod%> onclick="updateProd(this.id)"></button></td>
               </tr>
               <%}%>
-            <input class="delete" type="submit" value="" id=<%= Produto[i].Idprod%>
-            <button class="modify" id=<%=Produto[i].Idprod%></button>
           </tr>
         </tbody>
       </table> 
