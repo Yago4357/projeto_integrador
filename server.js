@@ -43,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'scr')))
 app.use(express.static(path.join(__dirname, 'scr/tela_login')))
 app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'scr/attProduto')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
 
 
@@ -123,17 +124,15 @@ app.post('/TESTE', (req,res)=>{
         res.send('Deletado');
         console.log(`Produto com o id:${id} foi apagado!`);   
 })
-app.post('/Att', (req,res)=>{
-    var id=req.body.idP
+app.post('/attP', (req,res)=>{
+    var id=req.body.id;
     var nome = req.body.nomeP;
     var fornecedor = req.body.fornecedorP;
     var valor = req.body.valorP;
     var quantidade = req.body.quantidadeP;
-    console.log(quantidade)
+    console.log(nome,'rook')
     result = banco.updateProduto(id,{ Nome: nome, Fornecedor: fornecedor, Valor: valor, Quantidade: quantidade});
     res.send('att');
-    
-    
 })
 })();
   

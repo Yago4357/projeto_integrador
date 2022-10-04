@@ -8,7 +8,6 @@
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="./excluirItem.js"></script><!--Trocar o caminho -->
-    <script src="./atualizarProd.js"></script>
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
   </head>
 
@@ -34,9 +33,8 @@
                   <td id="td" ><%= Produto[i].Fornecedor%></std>
                   <td id="td" ><%= Produto[i].Valor%></td>
                   <td id="td" class="tb_final"><%= Produto[i].Quantidade%>
-                  <button class="modify" id="222<%=Produto[i].Idprod%>" onclick="window.location.href='atualizarProd?id=<%=Produto[i].Idprod%>'"></button>
+                  <button class="modify" onclick="window.location.href='attProdutos.html?id=<%=Produto[i].Idprod%>'"></button>
                   <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button></td> 
-                 
                 </tr>
                 <%}%>
 </tbody>
