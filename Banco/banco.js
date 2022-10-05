@@ -1,18 +1,6 @@
-/*const mysql = require('mysql2');
-    const conn = mysql.createConnection({
-        host: 'localhost', 
-        user: 'root',      
-        password: '28047814lw',     
-        database: 'banco' 
-    });
-
-    conn.connect(function(err){
-        if (err) throw err;
-  console.log('Mysql Conectou');
-    });*/
-    function connect(){
+function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:28047814lw@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }

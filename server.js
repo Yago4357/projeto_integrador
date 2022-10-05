@@ -44,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'scr/tela_login')))
 app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
 app.use(express.static(path.join(__dirname, 'scr/attProduto')))
+app.use(express.static(path.join(__dirname, 'scr/tela_cadastro')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
 
 
@@ -59,6 +60,7 @@ server.listen(app.get('port'), ()=>{
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 app.post('/login', (req,res) =>{
+    const r = banco.Usuario();
     var usuario = req.body.usuario
     var senha = req.body.senha
 
@@ -93,18 +95,18 @@ app.post('/cadP', (req,res)=>{
         console.log(Produto);*/
 })
 app.post('/cadU', (req,res)=>{
-    const produto = banco.Produto();
+    const r = banco.Usuario();
     console.log('Começou o rocknroll!');
         var nomeU = req.body.nomeU;
         var cpf = req.body.cpf;
         var contato = req.body.contato;
         var senha = req.body.senha;
         var senhaC = req.body.senhaC;
-        console.log('Começou o rock 3!');
+        console.log(cpf);
         
         console.log('INSERT INTO usuario');
         if(senha == senhaC){
-        const result =  banco.insertUsuario({Nome: nomeU , CPF:cpf , contato:contato, senha:senha });
+        const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha });
         res.send('Cadastrado')
         console.log(result)
         
@@ -112,10 +114,6 @@ app.post('/cadU', (req,res)=>{
         alert("SENHAS DIFERENTES!")
     }
 
-        //alert("Produto cadastrado!");
-        /*console.log('SELECT * FROM Produto');
-        const Produto = await banco.Produto();
-        console.log(Produto);*/
 })
 app.post('/TESTE', (req,res)=>{
     const produto = banco.Produto();
