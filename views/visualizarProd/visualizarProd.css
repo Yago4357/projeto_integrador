@@ -124,7 +124,7 @@
 
 .delete{
     cursor: pointer;
-    background-image: url(remove.png);
+    background-image: url(scr\imagens\remove.png);
     background-size: cover;
     background-size: 25px;
     background-repeat: no-repeat;
@@ -132,7 +132,7 @@
 }
 .modify{
     cursor: pointer;
-    background-image: url(pen.png);
+    background-image: url(scr\imagens\pen.png);
     background-size: cover;
     background-size: 25px;
     background-repeat: no-repeat;
@@ -141,10 +141,10 @@
     right: 40px;
 }
 .delete:hover{
-    background-image: url(remove_filled.png);
+    background-image: url(scr\imagens\remove_filled.png);
     background-size: 26px;
 }
 .modify:hover{
-    background-image: url(pen_filled.png);
+    background-image: url(scr\imagens\pen_filled.png);
     background-size: 26px;
 }
