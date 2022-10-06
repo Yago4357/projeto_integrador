@@ -25,7 +25,7 @@
 }
 
 form{
-    border: 1px solid var(--color_all);
+    border: 2px solid var(--color_all);
     height: 8rem;
     width: 90%;
     padding: 24px;
@@ -49,7 +49,7 @@ input{
     font-size: 14px;
     font-weight: bold;
     border: none;
-    border-bottom: 1px solid #FF984E;
+    border-bottom: 2px solid #FF984E;
 }
 .remover_item{
     width: 50px;
