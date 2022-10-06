@@ -28,8 +28,9 @@
                     <td id="td" ><%= Fun[i].Nome%></td>
                     <td id="td" ><%= Fun[i].Cpf%></td>
                     <td id="td" ><%= Fun[i].Contato%> </td>
-                    <button id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)">Delete</button>
-                    <button onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'">Modificar</button>
+                    <button class="delete" id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)">Delete</button>
+                 <button class="modify"  id=<%=Fun[i].IdFun%> onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'"></button>
+                    </td>
                 </tr>
             <%}%>
 </tbody>
