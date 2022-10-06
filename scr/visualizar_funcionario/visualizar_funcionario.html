@@ -25,8 +25,8 @@
                 <td id="td" class="tb_ini">Bruno</td>
                 <td id="td">123.456.789-00</td>
                 <td id="td">R$2.000,00</td>
-                <td id="td" class="tb_final">05/09/2022 <button class="modify"></button>
-                <button class="delete"></button></td> </td>
+                <td id="td" class="tb_final">05/09/2022 <button class="modify"  id="222<%=Produto[i].Idprod%>" onclick="window.location.href='atualizarProd?id=<%=Produto[i].Idprod%>'"></button>
+                <button class="delete"  id=<%= Produto[i].Idprod%> <!--onclick="deleteProd(this.id)"--></button></td> </td>
             </tr>
         
               
