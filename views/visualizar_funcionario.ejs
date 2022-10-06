@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funcionarios</title>
+    <link rel="stylesheet" href="./visualizar_funcionario/visualizar_funcionario.css">
+    <script src="../js/scrool.js"></script>
+    <script src="./excluirUser.js"></script>
+</head>
+
+<body id="body">
+    <div class="center">
+        <table id="table" class="scroll">
+            <thead>
+            <tr class="cabeca">
+                <th id="th" class="tb_ini">ID</th>
+                <th id="th">Nome</th>
+                <th id="th">CPF</th>
+                <th id="th"class="tb_final">Contato</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" class="corpo">
+            <% for(var i = 0; i< Fun.length; i++) {%>
+                <tr>
+                    <td id="td" ><%= Fun[i].IdFun%></td>
+                    <td id="td" ><%= Fun[i].Nome%></td>
+                    <td id="td" ><%= Fun[i].Cpf%></td>
+                    <td id="td" ><%= Fun[i].Contato%> </td>
+                    <button id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)">Delete</button>
+                    <button onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'">Modificar</button>
+                </tr>
+            <%}%>
+</tbody>
+        </table>
+        <div class="botao_class">
+        <div id="bVoltar" class="botao">
+            <h1>Voltar</h1>
+        </div>
+        <div class="botao">
+            <h1>Adicionar Funcionário</h1>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

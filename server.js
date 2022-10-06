@@ -25,6 +25,11 @@ app.get('/visualizarProd', async(req, res,)=>{
  res.render('visualizarProd', {Produto: await produto})
 })
 
+app.get('/visualizarFun', async(req,res)=>{
+    const fun = banco.Usuario();
+    res.render('visualizar_funcionario',{Fun: await fun})
+})
+
 
 
 app.set('port', process.env.PORT || 3000);
@@ -43,6 +48,9 @@ app.use(express.static(path.join(__dirname, 'scr')))
 app.use(express.static(path.join(__dirname, 'scr/tela_login')))
 app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'scr/attFu')))
+app.use(express.static(path.join(__dirname, 'scr/attProduto')))
+app.use(express.static(path.join(__dirname, 'scr/tela_cadastro')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
 
 
@@ -58,6 +66,7 @@ server.listen(app.get('port'), ()=>{
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 app.post('/login', (req,res) =>{
+    const r = banco.Usuario();
     var usuario = req.body.usuario
     var senha = req.body.senha
 
@@ -74,6 +83,7 @@ app.post('/login', (req,res) =>{
     res.send('Falhou')
     
 })
+
 app.post('/cadP', (req,res)=>{
     const produto = banco.Produto();
     console.log('Começou o rock!');
@@ -86,24 +96,20 @@ app.post('/cadP', (req,res)=>{
         console.log('INSERT INTO Produto');
         const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
         res.send('Inserido')
-        //alert("Produto cadastrado!");
-        /*console.log('SELECT * FROM Produto');
-        const Produto = await banco.Produto();
-        console.log(Produto);*/
 })
 app.post('/cadU', (req,res)=>{
-    const produto = banco.Produto();
+    const r = banco.Usuario();
     console.log('Começou o rocknroll!');
         var nomeU = req.body.nomeU;
         var cpf = req.body.cpf;
         var contato = req.body.contato;
         var senha = req.body.senha;
         var senhaC = req.body.senhaC;
-        console.log('Começou o rock 3!');
+        console.log(cpf);
         
         console.log('INSERT INTO usuario');
         if(senha == senhaC){
-        const result =  banco.insertUsuario({Nome: nomeU , CPF:cpf , contato:contato, senha:senha });
+        const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha });
         res.send('Cadastrado')
         console.log(result)
         
@@ -111,10 +117,22 @@ app.post('/cadU', (req,res)=>{
         alert("SENHAS DIFERENTES!")
     }
 
-        //alert("Produto cadastrado!");
-        /*console.log('SELECT * FROM Produto');
-        const Produto = await banco.Produto();
-        console.log(Produto);*/
+})
+app.post('/deleteUser',(req,res)=>{
+    const refresh = banco.Usuario();
+    var idF = req.body.idF;
+    result = banco.deleteUser(idF);
+    res.send('Deletado')
+    console.log(`Usuario Apagado!`)
+})
+app.post('/attF',(req,res)=>{
+    var id = req.body.id;
+    var nome = req.body.nomeF;
+    var cpf = req.body.cpf;
+    var ctt = req.body.ctt;
+    console.log(nome,'SO CANTO ROCK')
+    result = banco.updateUser(id,{ Nome: nome, Cpf: cpf, Contato: ctt});
+    res.send('att');
 })
 app.post('/TESTE', (req,res)=>{
     const produto = banco.Produto();
@@ -123,17 +141,16 @@ app.post('/TESTE', (req,res)=>{
         res.send('Deletado');
         console.log(`Produto com o id:${id} foi apagado!`);   
 })
-app.post('/Att', (req,res)=>{
-    var id=req.body.idP
+
+app.post('/attP', (req,res)=>{
+    var id=req.body.id;
     var nome = req.body.nomeP;
     var fornecedor = req.body.fornecedorP;
     var valor = req.body.valorP;
     var quantidade = req.body.quantidadeP;
-    console.log(quantidade)
+    console.log(nome,'rook')
     result = banco.updateProduto(id,{ Nome: nome, Fornecedor: fornecedor, Valor: valor, Quantidade: quantidade});
     res.send('att');
-    
-    
 })
 })();
   

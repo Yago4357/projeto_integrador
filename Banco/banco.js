@@ -1,16 +1,4 @@
-/*const mysql = require('mysql2');
-    const conn = mysql.createConnection({
-        host: 'localhost', 
-        user: 'root',      
-        password: '28047814lw',     
-        database: 'banco' 
-    });
-
-    conn.connect(function(err){
-        if (err) throw err;
-  console.log('Mysql Conectou');
-    });*/
-    function connect(){
+function connect(){
         const mysql = require("mysql2/promise");
         const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
         global.connection = connection;
@@ -45,7 +33,7 @@
     
     async function Usuario(){
         const conn = await connect();
-        const [rows] = await conn.query('SELECT Nome,Senha FROM usuario;');
+        const [rows] = await conn.query('SELECT * FROM usuario;');
         return rows;
     }
     
@@ -55,7 +43,17 @@
         const values = [Usuario.Nome,Usuario.Cpf,Usuario.Contato,Usuario.Senha];
         return await conn.query(insertUser, values);
     }
+    async function deleteUser(IdFun){
+        const conn = await connect();
+        const deleteUser = 'DELETE FROM usuario where IdFun=?;';
+        return await conn.query(deleteUser, [IdFun]);
+    }
+    async function updateUser(IdFun,Usuario){
+        const conn = await connect();
+        const updateUser = 'UPDATE usuario SET Nome=?, Cpf=?, Contato=? WHERE IdFun=?';
+        const values=[Usuario.Nome,Usuario.Cpf,Usuario.Contato,IdFun]
+        return await conn.query(updateUser,values); 
+    }
     
-    
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser}
     
