@@ -71,11 +71,11 @@ flex{
 
 .center{
     outline: none;
-    margin-bottom: 5%;
     border: 1px solid var(--form);
     text-align: center;
     padding: 30px 26px;
     color: var(--text_color);
+    transform: translateY(-2%);
   }
 
 .center h1{
@@ -207,10 +207,14 @@ flex{
     height: 50px;
     background-color: var(--color_all);
     border: none;
-    position: relative;
-    bottom: 20.5px;
-    left: 41.8rem;
     color: white;
     font-size: 20px;
     border-radius: 2px;
+}
+
+.page_name{
+    color:rgb(78, 78, 78);
+    font-size: 32px;
+    font-weight:bold;
+    transform: translate(2.25%, 20%);
 }
