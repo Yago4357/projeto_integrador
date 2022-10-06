@@ -29,7 +29,7 @@ body{
   transform: translate(-50%, -50%);
   width: 700px;
   background: var(--form_background);
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
+  box-shadow: 0 0 10px #19191913;
   border-radius: 10px;
 }
 /*

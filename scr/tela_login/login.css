@@ -29,8 +29,8 @@
   transform: translate(-50%, -50%);
   width: 700px;
   background: var(--form_background);
-  border: 2px solid var(--color_all);
   border-radius: 10px;
+  box-shadow: 0 0 10px #19191913;
 }
 
 .red_cadastro{

@@ -19,6 +19,7 @@
 #th{
     color: #FFFFFF;
     background-color: #FF984E;
+    border-radius: 2px;
     border: none;
 }
 
@@ -31,9 +32,10 @@
     color: var(--text_color);
     width: 95%;
     height: 55ch;
-    border-radius: 1rem;
+    border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
+    overflow: hidden;
     overflow-x: auto;
 }
 
