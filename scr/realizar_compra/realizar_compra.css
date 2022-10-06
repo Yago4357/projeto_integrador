@@ -201,3 +201,16 @@ flex{
     position: relative;
     bottom: 10px;
 }
+
+.confirmar{
+    width: 200px;
+    height: 50px;
+    background-color: var(--color_all);
+    border: none;
+    position: relative;
+    bottom: 20.5px;
+    left: 41.8rem;
+    color: white;
+    font-size: 20px;
+    border-radius: 2px;
+}
