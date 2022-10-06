@@ -7,7 +7,7 @@
     <title>Funcionarios</title>
     <link rel="stylesheet" href="./visualizar_funcionario/visualizar_funcionario.css">
     <script src="../js/scrool.js"></script>
-    <script src="../scr/excluirUser.js"></script>
+    <script src="./excluirUser.js"></script>
 </head>
 
 <body id="body">
@@ -28,6 +28,8 @@
                     <td id="td" ><%= Fun[i].Nome%></td>
                     <td id="td" ><%= Fun[i].Cpf%></td>
                     <td id="td" ><%= Fun[i].Contato%> </td>
+                    <button id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)">Delete</button>
+                    <button onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'">Modificar</button>
                 </tr>
             <%}%>
 </tbody>

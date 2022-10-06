@@ -81,6 +81,7 @@ app.post('/login', (req,res) =>{
     res.send('Falhou')
     
 })
+
 app.post('/cadP', (req,res)=>{
     const produto = banco.Produto();
     console.log('Começou o rock!');
@@ -93,10 +94,6 @@ app.post('/cadP', (req,res)=>{
         console.log('INSERT INTO Produto');
         const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
         res.send('Inserido')
-        //alert("Produto cadastrado!");
-        /*console.log('SELECT * FROM Produto');
-        const Produto = await banco.Produto();
-        console.log(Produto);*/
 })
 app.post('/cadU', (req,res)=>{
     const r = banco.Usuario();
@@ -119,6 +116,14 @@ app.post('/cadU', (req,res)=>{
     }
 
 })
+app.post('/deleteUser',(req,res)=>{
+    const refresh = banco.Usuario();
+    var idF = req.body.idF;
+    result = banco.deleteUser(idF);
+    res.send('Deletado')
+    console.log(`Usuario Apagado!`)
+})
+
 app.post('/TESTE', (req,res)=>{
     const produto = banco.Produto();
     var id = req.body.idP;
@@ -126,6 +131,7 @@ app.post('/TESTE', (req,res)=>{
         res.send('Deletado');
         console.log(`Produto com o id:${id} foi apagado!`);   
 })
+
 app.post('/attP', (req,res)=>{
     var id=req.body.id;
     var nome = req.body.nomeP;

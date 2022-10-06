@@ -43,7 +43,11 @@ function connect(){
         const values = [Usuario.Nome,Usuario.Cpf,Usuario.Contato,Usuario.Senha];
         return await conn.query(insertUser, values);
     }
+    async function deleteUser(IdFun){
+        const conn = await connect();
+        const deleteUser = 'DELETE FROM usuario where IdFun=?;';
+        return await conn.query(deleteUser, [IdFun]);
+    }
     
-    
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser}
     
