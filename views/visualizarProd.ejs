@@ -33,7 +33,7 @@
                   <td id="td" ><%= Produto[i].Fornecedor%></std>
                   <td id="td" ><%= Produto[i].Valor%> R$</td>
                   <td id="td" class="tb_final"><%= Produto[i].Quantidade%>
-                  <button class="modify" onclick="window.location.href='attProdutos.html?id=<%=Produto[i].Idprod%>'"></button>
+                  <button class="modify" onclick="window.location.href='visualizarProd?id=<%=Produto[i].Idprod%>'"></button>
                   <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button></td> 
                 </tr>
                 <%}%>

@@ -31,6 +31,7 @@ app.get('/visualizarFun', async(req,res)=>{
 })
 
 
+
 app.set('port', process.env.PORT || 3000);
 
 
@@ -47,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'scr')))
 app.use(express.static(path.join(__dirname, 'scr/tela_login')))
 app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'scr/attFu')))
 app.use(express.static(path.join(__dirname, 'scr/attProduto')))
 app.use(express.static(path.join(__dirname, 'scr/tela_cadastro')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
@@ -123,7 +125,15 @@ app.post('/deleteUser',(req,res)=>{
     res.send('Deletado')
     console.log(`Usuario Apagado!`)
 })
-
+app.post('/attF',(req,res)=>{
+    var id = req.body.id;
+    var nome = req.body.nomeF;
+    var cpf = req.body.cpf;
+    var ctt = req.body.ctt;
+    console.log(nome,'SO CANTO ROCK')
+    result = banco.updateUser(id,{ Nome: nome, Cpf: cpf, Contato: ctt});
+    res.send('att');
+})
 app.post('/TESTE', (req,res)=>{
     const produto = banco.Produto();
     var id = req.body.idP;
