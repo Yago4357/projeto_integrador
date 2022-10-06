@@ -25,6 +25,10 @@ app.get('/visualizarProd', async(req, res,)=>{
  res.render('visualizarProd', {Produto: await produto})
 })
 
+app.get('/visualizarFun', async(req,res)=>{
+    const fun = banco.Usuario();
+    res.render('visualizar_funcionario',{Fun: await fun})
+})
 
 
 app.set('port', process.env.PORT || 3000);

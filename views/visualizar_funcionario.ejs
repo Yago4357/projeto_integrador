@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Funcionarios</title>
-    <link rel="stylesheet" href="./visualizar_funcionario.css">
+    <link rel="stylesheet" href="./visualizar_funcionario/visualizar_funcionario.css">
     <script src="../js/scrool.js"></script>
+    <script src="../scr/excluirUser.js"></script>
 </head>
 
 <body id="body">
@@ -14,19 +15,21 @@
         <table id="table" class="scroll">
             <thead>
             <tr class="cabeca">
-                <th id="th" class="tb_ini">Nome</th>
+                <th id="th" class="tb_ini">ID</th>
+                <th id="th">Nome</th>
                 <th id="th">CPF</th>
-                <th id="th">Salário</th>
-                <th id="th" class="tb_final">Data de Admissão</th>
+                <th id="th"class="tb_final">Contato</th>
             </tr>
         </thead>
         <tbody id="tbody" class="corpo">
-            <tr>
-                <td id="td" class="tb_ini">Bruno</td>
-                <td id="td">123.456.789-00</td>
-                <td id="td">R$2.000,00</td>
-                <td id="td" class="tb_final">05/09/2022</td>
-            </tr>
+            <% for(var i = 0; i< Fun.length; i++) {%>
+                <tr>
+                    <td id="td" ><%= Fun[i].IdFun%></td>
+                    <td id="td" ><%= Fun[i].Nome%></td>
+                    <td id="td" ><%= Fun[i].Cpf%></td>
+                    <td id="td" ><%= Fun[i].Contato%> </td>
+                </tr>
+            <%}%>
 </tbody>
         </table>
         <div class="botao_class">
