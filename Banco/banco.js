@@ -54,6 +54,28 @@ function connect(){
         const values=[Usuario.Nome,Usuario.Cpf,Usuario.Contato,IdFun]
         return await conn.query(updateUser,values); 
     }
+    async function Cliente(){
+        const conn = await connect();
+        const [rows] = await conn.query('SELECT * FROM cliente;');
+        return rows;
+    }
+    async function insertCliente(Cliente){
+        const conn = await connect();
+        const insertCliente = 'INSERT INTO cliente(Nome,Cpf,Contato) VALUES (?,?,?);'
+        const values = [Cliente.Nome,Cliente.Cpf,Cliente.Contato];
+        return await conn.query(insertCliente, values);
+    }
+    async function deleteCliente(idC){
+        const conn = await connect();
+        const deleteCliente = 'DELETE FROM cliente where idC=?;';
+        return await conn.query(deleteCliente, [idC]);
+    }
+    async function updateCliente(idC,Cliente){
+        const conn = await connect();
+        const updateCliente = 'UPDATE cliente SET Nome=?, Cpf=?, Contato=? WHERE idC=?';
+        const values=[Cliente.Nome,Cliente.Cpf,Cliente.Contato,idC]
+        return await conn.query(updateCliente,values); 
+    }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente}
     

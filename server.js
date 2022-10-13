@@ -28,6 +28,10 @@ app.get('/visualizarProd', async(req, res,)=>{
  res.render('visualizarProd', {Produto: await produto})
 })
 
+app.get('/visualizarCliente', async(req, res,)=>{ 
+    const Cliente = banco.Cliente();
+ res.render('visualizar_Cliente', {Cliente: await Cliente})
+})
 
 app.get("/visualizarFun", async(req,res)=>{
     const fun = banco.Usuario();
@@ -55,8 +59,10 @@ app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
 app.use(express.static(path.join(__dirname, 'scr/attFu')))
 app.use(express.static(path.join(__dirname, 'scr/attProduto')))
+app.use(express.static(path.join(__dirname, 'scr/attCliente')))
 app.use(express.static(path.join(__dirname, 'scr/tela_cadastro')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
+app.use(express.static(path.join(__dirname, 'scr/cadastro_cliente')))
 
 
 
@@ -186,5 +192,32 @@ app.post('/attP', (req,res)=>{
     result = banco.updateProduto(id,{ Nome: nome, Fornecedor: fornecedor, Valor: valor, Quantidade: quantidade});
     res.send('att');
 })
+app.post('/cadC', (req,res)=>{
+    const rf = banco.Cliente();
+    console.log('Começou o rocknroll!');
+      var nome = req.body.nomeC;
+      var cpf = req.body.cpfC;
+      var ctt = req.body.cttC;
+   
+        
+        console.log('INSERT INTO Cliente');
+        const result =  banco.insertCliente({Nome: nome , Cpf:cpf , Contato:ctt});
+        res.send('clienteCAD')
+})
+app.post('/attC', (req,res)=>{
+    var id=req.body.id;
+    var nome = req.body.nome;
+    var cpf = req.body.cpf;
+    var ctt = req.body.ctt;
+    console.log(nome,'rook')
+    result = banco.updateCliente(id,{ Nome: nome, Cpf: cpf, Contato: ctt});
+    res.send('attC');
+})
+app.post('/delC', (req,res)=>{
+    const rf = banco.Cliente();
+    var id = req.body.idC;
+        result = banco.deleteCliente(id);
+        res.send('Deletado');
+        console.log(`Cliente com o id:${id} foi apagado!`);   
+})
 })();
-  
