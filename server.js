@@ -3,19 +3,22 @@ const path = require('path')
 const banco = require('./Banco/banco')
 
 const express = require('express')
-var session = require('express-session')
-
-
+var sessions = require('express-session')
+const cookieParser = require("cookie-parser");
 const app = express()
 const server = http.createServer(app)
 
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(session({secret:'123',
-    saveUninitialized: true,
-    resave:false,
-    cookie:({max:1})
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(cookieParser());
+app.use(sessions({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
 }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+var session;
 
 
 
@@ -25,9 +28,18 @@ app.get('/visualizarProd', async(req, res,)=>{
  res.render('visualizarProd', {Produto: await produto})
 })
 
-app.get('/visualizarFun', async(req,res)=>{
+
+app.get("/visualizarFun", async(req,res)=>{
     const fun = banco.Usuario();
-    res.render('visualizar_funcionario',{Fun: await fun})
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('visualizar_funcionario',{Fun: await fun})
+    }
 })
 
 
@@ -35,13 +47,6 @@ app.get('/visualizarFun', async(req,res)=>{
 app.set('port', process.env.PORT || 3000);
 
 
-app.use('./scr/tela_login', (req, res, next)=>{
-    if(req.session.usuario){
-        next();
-    }else{
-        res.render('index.html')
-    }
-});
 
 
 app.use(express.static(path.join(__dirname, 'scr')))
@@ -59,12 +64,35 @@ server.listen(app.get('port'), ()=>{
     console.log("Server iniciado na porta: ", app.get('port'))
 });
 
+
+
+app.get('/logout',(req,res) => {
+    console.log(req.session,"Destroido")
+    req.session.destroy();
+    res.redirect('/');
+});
+
+
+
 //BancoSQL
 (async () => {
  
     const usuariodb = await banco.Usuario();
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
+
+app.get("/TelaIni", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('TelaIni',{Session:session,urid:session.userid})
+    }
+})
+
 app.post('/login', (req,res) =>{
     const r = banco.Usuario();
     var usuario = req.body.usuario
@@ -72,16 +100,22 @@ app.post('/login', (req,res) =>{
 
     for(var usuarios of usuariodb ){
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
-            console.log(usuarios.Nome)
-            req.session.usuario == usuarios
-            res.send('Conectado')
-                return
+            session=req.session;
+            session.userid=req.body.usuario;
         }
-
     }
-    
-    res.send('Falhou')
-    
+    res.redirect("/TelaIni")
+})
+app.get("/CadastrarProduto", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        console.log('CadastrarProdutoNÂO')
+        res.render('cadastro_produtos',{Session:session,urid:session.userid})
+    }
 })
 
 app.post('/cadP', (req,res)=>{
