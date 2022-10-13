@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized:true,
-    cookie: { maxAge: oneDay },
+    cookie: { maxAge: 23123123132 },
     resave: false 
 }));
 app.use(express.json());
@@ -29,6 +29,19 @@ app.get('/visualizarProd', async(req, res,)=>{
 })
 
 
+app.get("/visualizarProduto", async(req,res)=>{
+    const produto = banco.Produto();
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('visualizarProd',{Produto: await produto,Session:session,urid:session.userid})
+    }
+})
+
 app.get("/visualizarFun", async(req,res)=>{
     const fun = banco.Usuario();
     console.log(req.session)
@@ -38,7 +51,7 @@ app.get("/visualizarFun", async(req,res)=>{
         res.redirect('/');
     } else{    
         console.log('else')
-        res.render('visualizar_funcionario',{Fun: await fun})
+        res.render('visualizar_funcionario',{Fun: await fun,Session:session,urid:session.userid})
     }
 })
 
