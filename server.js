@@ -23,10 +23,7 @@ var session;
 
 
 app.set('view engine', 'ejs')
-app.get('/visualizarProd', async(req, res,)=>{ 
-    const produto = banco.Produto();
- res.render('visualizarProd', {Produto: await produto})
-})
+
 
 
 app.get("/visualizarProduto", async(req,res)=>{
@@ -94,17 +91,17 @@ app.get('/logout',(req,res) => {
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 
-app.get("/TelaIni", (req,res)=>{
-    console.log(req.session)
-    console.log(req.session.hasOwnProperty('userid'))
-    if(req.session.hasOwnProperty('userid') == false){
-        console.log('iasdadasdasf')
-        res.redirect('/');
-    } else{    
-        console.log('else')
-        res.render('TelaIni',{Session:session,urid:session.userid})
-    }
-})
+    app.get("/TelaIni", (req,res)=>{
+        console.log(req.session)
+        console.log(req.session.hasOwnProperty('userid'))
+        if(req.session.hasOwnProperty('userid') == false){
+            console.log('iasdadasdasf')
+            res.redirect('/');
+        } else{    
+            console.log('else')
+            res.render('TelaIni',{Session:session,urid:session.userid})
+        }
+    })
 
 app.post('/login', (req,res) =>{
     const r = banco.Usuario();
@@ -181,13 +178,16 @@ app.post('/attF',(req,res)=>{
     result = banco.updateUser(id,{ Nome: nome, Cpf: cpf, Contato: ctt});
     res.send('att');
 })
-app.post('/TESTE', (req,res)=>{
+app.post('/DeletarProduto', (req,res)=>{
     const produto = banco.Produto();
     var id = req.body.idP;
         result = banco.deleteProduto(id);
-        res.send('Deletado');
-        console.log(`Produto com o id:${id} foi apagado!`);   
+        console.log(`Produto com o id:${id} foi apagado!`);
+        alert("Produto")
+        res.redirect('/visualizarProduto');
 })
+
+
 
 app.post('/attP', (req,res)=>{
     var id=req.body.id;

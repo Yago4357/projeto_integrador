@@ -31,9 +31,8 @@ function Cadastrar(){
         console.log(statusprod);
         if(statusprod == 'Inserido'){
             alert("Produto cadastrado!")
-            location.href = 'telaIni.html'
+            location.href = 'TelaIni'
         }
-     
      })
 };
     /*.then(async (resp)=>{

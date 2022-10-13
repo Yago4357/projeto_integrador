@@ -5,24 +5,13 @@ function deleteProd(clicked_id){
         idP:idProd
     }))
     console.log(idProd);
-
-    fetch("TESTE",{
+    alert("Produto");
+    location.href="/visualizarProduto"
+    fetch("DeletarProduto",{
         method:'POST',
         body: JSON.stringify({
             idP:idProd
         }),
         headers: {"content-type" : "application/json"}
         }) 
-
-
-    .then(async(resp)=>{
-        var delet = await resp.text();
-        console.log(delet);
-        if(delet == 'Deletado'){
-            alert('Produto deletado!');
-            location.href='visualizarProd';
-        }else{
-            alert('Algo inesperado ocorreu!')
-        }
-    })
 }
