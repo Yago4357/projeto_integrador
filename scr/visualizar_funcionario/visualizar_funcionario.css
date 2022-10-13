@@ -9,18 +9,34 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
+  
+
 #th, #td{
     border: 2px solid var(--color_all);
     text-align: center;
     width: 44rem;
-    height: 3rem;
+    height: 3.1rem;
+    overflow: hidden;
 }
 
 #th{
     color: #FFFFFF;
     background-color: #FF984E;
-    border-radius: 2px;
+    border-radius: 0px;
     border: none;
+}
+
+.tb_ini{
+    position: relative;
+    right: 10px;
+}
+.i2{
+    position: relative;
+    right: 20px;
+}
+.i3{
+    position: relative;
+    right: 5px;
 }
 
 #table{
@@ -28,7 +44,6 @@
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
     width: 95%;
     height: 55ch;
@@ -46,7 +61,7 @@
 
 .corpo{
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
@@ -61,13 +76,14 @@
     overflow: auto;
 }
 
-.botao{
+.botaoz{
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     cursor: pointer;
     background-color: #FF984E;
     height: 3rem;
     width: 20rem;
     border-radius: 44px;
+    font-size: 24px;
 }
 
 .center{
@@ -89,9 +105,10 @@
     border-left: none;
 }
 
-.botao_class h1{
+.botao_class .textz{
     position: relative;
-    top: 5px;
+    top: 15px;
+    font-size: 22px;
 }
 
 .botao_class{
@@ -122,10 +139,11 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
-    right: 60px;
-    transform: translateY(-4px);
+    position: relative;
+    left: 25%;
+    transform: translateY(0.5rem);
     transition: all 100ms;
+    z-index: 999;
 }
 .modify{
     width: 25px;
@@ -138,9 +156,10 @@
     background-repeat: no-repeat;
     background-color: transparent;
     position: absolute;
-    right: 20px;
-    transform: translateY(-3px);
+    left: 72%;
+    transform: translateY(0.5rem);
     transition: all 100ms;
+    z-index: 999;
 }
 .delete:hover{
     background-image: url(../imagens/remove_filled.png);
@@ -149,4 +168,10 @@
 .modify:hover{
     background-image: url(../imagens/pen_filled.png);
     background-size: 26px;
+}
+
+.cont{
+    position: relative;
+    left: 20px;
+    bottom: 5px;
 }
