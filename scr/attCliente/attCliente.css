@@ -1,0 +1,117 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    
+}
+*:focus {
+    outline: 0;
+}
+
+:root{
+    --background: 180deg, #FFFFFF;
+    --color_all: #FF984E;
+    --text_color: #848484;
+    --form_background: #FFFFFF;
+    --border_color: none; 
+    --switch_bg_color: #FFFFFF;
+  }
+
+
+.cad{
+    height: 55rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form{
+    border: 2px solid var(--color_all);
+    height: 8rem;
+    width: 90%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem; 
+}
+form:hover{
+    background-color: rgba(223, 223, 223, 0.295);
+}
+form:hover input{
+    background-color: rgba(223, 223, 223, 0);
+}
+
+input{
+    position: relative;
+    left: 50px;
+    width: 250px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px solid #FF984E;
+}
+.remover_item{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 3rem;
+    background-color: rgb(255, 77, 77);
+    cursor: pointer;
+    position: relative;
+}
+.remover_item::before{
+    content: '';
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 11px;
+    transition: all 200ms;
+}
+.remover_item::after{
+    content: '';
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 11px;
+    transition: all 200ms;
+}
+.remover_item:hover::before{
+    transform: rotate(50deg);
+}
+.remover_item:hover::after{
+    transform: rotate(-50deg);
+}
+.remover_item:hover{
+    background-color: #fff;
+}
+
+span{
+    font-size: 32px;
+    margin-top: 12px;
+    font-weight: lighter;
+    color: #FF984E;
+}
+span:hover{
+    cursor: pointer;
+    color: rgb(230, 125, 51);
+}
+
+.send{
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #FF984E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 100ms;
+}
+.send:hover{
+    background-color: rgb(230, 125, 51);
+}
