@@ -29,15 +29,10 @@ function cadastrarUser(){
     }) 
     
     .then(async (respon)=>{
-        var statususer = await respon.text();
-        console.log(statususer);
-        if(statususer == 'Cadastrado'){
-            alert("USUARIO CADASTRADO")
-            location.href = 'index.html'
-        }else{
-            alert("Aconteceu algo inesperado!")
-            location.href = 'index.html'
+        var usuario = await respon.text();
+        console.log(usuario);
+        if(usuario == 'Cadastrado'){
+            location.href = 'visualizarFuncionario';
         }
-     
      });
 };

@@ -19,7 +19,7 @@ function deleteUser(clicked_id){
         console.log(delet);
         if(delet == 'Deletado'){
             alert('Usuario deletado!');
-            location.href='visualizarFun';
+            location.href='visualizarFuncionario';
         }else{
             alert('Não foi possivel excluir!')
         }

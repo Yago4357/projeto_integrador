@@ -29,10 +29,10 @@
                     <td id="td" ><%= Fun[i].IdFun%></td>
                     <td id="td" ><%= Fun[i].Nome%></td>
                     <td id="td" ><%= Fun[i].Cpf%></td>
-                    <td id="td" ><%= Fun[i].Contato%> </td>
-                    <button class="delete" id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)"></button>
-                 <button class="modify"  id=<%=Fun[i].IdFun%> onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'"></button>
-                    </td>
+                    <td id="td" ><%= Fun[i].Contato%> <button class="delete" id=<%=Fun[i].IdFun%> onclick="deleteUser(this.id)"></button>
+                        <button class="modify"  id=<%=Fun[i].IdFun%> onclick="window.location.href='attFun.html?id=<%=Fun[i].IdFun%>'"></button></td>
+                     
+                    
                 </tr>
             <%}%>
 </tbody>
@@ -40,11 +40,9 @@
 
         </table>
         <div class="botao_class">
-        <div id="bVoltar" class="botaoz">
-            <h1 class="textz">Voltar</h1>
         </div>
         <div class="botaoz">
-            <h1 class="textz">Adicionar Funcionário</h1>
+            <a href="/AdicionarFuncionario"><h1 class="textz">Adicionar Funcionário</h1></a>
         </div>
         </div>
     </div>

@@ -141,6 +141,18 @@ app.post('/cadP', (req,res)=>{
         const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
         res.send('Inserido')
 })
+
+app.get("/AdicionarFuncionario", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('tela_cadastro',{Session:session,urid:session.userid})
+    }
+})
 app.post('/cadU', (req,res)=>{
     const r = banco.Usuario();
     console.log('Começou o rocknroll!');
@@ -155,8 +167,6 @@ app.post('/cadU', (req,res)=>{
         if(senha == senhaC){
         const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha });
         res.send('Cadastrado')
-        console.log(result)
-        
     }else{
         alert("SENHAS DIFERENTES!")
     }
