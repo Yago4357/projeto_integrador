@@ -5,37 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./cadastro_cliente.css">
-    <script src="./produto.js"></script>
-    <title>CadastroProdutos</title>
+    <script src="../clienteCAD.js"></script>
+    <title>Cadastro cliente</title>
 </head>
 <body>
     <div class="cad">
             <div class="bloco">
             <input class="texto" type="text" placeholder="    NOME"id="nome">
-            <input class="texto" type="text" placeholder="   FORNECEDOR" id="fornecedor">
-            <input class="texto" type="number" placeholder="   VALOR" id="valor">
-            <input class="texto" type="number" placeholder="   QUANTIDADE" id="quantidade">
-            </div>
-            <div class="bloco">
-                    <input class="texto" type="text" placeholder="    NOME"id="nome">
-                    <input class="texto" type="text" placeholder="   FORNECEDOR" id="fornecedor">
-                    <input class="texto" type="number" placeholder="   VALOR" id="valor">
-                    <input class="texto" type="number" placeholder="   QUANTIDADE" id="quantidade">
-                    </div>
-                    <div class="bloco">
-                            <input class="texto" type="text" placeholder="    NOME"id="nome">
-                            <input class="texto" type="text" placeholder="   FORNECEDOR" id="fornecedor">
-                            <input class="texto" type="number" placeholder="   VALOR" id="valor">
-                            <input class="texto" type="number" placeholder="   QUANTIDADE" id="quantidade">
-                            </div>
-                            <div class="bloco">
-                                    <input class="texto" type="text" placeholder="    NOME"id="nome">
-                                    <input class="texto" type="text" placeholder="   FORNECEDOR" id="fornecedor">
-                                    <input class="texto" type="number" placeholder="   VALOR" id="valor">
-                                    <input class="texto" type="number" placeholder="   QUANTIDADE" id="quantidade">
-                                    </div>
+            <input class="texto" type="text" placeholder="   CPF" id="cpf">
+            <input class="texto" type="number" placeholder="   Contato" id="cttC">
+            <button type="submit" class="remover_item"></button>
         <span>+</span>
-        <div class="send" onclick="Cadastrar()">Cadastrar</div>
-    </div>
+        <div class="send" onclick="cadCliente()">Cadastrar</div>   
+     </div>
 </body>
 </html>
