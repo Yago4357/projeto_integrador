@@ -19,7 +19,8 @@
 #th{
     color: #FFFFFF;
     background-color: #FF984E;
-    border: 1px solid --color_all(--color_all);
+    border-radius: 2px;
+    border: none;
 }
 
 #table{
@@ -31,9 +32,10 @@
     color: var(--text_color);
     width: 95%;
     height: 55ch;
-    border-radius: 1rem;
+    border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
+    overflow: hidden;
     overflow-x: auto;
 }
 
@@ -108,4 +110,43 @@
     text-align: center;
     margin-left: 4rem;
     font-family: "Poppins", sans-serif;
+}
+
+.delete{
+    width: 25px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-image: url(../imagens/remove.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    right: 60px;
+    transform: translateY(-4px);
+    transition: all 100ms;
+}
+.modify{
+    width: 25px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-image: url(../imagens/pen.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    right: 20px;
+    transform: translateY(-3px);
+    transition: all 100ms;
+}
+.delete:hover{
+    background-image: url(../imagens/remove_filled.png);
+    background-size: 26px;
+}
+.modify:hover{
+    background-image: url(../imagens/pen_filled.png);
+    background-size: 26px;
 }

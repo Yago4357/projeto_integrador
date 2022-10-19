@@ -9,31 +9,48 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
-th, td{
+  
+
+#th, #td{
     border: 2px solid var(--color_all);
     text-align: center;
     width: 44rem;
-    height: 3rem;
+    height: 3.1rem;
+    overflow: hidden;
 }
 
-th{
+#th{
     color: #FFFFFF;
     background-color: #FF984E;
+    border-radius: 0px;
     border: none;
 }
 
-table{
+.tb_ini{
+    position: relative;
+    right: 10px;
+}
+.i2{
+    position: relative;
+    right: 20px;
+}
+.i3{
+    position: relative;
+    right: 5px;
+}
+
+#table{
     table-layout: fixed;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
     width: 95%;
     height: 55ch;
-    border-radius: 1rem;
+    border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
+    overflow: hidden;
     overflow-x: auto;
 }
 
@@ -42,24 +59,16 @@ table{
     font-family: "Poppins", sans-serif;
 }
 
-cabeca{
-    text-decoration: underline;
-    border-collapse: collapse;
-}
-
 .corpo{
     overflow-y: auto;
-    overflow-x: auto;
-}
-
-tbody{
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
     height: 495px;
 }
 
-body {
+#body {
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
@@ -67,13 +76,14 @@ body {
     overflow: auto;
 }
 
-.botao{
+.botaoz{
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     cursor: pointer;
     background-color: #FF984E;
     height: 3rem;
     width: 20rem;
     border-radius: 44px;
+    font-size: 24px;
 }
 
 .center{
@@ -95,15 +105,20 @@ body {
     border-left: none;
 }
 
-.botao_class h1{
+.botao_class .textz{
     position: relative;
-    top: 5px;
+    top: 15px;
+    font-size: 22px;
 }
 
 .botao_class{
     display: flex;
     gap: 50%;
     
+}
+#bVoltar{
+    position: relative;
+    left: 20px;
 }
 .Carrinho{
     border-bottom: 1px;
@@ -112,4 +127,51 @@ body {
     text-align: center;
     margin-left: 4rem;
     font-family: "Poppins", sans-serif;
+}
+
+.delete{
+    width: 25px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-image: url(../imagens/remove.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    left: 25%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
+}
+.modify{
+    width: 25px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-image: url(../imagens/pen.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    left: 72%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
+}
+.delete:hover{
+    background-image: url(../imagens/remove_filled.png);
+    background-size: 26px;
+}
+.modify:hover{
+    background-image: url(../imagens/pen_filled.png);
+    background-size: 26px;
+}
+
+.cont{
+    position: relative;
+    left: 20px;
+    bottom: 5px;
 }

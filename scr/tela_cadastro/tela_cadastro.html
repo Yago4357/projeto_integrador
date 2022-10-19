@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./tela_cadastro.css">
-    <script src="/scr/usuarioCAD.js"></script>
+    <script src="../usuarioCAD.js"></script>
     <title>Cadastro</title>
 </head>
 <body>
@@ -16,19 +16,19 @@
         <div class="c3" id="caixa"></div>
         -->
       <h1>Cadastro</h1>
-      <form method="post" id="login">
+      <form id="login">
         <div class="txt_field">
           <input type="text" id="usuario" required>
           <span></span>
           <label>Nome</label>
         </div>
         <div class="txt_field">
-          <input type="number" id="cpf"required>
+          <input type="number" data-ls-module="charCounter" maxlength="11" id="cpf"required>
           <span></span>
           <label>CPF</label>
         </div>
         <div class="txt_field">
-          <input type="number" id="contato" required>
+          <input type="number" data-ls-module="charCounter" maxlength="11" id="contato" required>
           <span></span>
           <label>Contato</label>
         </div>

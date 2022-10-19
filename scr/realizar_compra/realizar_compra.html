@@ -4,47 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>RealizarCompra</title>
     <link rel="stylesheet" href="realizar_compra.css">
+    <link rel="stylesheet" href="../tela_inicial/css/bootstrap.css">
+    <script src="../tela_inicial/js/bootstrap.js"></script>
 </head>
-<body>
+
+<header class="navbar">
+        <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <h1>
+          </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="nav-item">
+                  Realizar Vendas
+                </a>
+                <ul class="dropdown-menu" class="dropdown-menu1">
+                  <li><button class="item1">Realizar vendas</button></li>
+                  <li><button class="item2">Relatório de vendas</button></li>
+                  <li><button class="item3">Vendedores</button></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="nav-item">
+                   Produtos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><button class="item1" onclick="window.location.href='../cadastro_produto/cadastro_produtos.html'">Cadastrar produtos</button></li>
+                  <li><button class="item2" onclick="window.location.href='../../views/visualizarProd'">visualizar produtos</button></li>
+                  <li><button class="item3">Estoque</button></li>
+                </ul>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='../visualizar_funcionario/visualizar_funcionario.html'">
+                    Funcionários
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+<body id="body">
+  <div class="page_name">Realizar Compra</div>
     <div class="center">
-
-        <div class="flex">
-        <div class="produto">
-            <div class="img_produto">          </div>
-            <h2 class="titulo">Mouse Preto</h2>
-            <h2>Cód: </h2>
-            <h2>Quantidade em estoque:</h2>
+      <div class="flex">
+        <div class="prods">
+          <div class="produto">
+            <div class="informacoes">
+            <h2 id="h2" class="titulo">Mouse Preto</h2>
+            <h2 id="h2">Cód: 105079</h2>
+            <h2 id="h2">Quantidade em estoque: 11</h2>
+        </div>
+        
             <div class="detalhes">
-                <h3>Mais detalhes</h3> 
+                <h3 id="h3">Mais detalhes</h3> 
             </div>
             </div>
-
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Salário</th>
-                <th>Data de Admissão</th>
-            </tr>
-            <tr>
-                <td>Bruno</td>
-                <td>123.456.789-00</td>
-                <td>R$2.000,00</td>
-                <td>05/09/2022</td>
-            </tr>
-            
-        </table>
-    </div>
-        <div class="botao_class">
-        <div class="botao">
-            <h1>Voltar</h1>
+            <div class="ult_produto">
+              <div class="ult_informacoes">
+              <div class="ult_compra"><span class="ult_compra_txt">Última compra</span></div>
+              <div class="infos">
+              <h2 id="h2" class="titulo">Fornecedor: xxxxxxxxxxxxx</h2>
+              <h2 id="h2">Preço: R$ 17,00</h2>
+              <h2 id="h2">Quantidade: 8</h2>
+              </div>
+          </div>
+          <div class="ult_detalhes">
+            <h3 id="h3">Mais detalhes</h3> 
         </div>
-        <div class="botao">
-            <h1>Adicionar Funcionário</h1>
+      </div>
         </div>
-        </div>
-    </div>
+        <table id="table">
+          <tr>
+              <th id="th">Nome</th>
+              <th id="th">CNPJ</th>
+              <th id="th">Preço</th>
+              <th id="th">Contato</th>
+          </tr>
+          <tr>
+              <td id="td" class="inicio">Bruno</td>
+              <td id="td">123.456.789-00</td>
+              <td id="td">R$20,00</td>
+              <td id="td" class="ifim">(047) 98882-4155</td>
+          </tr>
+      </table>
+        <button class="confirmar">Comprar</button>
+      </div>
 </body>
 </html>
+

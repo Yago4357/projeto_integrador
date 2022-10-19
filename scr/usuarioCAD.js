@@ -1,5 +1,5 @@
 function cadastrarUser(){
-    console.log("Conectou 1");
+    console.log("cadastro");
     var nomeU = document.getElementById('usuario').value;
     var cpf = document.getElementById('cpf').value;
     var contato = document.getElementById('contato').value;
@@ -33,6 +33,9 @@ function cadastrarUser(){
         console.log(statususer);
         if(statususer == 'Cadastrado'){
             alert("USUARIO CADASTRADO")
+            location.href = 'index.html'
+        }else{
+            alert("Aconteceu algo inesperado!")
             location.href = 'index.html'
         }
      
