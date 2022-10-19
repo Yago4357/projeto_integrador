@@ -31,10 +31,10 @@ function updateProd(){
         var update = await resp.text();
         if(update == 'att'){
             alert('Produto atualizado!');
-            location.href='visualizarProd';
+            location.href='visualizarProduto';
         }else{
             alert('Produto não atualizado!')
-            location.href='attProduto.html'
+            location.href='visualizarProduto'
         }
     })
 }

@@ -39,7 +39,7 @@ app.get("/visualizarProduto", async(req,res)=>{
     }
 })
 
-app.get("/visualizarFun", async(req,res)=>{
+app.get("/visualizarFuncionario", async(req,res)=>{
     const fun = banco.Usuario();
     console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
@@ -187,6 +187,18 @@ app.post('/DeletarProduto', (req,res)=>{
         res.redirect('/visualizarProduto');
 })
 
+
+app.get("/AtualizarProduto", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('attProdutos',{Session:session,urid:session.userid})
+    }
+})
 
 
 app.post('/attP', (req,res)=>{
