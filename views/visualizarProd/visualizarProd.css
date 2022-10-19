@@ -9,17 +9,31 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
-#th, #td{
+#the, #td{
     border: 2px solid var(--color_all);
     text-align: center;
     width: 44rem;
-    height: 3rem;
+    height: 3.03rem;
 }
 
-#th{
+#the{
     color: #FFFFFF;
     background-color: #FF984E;
-    border: 1px solid --color_all(--color_all);
+    border: none;
+    border-radius: 1px;
+}
+.the{
+    position: relative;
+    left: 20px;
+}
+.thee{
+    position: relative;
+    left: 40px;
+}
+.theee{
+    
+    position: relative;
+    left: 20px;
 }
 
 #table{
@@ -27,11 +41,11 @@
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.15));
     color: var(--text_color);
     width: 95%;
     height: 55ch;
-    border-radius: 1rem;
+    border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
     overflow-x: auto;
@@ -42,9 +56,17 @@
     font-family: "Poppins", sans-serif;
 }
 
-.corpo{
+#cabeca{
+    text-decoration: underline;
+    border-collapse: collapse;
+}
+
+#corpo{
     overflow-y: auto;
     overflow-x: auto;
+}
+
+#tbody{
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
@@ -59,16 +81,8 @@
     overflow: auto;
 }
 
-.botao{
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
-    cursor: pointer;
-    background-color: #FF984E;
-    height: 3rem;
-    width: 20rem;
-    border-radius: 44px;
-}
 
-.center{
+#center{
     outline: none;
     margin-bottom: 5%;
     border: 1px solid var(--form);
@@ -97,15 +111,40 @@
     gap: 50%;
     
 }
-#bVoltar{
-    position: relative;
-    left: 20px;
+
+.modify, .delete{
+    border: none;
+    background-color: var(--color_all);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 4px;
+    transition: all 100ms;
 }
-.Carrinho{
-    border-bottom: 1px;
-    border-top-width: 0px;
-    font-size: 30px;
-    text-align: center;
-    margin-left: 4rem;
-    font-family: "Poppins", sans-serif;
+
+.delete{
+    cursor: pointer;
+    background-image: url(scr\imagens\remove.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.modify{
+    cursor: pointer;
+    background-image: url(scr\imagens\pen.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    right: 40px;
+}
+.delete:hover{
+    background-image: url(scr\imagens\remove_filled.png);
+    background-size: 26px;
+}
+.modify:hover{
+    background-image: url(scr\imagens\pen_filled.png);
+    background-size: 26px;
 }

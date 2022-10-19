@@ -18,22 +18,10 @@
 
 .cad{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    justify-content: left;
+    align-items: left;
 }
 
-form{
-    border: 1px solid #4F4F4F;
-    width: 90%;
-    padding: 24px;
-    border-right: none;
-    border-left: none; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6rem; 
-}
 form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
@@ -42,14 +30,15 @@ form:hover input{
 }
 
 input{
-    position: relative;
-    left: 50px;
-    width: 250px;
+    width: 82%;
     height: 32px;
     font-size: 14px;
     font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 25px;
+    margin-top: 20px;
     border: none;
-    border-bottom: 1px solid #FF984E;
+    border-bottom: 2px solid #FF984E;
 }
 .remover_item{
     width: 50px;
@@ -91,8 +80,9 @@ input{
 }
 
 span{
-    font-size: 32px;
-    margin-top: 12px;
+    font-size: 3rem;
+    margin-top: 12rem;
+    margin-left: 4rem;
     font-weight: lighter;
     color: #FF984E;
 }
@@ -102,6 +92,7 @@ span:hover{
 }
 
 .send{
+    position: relative;
     width: 200px;
     height: 30px;
     border-radius: 4px;
@@ -112,7 +103,19 @@ span:hover{
     color: #fff;
     cursor: pointer;
     transition: all 100ms;
+    
 }
 .send:hover{
     background-color: rgb(230, 125, 51);
+}
+
+.bloco{
+    margin-left: 4rem;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0 0 10px 5px #19191913;
+    width: 300px;
+    height: 300px;
 }

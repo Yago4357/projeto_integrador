@@ -1,26 +1,28 @@
-function updateProd(clicked_id){
-    idProd = clicked_id;
-    var nome = prompt("Nome");
-    var fornecedor = prompt("Fornecedor");
-    var valor = prompt("Valor");
-    var quantidade = prompt("Quantidade");
+const url = new URLSearchParams(window.location.search);
+function updateProd(){
+    const id = url.get("id");
+    var nome = document.getElementById("nome").value;
+    var fornecedor = document.getElementById("fornecedor").value;
+    var valor = document.getElementById("valor").value;
+    var quantidade = document.getElementById("quantidade").value;
+    
     console.log(JSON.stringify({
-        idP:idProd,
+        id:id,
         nomeP:nome,
         fornecedorP:fornecedor,
         valorP:valor,
         quantidadeP:quantidade
     }))
 
-    fetch("Att",{
+    fetch("attP",{
         method:'POST',
         body: JSON.stringify({
-            idP:idProd,
+            id:id,
             nomeP:nome,
             fornecedorP:fornecedor,
             valorP:valor,
             quantidadeP:quantidade
-        }),
+        }),    
         headers: {"content-type" : "application/json"}
         }) 
 
@@ -32,6 +34,7 @@ function updateProd(clicked_id){
             location.href='visualizarProd';
         }else{
             alert('Produto não atualizado!')
+            location.href='attProduto.html'
         }
     })
 }

@@ -7,17 +7,15 @@
 }
 
 :root{
-  --background: 180deg, #3a3a3a 0%, rgb(49, 49, 49) 100%;
-  --color_all: #191919;
-  --text_color: #e6e6e6;
-  --form_background: #3a3a3a;
+  --background: 180deg, #FFFFFF;
+  --color_all: #FF984E;
+  --text_color: #848484;
+  --form_background: #FFFFFF;
   --border_color: none; 
-  --switch_bg_color: #848484;
-  --switch_bg_color_enabled: rgb(104, 104, 104);
-  --switch_bg_color_disabled: #9c9c9c;
+  --switch_bg_color: #FFFFFF;
 }
 
-body{
+#body{
   margin: 0;
   padding: 0;
   background: linear-gradient(var(--background));
@@ -31,8 +29,8 @@ body{
   transform: translate(-50%, -50%);
   width: 700px;
   background: var(--form_background);
-  border: 2px solid #191919;
-  border-radius: 10px;
+  border-radius: 10px;  
+  box-shadow: 0 0 10px 5px #19191913;
 }
 
 .red_cadastro{
