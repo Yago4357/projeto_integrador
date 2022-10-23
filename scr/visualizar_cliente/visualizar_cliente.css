@@ -122,10 +122,11 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
-    right: 60px;
-    transform: translateY(-4px);
+    position: relative;
+    left: 25%;
+    transform: translateY(0.5rem);
     transition: all 100ms;
+    z-index: 999;
 }
 .modify{
     width: 25px;
@@ -138,9 +139,10 @@
     background-repeat: no-repeat;
     background-color: transparent;
     position: absolute;
-    right: 20px;
-    transform: translateY(-3px);
+    left: 72%;
+    transform: translateY(0.5rem);
     transition: all 100ms;
+    z-index: 999;
 }
 .delete:hover{
     background-image: url(../imagens/remove_filled.png);
@@ -149,4 +151,10 @@
 .modify:hover{
     background-image: url(../imagens/pen_filled.png);
     background-size: 26px;
+}
+
+.cont{
+    position: relative;
+    left: 20px;
+    bottom: 5px;
 }
