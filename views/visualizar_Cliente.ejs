@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
   </head>
 
-  <%- include('../scr/navbar/navbar.html') -%>
+  <%- include('../views/navbar') -%>
+
  
   <body id="body">
     <div id="center" class="center">
@@ -31,7 +32,7 @@
                   <td id="td" ><%= Cliente[i].Nome%></td>
                   <td id="td" ><%= Cliente[i].Cpf%></std>
                   <td id="td" class="tb_final"><%= Cliente[i].Contato%>
-                  <button class="modify" onclick="window.location.href='attCliente.html?id=<%=Cliente[i].idC%>'"></button>
+                  <button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
                   <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> 
                 </tr>
                 <%}%>

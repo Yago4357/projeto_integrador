@@ -23,15 +23,21 @@ var session;
 
 
 app.set('view engine', 'ejs')
-app.get('/visualizarProd', async(req, res,)=>{ 
-    const produto = banco.Produto();
- res.render('visualizarProd', {Produto: await produto})
-})
 
 app.get('/visualizarCliente', async(req, res,)=>{ 
     const Cliente = banco.Cliente();
- res.render('visualizar_Cliente', {Cliente: await Cliente})
+    const produto = banco.Produto();
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('visualizar_Cliente',{Cliente: await Cliente,Session:session,urid:session.userid})
+    }
 })
+
 
 app.get("/visualizarProduto", async(req,res)=>{
     const produto = banco.Produto();
@@ -108,7 +114,7 @@ app.get("/TelaIni", (req,res)=>{
         res.redirect('/');
     } else{    
         console.log('else')
-        res.render('TelaIni',{Session:session,urid:session.userid})
+        res.render('navbar',{Session:session,urid:session.userid})
     }
 })
 
@@ -116,14 +122,19 @@ app.post('/login', (req,res) =>{
     const r = banco.Usuario();
     var usuario = req.body.usuario
     var senha = req.body.senha
-
+    var conectado;
     for(var usuarios of usuariodb ){
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
+            conectado=true;
             session=req.session;
             session.userid=req.body.usuario;
         }
     }
+    if(conectado!=true){
+    res.redirect("/")
+}else{
     res.redirect("/TelaIni")
+}
 })
 app.get("/CadastrarProduto", (req,res)=>{
     console.log(req.session)
@@ -149,6 +160,17 @@ app.post('/cadP', (req,res)=>{
         console.log('INSERT INTO Produto');
         const result =  banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
         res.send('Inserido')
+})
+
+app.get("/CadastrarFuncionario", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('tela_cadastro',{Session:session,urid:session.userid})
+    }
 })
 app.post('/cadU', (req,res)=>{
     const r = banco.Usuario();
@@ -178,6 +200,16 @@ app.post('/deleteUser',(req,res)=>{
     res.send('Deletado')
     console.log(`Usuario Apagado!`)
 })
+app.get("/AtualizarFuncionario", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('attFun',{Session:session,urid:session.userid})
+    }
+})
 app.post('/attF',(req,res)=>{
     var id = req.body.id;
     var nome = req.body.nomeF;
@@ -195,6 +227,16 @@ app.post('/TESTE', (req,res)=>{
         console.log(`Produto com o id:${id} foi apagado!`);   
 })
 
+app.get("/AtualizarProduto", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('attProdutos',{Session:session,urid:session.userid})
+    }
+})
 app.post('/attP', (req,res)=>{
     var id=req.body.id;
     var nome = req.body.nomeP;
@@ -204,6 +246,16 @@ app.post('/attP', (req,res)=>{
     console.log(nome,'rook')
     result = banco.updateProduto(id,{ Nome: nome, Fornecedor: fornecedor, Valor: valor, Quantidade: quantidade});
     res.send('att');
+})
+app.get("/CadastrarCliente", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('cadastro_cliente',{Session:session,urid:session.userid})
+    }
 })
 app.post('/cadC', (req,res)=>{
     const rf = banco.Cliente();
@@ -216,6 +268,16 @@ app.post('/cadC', (req,res)=>{
         console.log('INSERT INTO Cliente');
         const result =  banco.insertCliente({Nome: nome , Cpf:cpf , Contato:ctt});
         res.send('clienteCAD')
+})
+app.get("/AtualizarCliente", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('attCliente',{Session:session,urid:session.userid})
+    }
 })
 app.post('/attC', (req,res)=>{
     var id=req.body.id;

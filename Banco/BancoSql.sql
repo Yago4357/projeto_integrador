@@ -23,10 +23,11 @@ DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cliente` (
-  `IdCliente` int(11) NOT NULL AUTO_INCREMENT,
-  `CPF` varchar(11) DEFAULT NULL,
+  `idC` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(49) DEFAULT NULL,
+  `Cpf` varchar(11) DEFAULT NULL,
   `Contato` varchar(11) DEFAULT NULL,
-  PRIMARY KEY (`IdCliente`)
+  PRIMARY KEY (`idC`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +37,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'1185276989','47999939121');
+INSERT INTO `cliente` VALUES (1,"Leandro",'1185276989','47999939121');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 

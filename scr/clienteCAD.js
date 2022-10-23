@@ -27,7 +27,7 @@ function cadCliente(){
         console.log(statuscliente);
         if(statuscliente == 'clienteCAD'){
             alert("CLIENTE CADASTRADO")
-            location.href = 'TelaIni'
+            location.href = 'visualizarCliente'
         }else{
             alert("Aconteceu algo inesperado!")
             location.href = 'cadastro_cliente.html'

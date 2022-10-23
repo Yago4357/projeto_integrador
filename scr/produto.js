@@ -31,7 +31,7 @@ function Cadastrar(){
         console.log(statusprod);
         if(statusprod == 'Inserido'){
             alert("Produto cadastrado!")
-            location.href = 'TelaIni'
+            location.href = 'visualizarProduto'
         }
      
      })

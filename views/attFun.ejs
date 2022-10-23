@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./attCliente.css">
-    <script src="../atualizarCliente.js"></script>
-    <title>Atualizar Cliente</title>
+    <link rel="stylesheet" href="./attFun.css">
+    <script src="../atualizarUser.js"></script>
+    <title>Atualizar Funcionário</title>
 </head>
+<%- include('../views/navbar') -%>
 
-<%-include('../src/navbar/navbar.html')-%>
 
 <body>
     <div class="cad">
@@ -18,8 +18,7 @@
             <input class="texto" type="text" placeholder="   CPF" id="cpf">
             <input class="texto" type="text" placeholder="   Contato" id="ctt">
         </form>
-        <button onclick="attCliente()">Atualizar</button>
-        <div class="send" onclick="attCliente()">Atualizar</div>
+        <div class="send" onclick="attUser()">Atualizar</div>
     </div>
 </body>
 </html>

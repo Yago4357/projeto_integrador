@@ -19,13 +19,13 @@ function Validar(){
      .then(async (resp)=>{
         var status = await resp.text();
         console.log(status);
-        
         if(status == 'Conectado'){
-            location.href = 'TelaIni.html'
+            location.href = 'TelaIni'
             
-        }else{
+        }else if(status == 'Falhou'){
             alert("Usuario ou senha incorretos!")
-            location.href = 'index.html'
+            location.href = '/'
+
         }
      });
 

@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
   </head>
 
-  <%- include('../scr/navbar/navbar.html') -%>
- 
-  <body id="body">
+  <%- include('../views/navbar') -%>
     <div id="center" class="center">
         <table id="table" class="scroll">
             <thead>
@@ -33,7 +31,7 @@
                   <td id="td" ><%= Produto[i].Fornecedor%></std>
                   <td id="td" ><%= Produto[i].Valor%> R$</td>
                   <td id="td" class="tb_final"><%= Produto[i].Quantidade%>
-                  <button class="modify" onclick="window.location.href='visualizarProd?id=<%=Produto[i].Idprod%>'"></button>
+                  <button class="modify" onclick="window.location.href='AtualizarProduto?id=<%=Produto[i].Idprod%>'"></button>
                   <button class="delete" id=<%= Produto[i].Idprod%> onclick="deleteProd(this.id)"></button></td> 
                 </tr>
                 <%}%>

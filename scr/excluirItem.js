@@ -20,7 +20,7 @@ function deleteProd(clicked_id){
         console.log(delet);
         if(delet == 'Deletado'){
             alert('Produto deletado!');
-            location.href='visualizarProd';
+            location.href='visualizarProduto';
         }else{
             alert('Algo inesperado ocorreu!')
         }
