@@ -27,7 +27,7 @@ CREATE TABLE `cliente` (
   `Nome` varchar(49) DEFAULT NULL,
   `Cpf` varchar(11) DEFAULT NULL,
   `Contato` varchar(11) DEFAULT NULL,
-  PRIMARY KEY (`IdCliente`)
+  PRIMARY KEY (`idC`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
