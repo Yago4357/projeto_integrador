@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista vendas</title>
+    <link rel="stylesheet" href="/scr/tela_lista_vendas/tela_lista_vendas.css">
+</head>
+    <%- include('../views/navbar') -%>
+
+<body id="body">
+    <div class="center">
+        <table id="table">
+            <tr id="cabeca" class="informacoes  ">
+                <th id="th" class="prim">COD</th>
+                <th id="th">Comissão</th>
+                <th id="th">Quantidade</th>
+                <th id="th">Valor Final </th>
+                <th id="th" class="ult">Cliente</th>
+            </tr>
+            <%=console.log(venda.codV)%>
+            <% for(var i = 0; i< venda.length; i++) {%>
+            <tr>
+                <td id="td"><%=venda[i].codV%></td>
+                <td id="td"><%=venda[i].comV%></td>
+                <td id="td"><%=venda[i].qtdV%></td>
+                <td id="td"><%=venda[i].vF%></td>
+                <td id="td"> <%=venda[i].Cliente%></td>
+            </tr>
+            <%}%>
+        
+        </table>
+        </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

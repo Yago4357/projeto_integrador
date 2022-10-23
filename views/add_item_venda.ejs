@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/scr/add_item_venda/add_item_venda.css">
+    <script src="../Vender.js"></script>    
+    <title>Venda</title>
+</head>
+
+<%- include('../views/navbar') -%>
+
+<body>
+    <div class="cad">
+        <form action="">
+            <input class="texto" type="text" placeholder="    COD"id="codP">
+            <input class="texto" type="text" placeholder="   QUANTIDADE" id="qtdV">
+            <input class="texto" type="text" placeholder="   CNPJ" id="cliente">
+        </form>
+        <div class="send" onclick="Vender()">Cadastrar</div>
+    </div>
+</body>
+</html>

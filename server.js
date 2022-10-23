@@ -5,6 +5,7 @@ const banco = require('./Banco/banco')
 const express = require('express')
 var sessions = require('express-session')
 const cookieParser = require("cookie-parser");
+const { Console } = require('console')
 const app = express()
 const server = http.createServer(app)
 
@@ -49,6 +50,31 @@ app.get("/visualizarProduto", async(req,res)=>{
     } else{    
         console.log('else')
         res.render('visualizarProd',{Produto: await produto,Session:session,urid:session.userid})
+    }
+})
+
+app.get('/telaVenda', async(req, res,)=>{ 
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('add_item_venda',{Session:session,urid:session.userid})
+    }
+})
+
+app.get("/visualizarVenda", async(req,res)=>{
+    const V = banco.Venda();
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        console.log('else')
+        res.render('tela_lis_vendas',{venda: await V ,Session:session,urid:session.userid})
     }
 })
 
@@ -103,6 +129,7 @@ app.get('/logout',(req,res) => {
 (async () => {
  
     const usuariodb = await banco.Usuario();
+    const ProdutoV = await banco.Produto();
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 
@@ -123,6 +150,7 @@ app.post('/login', (req,res) =>{
     var usuario = req.body.usuario
     var senha = req.body.senha
     var conectado;
+    console.log(ProdutoV[2].Valor)
     for(var usuarios of usuariodb ){
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
             conectado=true;
@@ -172,6 +200,24 @@ app.get("/CadastrarFuncionario", (req,res)=>{
         res.render('tela_cadastro',{Session:session,urid:session.userid})
     }
 })
+
+app.post('/Venda', (req,res)=>{
+    rf = banco.Venda();
+    var codP = req.body.codP;
+    var qtdV = req.body.qtdV;
+    var cliente = req.body.cliente;
+    console.log('SO CANTO ROCK 34')
+    valorT = ProdutoV[codP].Valor * qtdV;
+    baixa =  ProdutoV[codP].Quantidade - qtdV;
+    comV = valorT * 0.10;
+    console.log(comV);
+    console.log(baixa);
+    console.log(valorT)
+    
+    result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
+    res.send('Vendido');
+})
+
 app.post('/cadU', (req,res)=>{
     const r = banco.Usuario();
     console.log('Começou o rocknroll!');

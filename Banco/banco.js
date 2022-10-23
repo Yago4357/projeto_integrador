@@ -1,6 +1,6 @@
 function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:yago@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:28047814lw@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
@@ -76,6 +76,17 @@ function connect(){
         const values=[Cliente.Nome,Cliente.Cpf,Cliente.Contato,idC]
         return await conn.query(updateCliente,values); 
     }
+    async function Venda(){
+        const conn = await connect();
+        const [venda]  = await conn.query('SELECT * FROM relatoriovenda;');
+        return [venda]; 
+    }
+    async function relatorioVenda(Venda){
+        const conn = await connect();
+        const relatorioVenda= 'INSERT INTO relatoriovenda(comV,qtdV,vF,Cliente) VALUES (?,?,?,?);'
+        const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.Cliente]
+        return await conn.query(relatorioVenda,values);
+    }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda}
     
