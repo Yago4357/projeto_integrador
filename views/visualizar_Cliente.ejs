@@ -7,15 +7,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="../excluirCliente.js"></script><!--Trocar o caminho -->
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
+    <script src="../js/scrool.js"></script>
+    <script src="../excluirCliente.js"></script><!--Trocar o caminho -->
   </head>
 
   <%- include('../views/navbar') -%>
 
  
   <body id="body">
-    <div id="center" class="center">
+    <div class="center">
         <table id="table" class="scroll">
             <thead>
             <tr id class="cabeca">
@@ -31,12 +32,11 @@
                   <td id="td" class="tb_ini"><%= Cliente[i].idC%></td>
                   <td id="td" ><%= Cliente[i].Nome%></td>
                   <td id="td" ><%= Cliente[i].Cpf%></std>
-                  <td id="td" class="tb_final"><%= Cliente[i].Contato%>
+                  <td id="td" class="cont"><%= Cliente[i].Contato%>
                   <button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
                   <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> 
                 </tr>
                 <%}%>
 </tbody>
 </body>
-
 </html>
