@@ -23,10 +23,6 @@ var session;
 
 
 app.set('view engine', 'ejs')
-app.get('/visualizarProd', async(req, res,)=>{ 
-    const produto = banco.Produto();
- res.render('visualizarProd', {Produto: await produto})
-})
 
 app.get('/visualizarCliente', async(req, res,)=>{ 
     const Cliente = banco.Cliente();
@@ -272,6 +268,16 @@ app.post('/cadC', (req,res)=>{
         console.log('INSERT INTO Cliente');
         const result =  banco.insertCliente({Nome: nome , Cpf:cpf , Contato:ctt});
         res.send('clienteCAD')
+})
+app.get("/AtualizarCliente", (req,res)=>{
+    console.log(req.session)
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('CadastrarProduto')
+        res.redirect('/');
+    } else{    
+        res.render('attCliente',{Session:session,urid:session.userid})
+    }
 })
 app.post('/attC', (req,res)=>{
     var id=req.body.id;
