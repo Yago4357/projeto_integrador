@@ -78,12 +78,12 @@ function connect(){
     }
     async function Venda(){
         const conn = await connect();
-        const [venda]  = await conn.query('SELECT * FROM relatoriovenda;');
-        return [venda]; 
+        const [rows]  = await conn.query('SELECT * FROM rvenda;');
+        return rows; 
     }
     async function relatorioVenda(Venda){
         const conn = await connect();
-        const relatorioVenda= 'INSERT INTO relatoriovenda(comV,qtdV,vF,Cliente) VALUES (?,?,?,?);'
+        const relatorioVenda= 'INSERT INTO rvenda(comV,qtdV,vF,Cliente) VALUES (?,?,?,?);'
         const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.Cliente]
         return await conn.query(relatorioVenda,values);
     }

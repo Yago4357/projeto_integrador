@@ -74,7 +74,7 @@ app.get("/visualizarVenda", async(req,res)=>{
         res.redirect('/');
     } else{    
         console.log('else')
-        res.render('tela_lis_vendas',{venda: await V ,Session:session,urid:session.userid})
+        res.render('tela_lis_vendas',{v: await V ,Session:session,urid:session.userid})
     }
 })
 
@@ -207,6 +207,7 @@ app.post('/Venda', (req,res)=>{
     var qtdV = req.body.qtdV;
     var cliente = req.body.cliente;
     console.log('SO CANTO ROCK 34')
+    codP++;
     valorT = ProdutoV[codP].Valor * qtdV;
     baixa =  ProdutoV[codP].Quantidade - qtdV;
     comV = valorT * 0.10;
@@ -214,8 +215,10 @@ app.post('/Venda', (req,res)=>{
     console.log(baixa);
     console.log(valorT)
     
-    result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
+     result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
+     baixaI = banco.updateProduto(codP,{Quantidade:baixa});
     res.send('Vendido');
+
 })
 
 app.post('/cadU', (req,res)=>{

@@ -19,14 +19,13 @@
                 <th id="th">Valor Final </th>
                 <th id="th" class="ult">Cliente</th>
             </tr>
-            <%=console.log(venda.codV)%>
-            <% for(var i = 0; i< venda.length; i++) {%>
+            <% for(var i = 0; i< v.length; i++) {%>
             <tr>
-                <td id="td"><%=venda[i].codV%></td>
-                <td id="td"><%=venda[i].comV%></td>
-                <td id="td"><%=venda[i].qtdV%></td>
-                <td id="td"><%=venda[i].vF%></td>
-                <td id="td"> <%=venda[i].Cliente%></td>
+                <td id="td"><%=v[i].codV%></td>
+                <td id="td"><%=v[i].comV%></td>
+                <td id="td"><%=v[i].qtdV%></td>
+                <td id="td"><%=v[i].vF%></td>
+                <td id="td"> <%=v[i].Cliente%></td>
             </tr>
             <%}%>
         
