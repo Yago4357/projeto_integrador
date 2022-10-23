@@ -15,13 +15,6 @@
     --switch_bg_color: #FFFFFF;
   }
 
-
-.cad{
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
 form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
@@ -30,13 +23,12 @@ form:hover input{
 }
 
 input{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
     width: 82%;
-    height: 32px;
     font-size: 14px;
     font-weight: bold;
-    margin-left: 15px;
-    margin-bottom: 25px;
-    margin-top: 20px;
     border: none;
     border-bottom: 2px solid #FF984E;
 }
@@ -103,19 +95,30 @@ span:hover{
     color: #fff;
     cursor: pointer;
     transition: all 100ms;
-    
 }
 .send:hover{
     background-color: rgb(230, 125, 51);
 }
 
+.cad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50rem;
+}
+
 .bloco{
+    display: flex;
     margin-left: 4rem;
     margin-top: 5rem;
-    display: flex;
     justify-content: space-between;
-    flex-direction: column;
     box-shadow: 0 0 10px 5px #19191913;
-    width: 300px;
-    height: 300px;
+    width: 50%;
+    height: 15%;
+}
+
+.texto{
+    margin: 50px;
 }
