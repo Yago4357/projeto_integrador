@@ -15,25 +15,6 @@
     --switch_bg_color: #FFFFFF;
   }
 
-
-.cad{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-form{
-    border: 1px solid #4F4F4F;
-    width: 90%;
-    padding: 24px;
-    border-right: none;
-    border-left: none; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6rem; 
-}
 form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
@@ -42,14 +23,14 @@ form:hover input{
 }
 
 input{
-    position: relative;
-    left: 50px;
-    width: 250px;
-    height: 32px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 82%;
     font-size: 14px;
     font-weight: bold;
     border: none;
-    border-bottom: 1px solid #FF984E;
+    border-bottom: 2px solid #FF984E;
 }
 .remover_item{
     width: 50px;
@@ -91,8 +72,9 @@ input{
 }
 
 span{
-    font-size: 32px;
-    margin-top: 12px;
+    font-size: 3rem;
+    margin-top: 12rem;
+    margin-left: 4rem;
     font-weight: lighter;
     color: #FF984E;
 }
@@ -102,6 +84,7 @@ span:hover{
 }
 
 .send{
+    position: relative;
     width: 200px;
     height: 30px;
     border-radius: 4px;
@@ -115,4 +98,27 @@ span:hover{
 }
 .send:hover{
     background-color: rgb(230, 125, 51);
+}
+
+.cad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50rem;
+}
+
+.bloco{
+    display: flex;
+    margin-left: 4rem;
+    margin-top: 5rem;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 5px #19191913;
+    width: 80%;
+    height: 15%;
+}
+
+.texto{
+    margin: 50px;
 }
