@@ -76,6 +76,12 @@ function connect(){
         const values=[Cliente.Nome,Cliente.Cpf,Cliente.Contato,idC]
         return await conn.query(updateCliente,values); 
     }
+    async function bvenda(Idprod,Produto){
+        const conn = await connect();
+        const baixa = 'UPDATE produto SET Quantidade=? WHERE Idprod=?;';
+        const values=[Produto.Quantidade,Idprod]
+        return await conn.query(baixa,values); 
+    }
     async function Venda(){
         const conn = await connect();
         const [rows]  = await conn.query('SELECT * FROM rvenda;');
@@ -88,5 +94,5 @@ function connect(){
         return await conn.query(relatorioVenda,values);
     }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda}
     

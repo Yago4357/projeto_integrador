@@ -28,7 +28,6 @@ app.set('view engine', 'ejs')
 app.get('/visualizarCliente', async(req, res,)=>{ 
     const Cliente = banco.Cliente();
     const produto = banco.Produto();
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -42,7 +41,7 @@ app.get('/visualizarCliente', async(req, res,)=>{
 
 app.get("/visualizarProduto", async(req,res)=>{
     const produto = banco.Produto();
-    console.log(req.session)
+    
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -54,7 +53,6 @@ app.get("/visualizarProduto", async(req,res)=>{
 })
 
 app.get('/telaVenda', async(req, res,)=>{ 
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -67,7 +65,6 @@ app.get('/telaVenda', async(req, res,)=>{
 
 app.get("/visualizarVenda", async(req,res)=>{
     const V = banco.Venda();
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -80,7 +77,6 @@ app.get("/visualizarVenda", async(req,res)=>{
 
 app.get("/visualizarFun", async(req,res)=>{
     const fun = banco.Usuario();
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -102,6 +98,7 @@ app.use(express.static(path.join(__dirname, 'scr')))
 app.use(express.static(path.join(__dirname, 'scr/tela_login')))
 app.use(express.static(path.join('scr/tela_inicial')))
 app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'scr/add_item_venda')))
 app.use(express.static(path.join(__dirname, 'scr/attFu')))
 app.use(express.static(path.join(__dirname, 'scr/attCliente')))
 app.use(express.static(path.join(__dirname, 'scr/attProduto')))
@@ -129,12 +126,10 @@ app.get('/logout',(req,res) => {
 (async () => {
  
     const usuariodb = await banco.Usuario();
-    const ProdutoV = await banco.Produto();
 
 //login tem que ser igual ao parametro dentro do fetch no index.js..
 
 app.get("/TelaIni", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('iasdadasdasf')
@@ -150,7 +145,6 @@ app.post('/login', (req,res) =>{
     var usuario = req.body.usuario
     var senha = req.body.senha
     var conectado;
-    console.log(ProdutoV[2].Valor)
     for(var usuarios of usuariodb ){
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
             conectado=true;
@@ -165,7 +159,6 @@ app.post('/login', (req,res) =>{
 }
 })
 app.get("/CadastrarProduto", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')
@@ -191,7 +184,6 @@ app.post('/cadP', (req,res)=>{
 })
 
 app.get("/CadastrarFuncionario", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')
@@ -201,22 +193,28 @@ app.get("/CadastrarFuncionario", (req,res)=>{
     }
 })
 
-app.post('/Venda', (req,res)=>{
-    rf = banco.Venda();
-    var codP = req.body.codP;
+app.post('/Venda', async(req,res)=>{
+    const ProdutoV = await banco.Produto();
+    var codPO = req.body.codP;
     var qtdV = req.body.qtdV;
     var cliente = req.body.cliente;
     console.log('SO CANTO ROCK 34')
-    codP++;
+    console.log(codPO);
+    console.log(qtdV);
+    console.log(cliente);
+    
+    codP = codPO-1;
     valorT = ProdutoV[codP].Valor * qtdV;
     baixa =  ProdutoV[codP].Quantidade - qtdV;
     comV = valorT * 0.10;
     console.log(comV);
     console.log(baixa);
     console.log(valorT)
+    console.log(codPO)
     
      result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
-     baixaI = banco.updateProduto(codP,{Quantidade:baixa});
+     baixaI = banco.bvenda(codPO,{Quantidade: baixa});
+     
     res.send('Vendido');
 
 })
@@ -250,7 +248,6 @@ app.post('/deleteUser',(req,res)=>{
     console.log(`Usuario Apagado!`)
 })
 app.get("/AtualizarFuncionario", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')
@@ -277,7 +274,6 @@ app.post('/TESTE', (req,res)=>{
 })
 
 app.get("/AtualizarProduto", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')
@@ -297,7 +293,6 @@ app.post('/attP', (req,res)=>{
     res.send('att');
 })
 app.get("/CadastrarCliente", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')
@@ -319,7 +314,6 @@ app.post('/cadC', (req,res)=>{
         res.send('clienteCAD')
 })
 app.get("/AtualizarCliente", (req,res)=>{
-    console.log(req.session)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         console.log('CadastrarProduto')

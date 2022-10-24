@@ -27,10 +27,10 @@ function Vender(){
         console.log(statusVenda);
         if(statusVenda == 'Vendido'){
             alert("Produto vendido")
-            location.href = 'TelaIni'
+            location.href = 'visualizarVenda'
         }else{
             alert("Aconteceu algo inesperado!")
-            location.href = 'TelaIni'
+            location.href = 'visualizarVenda'
         }
      
      });
