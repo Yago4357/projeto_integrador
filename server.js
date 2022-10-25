@@ -194,7 +194,8 @@ app.get("/CadastrarFuncionario", (req,res)=>{
 })
 
 app.post('/Venda', async(req,res)=>{
-    const ProdutoV = await banco.Produto();
+    const produtoV = await banco.Produto();
+    cpfc = banco.Cliente();
     var codPO = req.body.codP;
     var qtdV = req.body.qtdV;
     var cliente = req.body.cliente;
@@ -202,20 +203,23 @@ app.post('/Venda', async(req,res)=>{
     console.log(codPO);
     console.log(qtdV);
     console.log(cliente);
-    
-    codP = codPO-1;
-    valorT = ProdutoV[codP].Valor * qtdV;
-    baixa =  ProdutoV[codP].Quantidade - qtdV;
-    comV = valorT * 0.10;
-    console.log(comV);
-    console.log(baixa);
-    console.log(valorT)
-    console.log(codPO)
-    
+    for(ProdutoV of produtoV){
+    if(codPO == ProdutoV.Idprod && qtdV <= ProdutoV.Quantidade){
+        //codP = codPO-1;
+        s='s';
+        valorT = ProdutoV.Valor * qtdV;
+        baixa =  ProdutoV.Quantidade - qtdV;
+        comV = valorT * 0.10;
+            
      result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
      baixaI = banco.bvenda(codPO,{Quantidade: baixa});
-     
-    res.send('Vendido');
+    }
+}
+    if(s =!'s'){
+    res.send('erro');
+    }else{
+        res.send('Vendido')
+    }
 
 })
 
