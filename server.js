@@ -226,7 +226,6 @@ app.post('/Venda', async(req,res)=>{
 
 app.post('/cadU', (req,res)=>{
     const r = banco.Usuario();
-    console.log('Começou o rocknroll!');
         var nomeU = req.body.nomeU;
         var cpf = req.body.cpf;
         var contato = req.body.contato;
@@ -234,7 +233,6 @@ app.post('/cadU', (req,res)=>{
         var senhaC = req.body.senhaC;
         console.log(cpf);
         
-        console.log('INSERT INTO usuario');
         if(senha == senhaC){
         const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha });
         res.send('Cadastrado')

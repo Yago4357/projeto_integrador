@@ -5,7 +5,18 @@ function cadastrarUser(){
     var contato = document.getElementById('contato').value;
     var senha = document.getElementById('senha').value;
     var senhaC = document.getElementById('senhaC').value;
-
+    
+    if(nomeU==''||nomeU>49){
+        alert("Nome inválido")
+    }else if(cpf==null||cpf.length!=11){
+        alert("CPF inválido")
+    }else if(contato==null||contato.length!=11){
+        alert("Contato inválido")
+    }else if(senha.length<5){
+        alert("Senha pequena")
+    }else if(senha!=senhaC){
+        alert("As senhas não são as mesmas")
+    }else{
     console.log(JSON.stringify({
         nomeU:nomeU,
         cpf:cpf,
@@ -41,3 +52,4 @@ function cadastrarUser(){
      
      });
 };
+}

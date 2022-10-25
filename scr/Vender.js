@@ -2,6 +2,14 @@ function Vender(){
     codP= document.getElementById('codP').value;
     qtdV = document.getElementById('qtdV').value;
     cliente = document.getElementById('cliente').value;
+    if(codP==null||codP<1){
+        alert("Código do produto não exite")
+    }
+    else if(qtdV==null||qtdV<1){
+        alert("Quantidade não permitida")
+    }else if(cliente.length!=11){
+        alert("CNPJ não existe")
+    }else{
 
 
     console.log(JSON.stringify({
@@ -34,4 +42,5 @@ function Vender(){
         }
      
      });
+}
 }

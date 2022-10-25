@@ -49,10 +49,10 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
-  `IdFun` int(11) NOT NULL,
+  `IdFun` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(49) DEFAULT NULL,
   `Cpf` varchar(11) NOT NULL,
-  `Contato` int(11) DEFAULT NULL,
+  `Contato` varchar(13) NOT NULL,
   `Senha` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`IdFun`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -64,7 +64,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Leandro','11111111111',479999999,'3031');
+INSERT INTO `usuario` VALUES (1,'Leandro','11111111111',47999229999,'3031');
 INSERT INTO `usuario` VALUES (2,'RockFeller','22222222222',478888888,'2022');
 INSERT INTO `usuario` VALUES (3,'Luke Skywalker','33333333333',477777777,'rock2');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;

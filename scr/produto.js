@@ -4,7 +4,15 @@ function Cadastrar(){
     var forn = document.getElementById('fornecedor').value;
     var valor = document.getElementById('valor').value;
     var qtd = document.getElementById('quantidade').value;
-
+    if(nomeP.length>49||nomeP==''){
+        alert("Nome do produto é inválido")
+    }else if(forn.length>49||forn==''){
+        alert("Nome do fornecedor é inválido")
+    }else if(valor<1||valor==null){
+        alert("Valor do produto é inválido")
+    }else if(qtd<1||qtd==null){
+        alert("Quantidade do produto é inválido ")
+    }else{
     console.log(JSON.stringify({
         nomeP:nomeP,
         forn:forn,
@@ -36,45 +44,4 @@ function Cadastrar(){
      
      })
 };
-    /*.then(async (resp)=>{
-        var teste = await resp.text();
-        console.log(teste);
-        if( teste == 'Inserido'){
-        alert("Produto: Cadastrado!!");
-        location.href = 'cadastro_produto.html'
-        }})*/
-    
-
-
-//}));
-/*(async () => {
-    console.log('Começou!');
-    
-    console.log('INSERT INTO Produto');
-    const result = await banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
-    console.log(result);
- 
-    console.log('SELECT * FROM Produto');
-    const Produto = await banco.Produto();
-    console.log(Produto);
-})();*/
-
-/*function cadastrarProd(){
-    console.log("Conectou 1");
-    var nomeP = document.getElementById('nome').value;
-    var forn = document.getElementById('fornecedor').value;
-    var valor = document.getElementById('valor').value;
-    var qtd = document.getElementById('quantidade').value;
-
-(async () => {
-    console.log('Começou!');
-    
-    console.log('INSERT INTO Produto');
-    const result = await banco.insertProduto({Nome: nomeP , Fornecedor: forn, Valor: valor, Quantidade: qtd });
-    console.log(result);
- 
-    console.log('SELECT * FROM Produto');
-    const Produto = await banco.Produto();
-    console.log(Produto);
-})();
-};*/
+}

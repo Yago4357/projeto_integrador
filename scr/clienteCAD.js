@@ -3,7 +3,13 @@ function cadCliente(){
     var nomeC = document.getElementById('nome').value;
     var cpfC = document.getElementById('cpf').value;
     var cttC = document.getElementById('cttC').value;
-
+    if(nomeC==""||nomeC>49){
+        alert("Nome inválido")
+    }else if(cpfC.length!=11){
+        alert("CPF inválido")        
+    }else if(cttC.length!=11){
+        alert("Contato inválido")        
+    }else{
     console.log(JSON.stringify({
         nomeC:nomeC,
         cpfC:cpfC,
@@ -34,4 +40,5 @@ function cadCliente(){
         }
      
      });
-};
+}
+}
