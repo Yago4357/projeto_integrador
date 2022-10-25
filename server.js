@@ -199,27 +199,28 @@ app.post('/Venda', async(req,res)=>{
     var codPO = req.body.codP;
     var qtdV = req.body.qtdV;
     var cliente = req.body.cliente;
+    var bx;
     console.log('SO CANTO ROCK 34')
     console.log(codPO);
     console.log(qtdV);
     console.log(cliente);
     for(ProdutoV of produtoV){
     if(codPO == ProdutoV.Idprod && qtdV <= ProdutoV.Quantidade){
-        //codP = codPO-1;
-        s='s';
+        bx=1;
         valorT = ProdutoV.Valor * qtdV;
         baixa =  ProdutoV.Quantidade - qtdV;
         comV = valorT * 0.10;
             
      result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
      baixaI = banco.bvenda(codPO,{Quantidade: baixa});
-    }
-}
-    if(s =!'s'){
-    res.send('erro');
-    }else{
-        res.send('Vendido')
-    }
+    
+     }
+}   if(bx==1){
+    res.send('Vendido')   
+}else{
+    res.send('falha')
+}   
+   
 
 })
 

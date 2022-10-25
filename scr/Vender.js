@@ -24,12 +24,12 @@ function Vender(){
     
     .then(async (r)=>{
         var statusVenda = await r.text();
-        console.log(statusVenda);
+        console.log(statusVenda)
         if(statusVenda == 'Vendido'){
             alert("Produto vendido")
             location.href = 'visualizarVenda'
         }else{
-            alert("Aconteceu algo inesperado!")
+            alert("Dados incorretos!")
             location.href = 'visualizarVenda'
         }
      
