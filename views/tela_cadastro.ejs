@@ -9,8 +9,11 @@
     <title>Cadastro</title>
 </head>
 
+<% if(urid.toString()=="Leansro"){ %>
 <%- include('../views/navbar') -%>
-
+<% }else{%>
+<%- include('../views/navbarVendedor') -%>
+<% } %> 
 <body>
     <div class="center">
        
