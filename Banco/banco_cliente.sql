@@ -28,7 +28,7 @@ CREATE TABLE `cliente` (
   `Cpf` varchar(11) DEFAULT NULL,
   `Contato` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`idC`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,38 +37,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,"Leandro",'1185276989','47999939121','ofoda');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
-  `IdFun` int(11) NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(49) DEFAULT NULL,
-  `Cpf` varchar(11) NOT NULL,
-  `Contato` varchar(13) NOT NULL,
-  `Senha` varchar(20) DEFAULT NULL,
-  `Tipo` varchar(10) DEFAULT Null,
-  PRIMARY KEY (`IdFun`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuario`
---
-
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Leandro','11111111111',47999229999,'3031','ofoda');
-INSERT INTO `usuario` VALUES (2,'RockFeller','22222222222',478888888,'2022','obosta');
-INSERT INTO `usuario` VALUES (3,'Luke Skywalker','33333333333',477777777,'rock2','obosta');
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -80,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-01 11:19:34
+-- Dump completed on 2022-10-27  8:00:56
