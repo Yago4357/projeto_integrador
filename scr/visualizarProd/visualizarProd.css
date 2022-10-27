@@ -123,14 +123,25 @@
 }
 
 .delete{
+    width: 25px;
+    height: 30px;
+    border: none;
     cursor: pointer;
     background-image: url(../imagens/remove.png);
     background-size: cover;
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
+    position: absolute;
+    left: 84%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
 }
 .modify{
+    width: 25px;
+    height: 30px;
+    border: none;
     cursor: pointer;
     background-image: url(../imagens/pen.png);
     background-size: cover;
@@ -138,7 +149,10 @@
     background-repeat: no-repeat;
     background-color: transparent;
     position: absolute;
-    right: 40px;
+    left: 72%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
 }
 .delete:hover{
     background-image: url(../imagens/remove_filled.png);
