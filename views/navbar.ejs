@@ -42,13 +42,16 @@
                   <a class="nav-link" role="button"  aria-expanded="false" href="/visualizarFun">
                       Funcionários
                   </a>
+                  <ul class="dropdown-menu">
+                    <a href="/CadastrarProduto"><li><button class="item1" >Cadastrar Funcionários</button></li></a>
+                    <a href="/visualizarProduto"><li><button class="item2" >Visualizar Funcionário</button></li></a>
+                  </ul>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-        <div class="user">Bem vindo <%=urid.Nome%></div>
-        <div class="logout"></div>
+        <a class="logout" href="/logout"></a>
       </header>
   </html>
 
