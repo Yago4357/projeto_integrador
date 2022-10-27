@@ -46,7 +46,7 @@ input{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    width: 82%;
+    width: 25%;
     font-size: 14px;
     font-weight: bold;
     border: none;
@@ -104,7 +104,8 @@ span:hover{
 
 .send{
     position: relative;
-    width: 200px;
+    right: 1rem;
+    width: 300px;
     height: 30px;
     border-radius: 4px;
     background-color: #FF984E;
@@ -139,5 +140,7 @@ span:hover{
 }
 
 .texto{
-    margin: 50px;
+    position: relative;
+    top: 40%;
+    left: 1rem;
 }
