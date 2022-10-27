@@ -75,9 +75,10 @@ body{
 
 .center h1{
   text-align: left;
-  padding: 20px 24px;
+  padding: 20px 36px;
   border-bottom: 1px solid var(--color_all);
   color: var(--text_color);
+  font-size: 32px;
 }
 .center form{
   padding: 0 40px;

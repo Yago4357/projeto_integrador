@@ -17,7 +17,8 @@
 
 
 .cad{
-    height: 55rem;
+    transform: translateY(10%);
+    height: 50rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -34,12 +35,12 @@ form{
     align-items: center;
     gap: 6rem; 
 }
-form:hover{
+/* form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
 form:hover input{
     background-color: rgba(223, 223, 223, 0);
-}
+} */
 
 input{
     position: relative;

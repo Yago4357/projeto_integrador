@@ -84,6 +84,7 @@
     width: 20rem;
     border-radius: 44px;
     font-size: 24px;
+    transform: translateX(40%);
 }
 
 .center{
@@ -105,6 +106,13 @@
     border-left: none;
 }
 
+.add_fun{
+    position: relative;
+    top: 10px;
+    font-size: 22px;
+    color: white;
+}
+
 .botao_class .textz{
     position: relative;
     top: 15px;
@@ -117,8 +125,7 @@
     
 }
 #bVoltar{
-    position: relative;
-    left: 20px;
+    transform: translateX(5%);
 }
 .Carrinho{
     border-bottom: 1px;

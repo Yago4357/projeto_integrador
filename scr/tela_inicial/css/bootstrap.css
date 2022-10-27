@@ -3729,7 +3729,7 @@ textarea.form-control-lg {
 
 .dropdown-menu.show {
   display: block;
-  height: 155px;
+  height: 105px;
   position: relative;
   left: .5rem;
   top: 3.3rem;

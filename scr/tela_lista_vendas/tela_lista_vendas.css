@@ -109,3 +109,40 @@
     margin-left: 4rem;
     font-family: "Poppins", sans-serif;
 }
+
+.modify, .delete{
+    border: none;
+    background-color: var(--color_all);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 4px;
+    transition: all 100ms;
+}
+
+.delete{
+    cursor: pointer;
+    background-image: url(scr\imagens\remove.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.modify{
+    cursor: pointer;
+    background-image: url(scr\imagens\pen.png);
+    background-size: cover;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    right: 40px;
+}
+.delete:hover{
+    background-image: url(scr\imagens\remove_filled.png);
+    background-size: 26px;
+}
+.modify:hover{
+    background-image: url(scr\imagens\pen_filled.png);
+    background-size: 26px;
+}

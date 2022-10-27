@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./cadastro_cliente.css">
-    <script src="../clienteCAD.js"></script>
+    <script src="../clienteCAD.js"></script> 
     <title>Cadastro cliente</title>
 </head>
+
 <%- include('../views/navbar') -%>
 
 <body>
     <div class="cad">
-            <div class="bloco">
+        <form>
             <input class="texto" type="text" placeholder="    NOME"id="nome">
             <input class="texto" type="number" placeholder="   CPF" id="cpf">
-            <input class="texto" type="number" placeholder="   Contato" id="cttC">
-            </div>
-        <div class="send" onclick="cadCliente()">Cadastrar</div>   
+            <input class="texto" type="number" placeholder="   CONTATO" id="cttC">
+            <div class="send" onclick="cadCliente()">Cadastrar cliente</div>
+        </form>
+        
     </div>
 </body>
 </html>

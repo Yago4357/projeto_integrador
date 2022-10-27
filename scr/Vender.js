@@ -4,8 +4,7 @@ function Vender(){
     cliente = document.getElementById('cliente').value;
     if(codP==null||codP<1){
         alert("Código do produto não exite")
-    }
-    else if(qtdV==null||qtdV<1){
+    }else if(qtdV==null||qtdV<1){
         alert("Quantidade não permitida")
     }else if(cliente.length!=11){
         alert("CNPJ não existe")
