@@ -9,8 +9,12 @@
     <title>Venda</title>
 </head>
 
-<%- include('../views/navbar') -%>
-
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
+    
 <body>
     <div class="cad">
         <form>

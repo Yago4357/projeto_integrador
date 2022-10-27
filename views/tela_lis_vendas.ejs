@@ -7,8 +7,13 @@
     <title>Lista vendas</title>
     <link rel="stylesheet" href="/scr/tela_lista_vendas/tela_lista_vendas.css">
 </head>
-    <%- include('../views/navbar') -%>
 
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
+    
     <div id="center" class="center">
         <table id="table" class="scroll">
             <thead>

@@ -9,11 +9,12 @@
     <title>Cadastro</title>
 </head>
 
-<% if(urid.toString()=="Leansro"){ %>
+<% if(urid.Tipo=="ofoda"){ %>
 <%- include('../views/navbar') -%>
 <% }else{%>
 <%- include('../views/navbarVendedor') -%>
 <% } %> 
+
 <body>
     <div class="center">
        
@@ -44,9 +45,11 @@
             <span></span> 
             <label>Confirmar Senha</label>
         </div>
-        <div>
-          <input type="checkbox" class="checkbox"> <span class="adm">Admin?</span>
-        </div>
+        <div  class="txt_field">
+          <input type="text" id="tipo"required>
+          <span></span> 
+          <label>Informe o tipo do usuário (admin/func)</label>
+        </div class="txt_field">
         <input type="submit"  onclick="cadastrarUser()">
       </form>
     </div>

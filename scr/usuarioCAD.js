@@ -1,10 +1,19 @@
 function cadastrarUser(){
     console.log("cadastro");
+    var admin = document.getElementById('tipo').value;
     var nomeU = document.getElementById('usuario').value;
     var cpf = document.getElementById('cpf').value;
     var contato = document.getElementById('contato').value;
     var senha = document.getElementById('senha').value;
     var senhaC = document.getElementById('senhaC').value;
+    
+    if(admin=='admin'){
+        admin = "ofoda";
+    }else{
+        admin = "onoob";
+    }
+
+    console.log(admin);
     
     if(nomeU==''||nomeU>49){
         alert("Nome inválido")
@@ -22,7 +31,8 @@ function cadastrarUser(){
         cpf:cpf,
         contato:contato,
         senha:senha,
-        senhaC:senhaC
+        senhaC:senhaC,
+        admin:admin
      }));
     
      console.log("rock3");
@@ -34,7 +44,8 @@ function cadastrarUser(){
         cpf:cpf,
         contato:contato,
         senha:senha,
-        senhaC:senhaC
+        senhaC:senhaC,
+        admin:admin
     }),
     headers: {"content-type" : "application/json"}
     }) 

@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
   </head>
 
-  <%- include('../views/navbar') -%>
+  <% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
+
     <div id="center" class="center">
         <table id="table" class="scroll">
             <thead>

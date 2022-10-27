@@ -12,9 +12,11 @@
     <script src="../excluirCliente.js"></script><!--Trocar o caminho -->
   </head>
 
-  <%- include('../views/navbar') -%>
-
- 
+  <% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
   <body id="body">
     <div class="center">
         <table id="table" class="scroll">
