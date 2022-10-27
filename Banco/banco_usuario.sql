@@ -28,6 +28,7 @@ CREATE TABLE `usuario` (
   `Cpf` varchar(11) NOT NULL,
   `Contato` int(11) DEFAULT NULL,
   `Senha` varchar(20) DEFAULT NULL,
+  `Tipo` varchar(10) DEFAULT NUll,
   PRIMARY KEY (`IdFun`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

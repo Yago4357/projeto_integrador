@@ -135,8 +135,17 @@ app.get("/TelaIni", (req,res)=>{
         console.log('iasdadasdasf')
         res.redirect('/');
     } else{    
-        console.log('else')
-        res.render('homePage',{Session:session,urid:session.userid})
+        res.render('navbar',{Session:session,urid:session.userid,admin: usuariodb})
+    }
+})
+
+app.get("/TelaIniV", (req,res)=>{
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        console.log('iasdadasdasf')
+        res.redirect('/');
+    } else{    
+        res.render('navbarVendedor',{Session:session,urid:session.userid,admin: usuariodb})
     }
 })
 
@@ -149,13 +158,22 @@ app.post('/login', (req,res) =>{
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
             conectado=true;
             session=req.session;
-            session.userid=req.body.usuario;
+            session.userid=usuarios;
+            if(usuarios.Tipo == 'onoob'){
+                s = 'onoob'
+            }else{
+                s = 'ofoda'
+            }
         }
     }
     if(conectado!=true){
     res.redirect("/")
-}else{
-    res.redirect("/TelaIni")
+    }else{
+    if(s=="ofoda"){
+        res.redirect("/TelaIni")
+        }else{
+        res.redirect("/TelaIniV")
+        }
 }
 })
 app.get("/CadastrarProduto", (req,res)=>{
@@ -231,10 +249,11 @@ app.post('/cadU', (req,res)=>{
         var contato = req.body.contato;
         var senha = req.body.senha;
         var senhaC = req.body.senhaC;
-        console.log(cpf);
+        var admin = req.body.admin;
+        console.log(admin);
         
         if(senha == senhaC){
-        const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha });
+        const result =  banco.insertUsuario({Nome: nomeU , Cpf:cpf , Contato:contato, Senha:senha, Tipo: admin });
         res.send('Cadastrado')
         console.log(result)
         

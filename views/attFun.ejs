@@ -8,8 +8,12 @@
     <script src="../atualizarUser.js"></script>
     <title>Atualizar Funcionário</title>
 </head>
-<%- include('../views/navbar') -%>
 
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
 
 <body>
     <div class="cad">

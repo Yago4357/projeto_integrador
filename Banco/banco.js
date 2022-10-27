@@ -39,8 +39,8 @@ function connect(){
     
     async function insertUsuario(Usuario){
         const conn = await connect();
-        const insertUser = 'INSERT INTO usuario(Nome,Cpf,Contato,Senha) VALUES (?,?,?,?);'
-        const values = [Usuario.Nome,Usuario.Cpf,Usuario.Contato,Usuario.Senha];
+        const insertUser = 'INSERT INTO usuario(Nome,Cpf,Contato,Senha,Tipo) VALUES (?,?,?,?,?);'
+        const values = [Usuario.Nome,Usuario.Cpf,Usuario.Contato,Usuario.Senha,Usuario.Tipo];
         return await conn.query(insertUser, values);
     }
     async function deleteUser(IdFun){

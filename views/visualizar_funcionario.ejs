@@ -10,8 +10,11 @@
     <script src="./excluirUser.js"></script>
 </head>
 
-<%- include('../views/navbar') -%>
-
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
 
 <body id="body">
     <div class="center">

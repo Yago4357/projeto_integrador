@@ -37,7 +37,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,"Leandro",'1185276989','47999939121');
+INSERT INTO `cliente` VALUES (1,"Leandro",'1185276989','47999939121','ofoda');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,6 +54,7 @@ CREATE TABLE `usuario` (
   `Cpf` varchar(11) NOT NULL,
   `Contato` varchar(13) NOT NULL,
   `Senha` varchar(20) DEFAULT NULL,
+  `Tipo` varchar(10) DEFAULT Null,
   PRIMARY KEY (`IdFun`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -64,9 +65,9 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Leandro','11111111111',47999229999,'3031');
-INSERT INTO `usuario` VALUES (2,'RockFeller','22222222222',478888888,'2022');
-INSERT INTO `usuario` VALUES (3,'Luke Skywalker','33333333333',477777777,'rock2');
+INSERT INTO `usuario` VALUES (1,'Leandro','11111111111',47999229999,'3031','ofoda');
+INSERT INTO `usuario` VALUES (2,'RockFeller','22222222222',478888888,'2022','obosta');
+INSERT INTO `usuario` VALUES (3,'Luke Skywalker','33333333333',477777777,'rock2','obosta');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
