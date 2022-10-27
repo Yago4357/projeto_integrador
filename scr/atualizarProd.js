@@ -6,6 +6,15 @@ function updateProd(){
     var valor = document.getElementById("valor").value;
     var quantidade = document.getElementById("quantidade").value;
     
+    if(nome.length>49||nome==''){
+        alert("Nome do produto é inválido")
+    }else if(fornecedor.length>49||fornecedor==''){
+        alert("Nome do fornecedor é inválido")
+    }else if(valor<1||valor==null){
+        alert("Valor do produto é inválido")
+    }else if(quantidade<1||quantidade==null){
+        alert("Quantidade do produto é inválido ")
+    }else{
     console.log(JSON.stringify({
         id:id,
         nomeP:nome,
@@ -37,4 +46,5 @@ function updateProd(){
             location.href='attProduto.html'
         }
     })
+}
 }

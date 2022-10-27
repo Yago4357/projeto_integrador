@@ -1,6 +1,6 @@
 function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:Ruanuni2004@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:123abc@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
