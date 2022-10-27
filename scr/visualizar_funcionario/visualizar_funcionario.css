@@ -146,8 +146,8 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: relative;
-    left: 25%;
+    position: absolute;
+    left: 84%;
     transform: translateY(0.5rem);
     transition: all 100ms;
     z-index: 999;
