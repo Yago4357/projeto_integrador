@@ -73,6 +73,18 @@ body{
 }
 */
 
+.checkbox{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  bottom: 10px;
+}
+.adm{
+  position: relative;
+  bottom: 13px;
+  font-weight: 700;
+}
+
 .center h1{
   text-align: left;
   padding: 20px 36px;
