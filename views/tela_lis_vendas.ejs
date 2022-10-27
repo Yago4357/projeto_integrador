@@ -9,30 +9,31 @@
 </head>
     <%- include('../views/navbar') -%>
 
-<body id="body">
-    <div class="center">
-        <table id="table">
-            <tr id="cabeca" class="informacoes  ">
-                <th id="th" class="prim">COD</th>
-                <th id="th">Comissão</th>
-                <th id="th">Quantidade</th>
-                <th id="th">Valor Final </th>
-                <th id="th" class="ult">Cliente</th>
-            </tr>
+    <div id="center" class="center">
+        <table id="table" class="scroll">
+            <thead>
+                <tr id class="cabeca">
+                    <th id="the" class="tb_ini">COD</th>
+                    <th id="the">Comissão</th>
+                    <th id="the"><span class="the">Quantidade</span></th>
+                    <th id="the"><span class="thee">Valor Final</span></th>
+                    <th id="the" class="tb_final"><span class="theee">Cliente</span></th>
+                </tr>
+            </thead>
             <% for(var i = 0; i< v.length; i++) {%>
             <tr>
                 <td id="td"><%=v[i].codV%></td>
                 <td id="td"><%=v[i].comV%></td>
                 <td id="td"><%=v[i].qtdV%></td>
                 <td id="td"><%=v[i].vF%></td>
-                <td id="td"> <%=v[i].Cliente%></td>
+                <td id="td"> <%=v[i].Cliente%>
+                
+                    <button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
+                  <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button>
+
+                </td>
             </tr>
             <%}%>
-        
         </table>
-        </div>
-        </div>
     </div>
-    </div>
-</body>
 </html>

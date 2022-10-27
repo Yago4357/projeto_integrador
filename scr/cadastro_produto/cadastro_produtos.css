@@ -17,29 +17,30 @@
 
 
 .cad{
+    transform: translateY(10%);
+    height: 50rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 form{
-    border: 1px solid #4F4F4F;
+    border: 2px solid var(--color_all);
+    height: 8rem;
     width: 90%;
     padding: 24px;
-    border-right: none;
-    border-left: none; 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6rem; 
 }
-form:hover{
+/* form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
 form:hover input{
     background-color: rgba(223, 223, 223, 0);
-}
+} */
 
 input{
     position: relative;
@@ -49,7 +50,7 @@ input{
     font-size: 14px;
     font-weight: bold;
     border: none;
-    border-bottom: 1px solid #FF984E;
+    border-bottom: 2px solid #FF984E;
 }
 .remover_item{
     width: 50px;
@@ -68,7 +69,6 @@ input{
     background-color: #fff;
     position: absolute;
     left: 11px;
-    
     transition: all 200ms;
 }
 .remover_item::after{
