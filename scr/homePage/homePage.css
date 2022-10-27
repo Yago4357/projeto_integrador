@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+
+.astro{
+    position: absolute;
+    transform: translate(30%, 8%);
+    animation: astro 5s infinite;
+}
+
+@keyframes astro{
+    0% {transform: translate(30%, 8%);}
+    50% {transform: translate(25%, 12%);}
+    100% {transform: translate(30%, 8%);} 
+}
+

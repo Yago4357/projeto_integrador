@@ -136,7 +136,7 @@ app.get("/TelaIni", (req,res)=>{
         res.redirect('/');
     } else{    
         console.log('else')
-        res.render('navbar',{Session:session,urid:session.userid})
+        res.render('homePage',{Session:session,urid:session.userid})
     }
 })
 
