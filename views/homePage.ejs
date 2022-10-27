@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../scr/homePage/homePage.css">
+    <link rel="stylesheet" href="./homePage/homepage.css">
     <title>HomePage</title>
 </head>
 
-<%- include('../views/navbar') -%>
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
 
-    
+    <body class="corpitcho">
+        <div class="contkkk">
+                <img class="card_fundo" src="./imagens/card.png" alt="card_img_bah">
+                <img class="astro_sla" src="./imagens/astronauta.png" alt="astronauta_foda">
+        </div>
+    </body>
 
 </html>

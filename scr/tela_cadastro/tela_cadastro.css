@@ -26,10 +26,10 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -45%);
   width: 700px;
   background: var(--form_background);
-  box-shadow: 0 0 10px #19191913;
+  box-shadow: 0 0 10px #19191933;
   border-radius: 10px;
 }
 /*

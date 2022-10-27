@@ -132,9 +132,9 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
-    left: 84%;
-    transform: translateY(0.5rem);
+    position: relative;
+    left: 33%;
+    transform: translateY(.3rem);
     transition: all 100ms;
     z-index: 999;
 }
@@ -148,9 +148,9 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
-    left: 72%;
-    transform: translateY(0.5rem);
+    position: relative;
+    left: 28%;
+    transform: translateY(.3rem);
     transition: all 100ms;
     z-index: 999;
 }

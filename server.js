@@ -95,6 +95,7 @@ app.use(express.static(path.join(__dirname, 'scr/attProduto')))
 app.use(express.static(path.join(__dirname, 'scr/tela_cadastro')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_cliente')))
 app.use(express.static(path.join(__dirname, 'scr/cadastro_produto')))
+app.use(express.static(path.join(__dirname, 'scr/homePage')))
 
 
 
@@ -124,7 +125,7 @@ app.get("/TelaIni", (req,res)=>{
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('navbar',{Session:session,urid:session.userid,admin: usuariodb})
+        res.render('homePage',{Session:session,urid:session.userid,admin: usuariodb})
     }
 })
 
