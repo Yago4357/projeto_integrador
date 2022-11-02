@@ -16,13 +16,20 @@
     <% } %> 
     
 <body>
-    <div class="cad">
+    <div class="cad" id="cadV">
         <form>
             <input class="texto" type="number" placeholder="    CÓDIGO"id="codP">
             <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdV">
             <input class="texto" type="number" placeholder="   CNPJ" id="cliente">
             <div class="send" onclick="Vender()">Realizar venda</div>
+                <h1 onclick="Add()">+</h1>
         </form>
     </div>
+    <script> function Add(){
+    const node = document.getElementById('cadV');
+    const clone = node.cloneNode(true);
+    document.body.appendChild(clone);
+}
+</script>
 </body>
 </html>
