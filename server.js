@@ -247,12 +247,14 @@ app.post('/deleteUser',(req,res)=>{
     result = banco.deleteUser(idF);
     res.send('Deletado')
 })
-app.get("/AtualizarFuncionario", (req,res)=>{
+app.get("/AtualizarFuncionario", async(req,res)=>{
+    var id = req.query.id;
+    f = banco.UsuarioPorId(id);
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('attFun',{Session:session,urid:session.userid})
+        res.render('attFun',{F: await f,Session:session,urid:session.userid})
     }
 })
 app.post('/attF',(req,res)=>{
@@ -307,12 +309,14 @@ app.post('/cadC', (req,res)=>{
         const result =  banco.insertCliente({Nome: nome , Cpf:cpf , Contato:ctt});
         res.send('clienteCAD')
 })
-app.get("/AtualizarCliente", (req,res)=>{
+app.get("/AtualizarCliente", async(req,res)=>{
+    var id = req.query.id;
+    c = banco.ClientePorId(id)
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('attCliente',{Session:session,urid:session.userid})
+        res.render('attCliente',{C: await c ,Session:session,urid:session.userid})
     }
 })
 app.post('/attC', (req,res)=>{

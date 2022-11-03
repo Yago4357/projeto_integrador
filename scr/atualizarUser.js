@@ -1,6 +1,5 @@
-    const url = new URLSearchParams(window.location.search);
 function attUser(){
-    const id = url.get("id");
+    const id = document.getElementById("id").value;
     var nome = document.getElementById("nome").value;
     var cpf = document.getElementById("cpf").value;
     var ctt = document.getElementById("ctt").value;

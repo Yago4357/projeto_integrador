@@ -1,4 +1,3 @@
-
 function updateProd(){
     const id = document.getElementById("id").value;
     var nome = document.getElementById("nome").value;

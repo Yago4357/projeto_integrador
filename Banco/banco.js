@@ -43,6 +43,12 @@ function connect(){
         const [rows] = await conn.query('SELECT * FROM usuario;');
         return rows;
     }
+
+    async function UsuarioPorId(id){
+        const conn = await connect();
+        const [usuario] = await conn.query('SELECT * FROM usuario where IdFun=?;', id);
+        return usuario;
+    }
     
     async function insertUsuario(Usuario){
         const conn = await connect();
@@ -65,6 +71,11 @@ function connect(){
         const conn = await connect();
         const [rows] = await conn.query('SELECT * FROM cliente;');
         return rows;
+    }
+    async function ClientePorId(id){
+        const conn = await connect();
+        const [Cliente] = await conn.query('SELECT * FROM cliente where idC=?;', id);
+        return Cliente;
     }
     async function insertCliente(Cliente){
         const conn = await connect();
@@ -101,5 +112,5 @@ function connect(){
         return await conn.query(relatorioVenda,values);
     }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda,ProdutoPorId}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda,ProdutoPorId,ClientePorId,UsuarioPorId}
     
