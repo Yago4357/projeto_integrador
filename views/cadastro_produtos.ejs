@@ -8,14 +8,13 @@
     <script src="./produto.js"></script>
     <title>CadastroProdutos</title>
 </head>
-
 <% if(urid.Tipo=="ofoda"){ %>
     <%- include('../views/navbar') -%>
     <% }else{%>
     <%- include('../views/navbarVendedor') -%>
     <% } %> 
 <body>
-    <div class="cad">
+    <div class="cad" id="cadV">
         <form>
             <input class="texto" type="text" placeholder="    Nome"id="nome">
             <input class="texto" type="text" placeholder="   Fornecedor" id="fornecedor">

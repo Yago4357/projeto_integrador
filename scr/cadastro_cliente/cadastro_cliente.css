@@ -18,11 +18,12 @@
 
 .cad{
     transform: translateY(10%);
-    height: 50rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 form{
@@ -115,4 +116,18 @@ span:hover{
 }
 .send:hover{
     background-color: rgb(230, 125, 51);
+}
+
+.tit{
+    cursor: default;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1919198e;
+    position: relative;
+    top: 20px;
+    left: 5%;
+}
+.tit:hover{
+    cursor: default;
+    color: #1919198e;
 }
