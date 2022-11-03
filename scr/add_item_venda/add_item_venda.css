@@ -164,10 +164,17 @@ span:hover{
     width: 70px;
     height: 70px;
     background-color: var(--color_all);
+    background-image: url(logo_white.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: 50% 70%;
     border-radius: 50%;
 
     position: sticky;
     transform: translate(0rem, 0rem);
+}
+#f_but:hover, #add:hover, #confirm:hover{
+    background-color: rgb(255, 135, 49);
 }
 
 
@@ -175,7 +182,6 @@ span:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: grey;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,7 +195,6 @@ span:hover{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: grey;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -207,6 +212,7 @@ span:hover{
     top: 1rem;
     z-index: -1;
     cursor: pointer;
+    background-color: var(--color_all);
 
     transition: all 350ms ease;
 }
