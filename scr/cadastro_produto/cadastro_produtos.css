@@ -16,13 +16,14 @@
   }
 
 
-.cad{
-    transform: translateY(10%);
-    height: 50rem;
+  .cad{
+    transform: translateY(0%);
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 form{
