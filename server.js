@@ -270,12 +270,13 @@ app.post('/TESTE', (req,res)=>{
         res.send('Deletado');  
 })
 
-app.get("/AtualizarProduto", (req,res)=>{
-    console.log(req.session.hasOwnProperty('userid'))
+app.get("/AtualizarProduto", async (req,res)=>{
+    var id = req.query.id;
+    p = banco.ProdutoPorId(id);
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('attProdutos',{Session:session,urid:session.userid})
+        res.render('attProdutos',{P: await p,Session:session,urid:session.userid,})
     }
 })
 app.post('/attP', (req,res)=>{

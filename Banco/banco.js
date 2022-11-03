@@ -1,6 +1,6 @@
 function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:28047814lw@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
@@ -8,6 +8,13 @@ function connect(){
     async function Produto(){
         const conn = await connect();
         const [produto] = await conn.query('SELECT Idprod,Nome,Fornecedor,Valor,Quantidade FROM produto;');
+        return produto;
+    }
+
+    
+    async function ProdutoPorId(id){
+        const conn = await connect();
+        const [produto] = await conn.query('SELECT Idprod,Nome,Fornecedor,Valor,Quantidade FROM produto where Idprod=?;', id);
         return produto;
     }
     
@@ -94,5 +101,5 @@ function connect(){
         return await conn.query(relatorioVenda,values);
     }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda,ProdutoPorId}
     

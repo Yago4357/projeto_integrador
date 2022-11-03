@@ -1,6 +1,6 @@
-const url = new URLSearchParams(window.location.search);
+
 function updateProd(){
-    const id = url.get("id");
+    const id = document.getElementById("id").value;
     var nome = document.getElementById("nome").value;
     var fornecedor = document.getElementById("fornecedor").value;
     var valor = document.getElementById("valor").value;

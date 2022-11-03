@@ -14,15 +14,18 @@
     <% }else{%>
     <%- include('../views/navbarVendedor') -%>
     <% } %> 
+   
 <body>
     <div class="cad">
         <form action="">
-            <input class="texto" type="text" placeholder="    NOME" id="nome">
-            <input class="texto" type="text" placeholder="   FORNECEDOR" id="fornecedor">
-            <input class="texto" type="number" placeholder="   VALOR" id="valor">
-            <input class="texto" type="number" placeholder="   QUANTIDADE" id="quantidade">
+                <input class="texto" type="hidden" id="id" value="<%=P[0].Idprod%>" >
+            <input class="texto" type="text" id="nome" value="<%=P[0].Nome%>" >
+            <input class="texto" type="text"  id="fornecedor" value="<%=P[0].Fornecedor%>" >
+            <input class="texto" type="number"  id="valor" value="<%=P[0].Valor%>" >
+            <input class="texto" type="number"  id="quantidade" value="<%=P[0].Quantidade%>">
         </form>
         <div class="send" onclick="updateProd()">Atualizar</div>
     </div>
+    
 </body>
 </html>
