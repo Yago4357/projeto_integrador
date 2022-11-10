@@ -51,7 +51,7 @@ app.get("/visualizarProduto", async(req,res)=>{
 app.get('/telaVenda', async(req, res,)=>{ 
     const fun = banco.Cliente();    
     const produto = banco.Produto();
-    
+
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
@@ -81,21 +81,27 @@ app.get("/visualizarFun", async(req,res)=>{
 })
 
 app.get("/compra", async(req,res)=>{
-    const fun = banco.Usuario();
+    const fun = banco.Cliente();    
+    const produto = banco.Produto();
+
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('add_item_compra',{Fun: await fun,Session:session,urid:session.userid})
+        res.render('add_item_compra',{Produto: await produto,Fun: await fun,Session:session,urid:session.userid})
     }
 })
 
 app.get("/relatCompra", async(req,res)=>{
+    const fun = banco.Cliente();    
+    const produto = banco.Produto();
+    const V = banco.Venda();
+
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('tela_lis_compras',{Session:session,urid:session.userid})
+        res.render('tela_lis_compras',{v: await V ,Produto: await produto,Fun: await fun,Session:session,urid:session.userid})
     }
 })
 
