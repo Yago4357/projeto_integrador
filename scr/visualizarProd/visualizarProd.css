@@ -78,7 +78,7 @@
     padding: 0px;
     background: linear-gradient(var(--background));
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
 }
 
 
@@ -157,11 +157,23 @@
     background-repeat: no-repeat;
     background-color: transparent;
     position: relative;
-    left: 22%;
+    left: 15%;
     transform: translateY(.3rem);
     transition: all 100ms;
     z-index: 999;
 }
+
+.op{
+    width: fit-content;
+    height: fit-content;
+
+    transform: translate(200px, -0%);
+}
+#final{
+    position: absolute;
+    margin-top: .3%;
+}
+
 .delete:hover{
     background-image: url(../imagens/remove_filled.png);
     background-size: 26px;

@@ -19,11 +19,24 @@
     <span class="tit">Realizar Vendas</span>
     <div class="cad" id="cadV">
         <form>
-            <input class="texto" type="number" placeholder="    CÓDIGO"id="codP">
+            <!-- <input class="texto" type="number" placeholder="    CÓDIGO"id="codP"> -->
+            <select name="id" id="codP">
+                <option value="iden" id="cp">--</option>
+                    <% for(var i = 0; i< Produto.length; i++) {%>
+                    <% if(Produto[i].Quantidade > 0) {%>
+                        <option value="<%= Produto[i].Idprod%>"><%= Produto[i].Nome%></option>
+                    <%}%>
+                <%}%>
+            </select>
+
             <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdV">
-            <input class="texto" type="number" placeholder="   CNPJ/CPF" id="cliente">
-            <!-- <div class="send" onclick="Vender()">Realizar venda</div>
-                <h1 class="add" onclick="Add()">+</h1> -->
+            
+            <select name="cpf" id="cliente">
+                <option value="iden" id="cp">--</option>
+                <% for(var i = 0; i< Fun.length; i++) {%>
+                    <option value="<%= Fun[i].Cpf%>"><%= Fun[i].Nome%></option>
+                <%}%>
+            </select>
         </form>
     </div>
 

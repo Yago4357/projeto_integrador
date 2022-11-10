@@ -195,7 +195,7 @@ span:hover{
     border-radius: 50%;
 
     position: fixed;
-    transform: translate(-2.5rem, 22rem);
+    transform: translate(-2rem, 22rem);
 }
 #f_but:hover, #add:hover, #confirm:hover{
     background-color: rgb(255, 135, 49);
@@ -211,7 +211,7 @@ span:hover{
     justify-content: center;
     color: white;
 
-    transform: translate(1.8rem, 22rem);
+    transform: translate(2.2rem, 22rem);
 
     font-size: 16px;
     font-weight: 700;
@@ -227,7 +227,7 @@ span:hover{
     justify-content: center;
     color: white;
 
-    transform: translate(1.8rem, 22rem);
+    transform: translate(2.2rem, 22rem);
 
     font-weight: lighter;
     font-size: 5px;
@@ -264,3 +264,10 @@ span:hover{
 
 /*  */
 
+select{
+    border: none;
+    border-bottom: 2px solid var(--color_all);
+
+    position: relative;
+    top: 5px;
+}
