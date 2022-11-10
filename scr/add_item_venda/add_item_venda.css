@@ -15,6 +15,28 @@
     --switch_bg_color: #FFFFFF;
   }
 
+::-webkit-scrollbar {
+    width: 5px;
+
+    z-index: -999;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color_all); 
+    height: 5px;
+  }
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 121, 51); 
+  }
+
 .cad{
     transform: translateY(10%);
     display: flex;
@@ -153,7 +175,9 @@ span:hover{
     align-items: center;
     flex-direction: column;
     gap: 15px;
-    position: sticky;
+
+    position: fixed;
+
     transform: translate(84rem, 550%);
 }
 
@@ -161,8 +185,8 @@ span:hover{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: var(--color_all);
     background-image: url(logo_white.png);
     background-repeat: no-repeat;
@@ -170,8 +194,8 @@ span:hover{
     background-position: 50% 70%;
     border-radius: 50%;
 
-    position: sticky;
-    transform: translate(0rem, 0rem);
+    position: fixed;
+    transform: translate(-2.5rem, 22rem);
 }
 #f_but:hover, #add:hover, #confirm:hover{
     background-color: rgb(255, 135, 49);
@@ -179,26 +203,32 @@ span:hover{
 
 
 #add{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+
+    transform: translate(1.8rem, 22rem);
+
     font-size: 16px;
     font-weight: 700;
     /* transform: translate(2rem, 14.8rem); */
 }
 
 #confirm{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+
+    transform: translate(1.8rem, 22rem);
+
     font-weight: lighter;
     font-size: 5px;
 }
