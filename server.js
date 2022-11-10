@@ -77,6 +77,24 @@ app.get("/visualizarFun", async(req,res)=>{
     }
 })
 
+app.get("/compra", async(req,res)=>{
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        res.redirect('/');
+    } else{    
+        res.render('add_item_compra',{Session:session,urid:session.userid})
+    }
+})
+
+app.get("/relatCompra", async(req,res)=>{
+    console.log(req.session.hasOwnProperty('userid'))
+    if(req.session.hasOwnProperty('userid') == false){
+        res.redirect('/');
+    } else{    
+        res.render('tela_lis_compras',{Session:session,urid:session.userid})
+    }
+})
+
 
 
 app.set('port', process.env.PORT || 3000);

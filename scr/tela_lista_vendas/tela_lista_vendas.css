@@ -19,7 +19,8 @@
 #th{
     color: #FFFFFF;
     background-color: #FF984E;
-    border: 1px solid --color_all(--color_all);
+    border-radius: 2px;
+    border: none;
 }
 
 #table{
@@ -31,9 +32,10 @@
     color: var(--text_color);
     width: 95%;
     height: 55ch;
-    border-radius: 1rem;
+    border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
+    overflow: hidden;
     overflow-x: auto;
 }
 
@@ -110,39 +112,49 @@
     font-family: "Poppins", sans-serif;
 }
 
-.modify, .delete{
-    border: none;
-    background-color: var(--color_all);
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 4px;
-    transition: all 100ms;
-}
-
 .delete{
+    width: 25px;
+    height: 30px;
+    border: none;
     cursor: pointer;
-    background-image: url(scr\imagens\remove.png);
+    background-image: url(../imagens/remove.png);
     background-size: cover;
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
+    position: absolute;
+    left: 84%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
 }
 .modify{
+    width: 25px;
+    height: 30px;
+    border: none;
     cursor: pointer;
-    background-image: url(scr\imagens\pen.png);
+    background-image: url(../imagens/pen.png);
     background-size: cover;
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
     position: absolute;
-    right: 40px;
+    left: 72%;
+    transform: translateY(0.5rem);
+    transition: all 100ms;
+    z-index: 999;
 }
 .delete:hover{
-    background-image: url(scr\imagens\remove_filled.png);
+    background-image: url(../imagens/remove_filled.png);
     background-size: 26px;
 }
 .modify:hover{
-    background-image: url(scr\imagens\pen_filled.png);
+    background-image: url(../imagens/pen_filled.png);
     background-size: 26px;
+}
+
+.cont{
+    position: relative;
+    left: 20px;
+    bottom: 5px;
 }
