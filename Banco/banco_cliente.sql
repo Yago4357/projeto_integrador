@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `idC` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(49) DEFAULT NULL,
-  `Cpf` varchar(11) DEFAULT NULL,
-  `Contato` varchar(11) DEFAULT NULL,
+  `Cpf` varchar(13) DEFAULT NULL,
+  `Contato` varchar(13) DEFAULT NULL,
   PRIMARY KEY (`idC`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

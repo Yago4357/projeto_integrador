@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../add_item_venda.css">
+    <script src=""></script>    
+    <title>Compra</title>
+</head>
+
+<% if(urid.Tipo=="ofoda"){ %>
+    <%- include('../views/navbar') -%>
+    <% }else{%>
+    <%- include('../views/navbarVendedor') -%>
+    <% } %> 
+    
+<body>
+    <span class="tit">Realizar Compra</span>
+    <div class="cad" id="cadV">
+        <form>
+            <input class="texto" type="number" placeholder="    CÓDIGO"id="codP">
+            <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdV">
+            <input class="texto" type="number" placeholder="   CNPJ" id="cliente">
+            <!-- <div class="send" onclick="Vender()">Realizar venda</div>
+                <h1 class="add" onclick="Add()">+</h1> -->
+        </form>
+    </div>
+
+    <div class="float_button">
+            <input class="btns" id="f_but" type="checkbox">
+            <div class="func_buttons" class="btns" id="add" onclick="Add()"><h1 id="t1">+</h1></div>
+            <div class="func_buttons" class="btns" id="confirm" onclick="Vender()"><h1 id="t1">✓</h1></div>
+    </div>
+
+    <script> function Add(){
+    const node = document.getElementById('cadV');
+    const clone = node.cloneNode(true);
+    document.body.appendChild(clone);
+}
+</script>
+</body>
+</html>
