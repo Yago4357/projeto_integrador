@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="./visualizarProd/visualizarProd.css">
     <script src="../js/scrool.js"></script>
     <script src="../excluirCliente.js"></script><!--Trocar o caminho -->
+    <script src="./pagination.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
   </head>
 
   <% if(urid.Tipo=="ofoda"){ %>
@@ -19,7 +32,9 @@
     <% } %> 
   <body id="body">
     <div class="center">
-        <table id="table" class="scroll">
+      <input id="myInput" type="text" placeholder="Search..">
+<br><br>
+        <table id="table" class="scroll"> <!-- tirei o  id="table" -->
             <thead>
             <tr id class="cabeca">
                 <th id="the" class="tb_ini">ID</th>
@@ -28,7 +43,7 @@
                 <th id="the"class="tb_final"><span class="theee">Contato</span></th>
             </tr>
         </thead>
-        <tbody id="tbody" class="corpo">
+        <tbody id="myTable" class="corpo">
           <%=console.log(Cliente)%>
           
           <% for(var i = 0; i< Cliente.length; i++) {%>
@@ -42,5 +57,8 @@
                 </tr>
                 <%}%>
 </tbody>
+</main>
+
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 const http = require('http')
 const path = require('path')
 const banco = require('./Banco/banco')
-
+var $ = require( "jquery" );
 const express = require('express')
 var sessions = require('express-session')
 const cookieParser = require("cookie-parser");
@@ -32,7 +32,7 @@ app.get('/visualizarCliente', async(req, res,)=>{
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('visualizar_Cliente',{Cliente: await Cliente,Session:session,urid:session.userid})
+        res.render('visualizar_Cliente',{Cliente: await Cliente,Session:session,urid:session.userid,$:$})
     }
 })
 
