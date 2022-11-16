@@ -51,9 +51,9 @@ $(document).ready(function(){
                   <td id="td" class="tb_ini"><%= Cliente[i].idC%></td>
                   <td id="td" ><%= Cliente[i].Nome%></td>
                   <td id="td" ><%= Cliente[i].Cpf%></std>
-                  <td id="td" class="cont"><%= Cliente[i].Contato%>
-                  <button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
-                  <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> 
+                  <td id="td" class="cont"><%= Cliente[i].Contato%></td>
+                   <td id="td"><button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
+                  <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> </td> 
                 </tr>
                 <%}%>
 </tbody>
