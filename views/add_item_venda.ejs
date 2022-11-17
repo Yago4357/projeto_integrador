@@ -21,7 +21,7 @@
         <form>
             <!-- <input class="texto" type="number" placeholder="    CÓDIGO"id="codP"> -->
             <div class="column">
-            <text>Código do Produto:</text>
+            <text id="cc">Código do Produto:</text>
             <select name="id" id="codP">
                 <option value="iden" id="cp">--</option>
                     <% for(var i = 0; i< Produto.length; i++) {%>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="column">
-                <text>Quantidade:</text>
+                <text id="cc2">Quantidade:</text>
                 <input class="texto" type="number" id="qtdV">
             </div>
 
@@ -53,6 +53,12 @@
             <input class="btns" id="f_but" type="checkbox">
             <div class="func_buttons" class="btns" id="add" onclick="Add()"><h1 id="t1">+</h1></div>
             <div class="func_buttons" class="btns" id="confirm" onclick="Vender()"><h1 id="t1">✓</h1></div>
+    </div>
+
+    <div class="float_button2">
+            <input class="btns2" id="f_but2" type="checkbox">
+            <div class="func_buttons2" class="btns2" id="add2" onclick="Add()"><h1 id="t1">+</h1></div>
+            <div class="func_buttons2" class="btns2" id="confirm2" onclick="cadCliente()"><h1 id="t1">✓</h1></div>
     </div>
 
     <script> function Add(){
