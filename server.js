@@ -166,7 +166,7 @@ app.get("/TelaIniV", (req,res)=>{
     }
 })
 
-app.post('/login', (req,res) =>{
+app.post('/login',(req,res) =>{
     const r = banco.Usuario();
     var usuario = req.body.usuario
     var senha = req.body.senha
@@ -193,6 +193,7 @@ app.post('/login', (req,res) =>{
         }
 }
 })
+    
 app.get("/CadastrarProduto", (req,res)=>{
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
