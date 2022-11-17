@@ -59,10 +59,14 @@
 }
 function valorAtt(){
     $.get( "/valorAtt/"+$('#codPC').val(), function( data ) {
-    $( "#labelValor" ).html( "R$ "+data.Valor );
+    if(data.Valor<0){
+    $( "#labelValor" ).html('Valor inexistente')
+    $("#labelForn").html('Fonecedor inexistente');
+    }else{
+    $("#labelValor").html( "R$ "+data.Valor )
     $("#labelForn").html(data.Fornecedor);
+    }
     });
-
 }
 </script>
 </body>
