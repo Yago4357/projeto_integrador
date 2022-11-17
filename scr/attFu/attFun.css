@@ -26,14 +26,33 @@ text{
     color: var(--text_color);
     font-weight: bold;
 }
+
 .cad{
-    margin-top: 40px;
-    height: 55rem;
+    margin-top: 5vh;
+    width: 100%;
+    height: 76vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
 }
+
+.send{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #FF984E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 100ms;
+}
+.send:hover{
+    background-color: rgb(230, 125, 51);
+}
+
 
 form{
     border: 2px solid var(--color_all);
@@ -109,20 +128,4 @@ span{
 span:hover{
     cursor: pointer;
     color: rgb(230, 125, 51);
-}
-
-.send{
-    width: 200px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #FF984E;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    transition: all 100ms;
-}
-.send:hover{
-    background-color: rgb(230, 125, 51);
 }
