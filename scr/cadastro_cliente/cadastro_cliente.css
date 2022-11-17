@@ -15,7 +15,7 @@
     --switch_bg_color: #FFFFFF;
   }
 
-  .column{
+.column{
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -16,12 +16,22 @@
     <% } %> 
 
 <body>
+    <span id="titu" class="tit">Atualizar Cliente</span>
     <div class="cad">
         <form action="">
-                <input class="texto" type="hidden" placeholder="    NOME"id="id"value="<%=C[0].idC%>">
-            <input class="texto" type="text" placeholder="    NOME"id="nome"value="<%=C[0].Nome%>">
-            <input class="texto" type="number" placeholder="   CPF" id="cpf"value="<%=C[0].Cpf%>">
-            <input class="texto" type="number" placeholder="   Contato" id="ctt"value="<%=C[0].Contato%>">
+            <input class="texto" type="hidden"id="id"value="<%=C[0].idC%>">
+            <div class="column">
+                    <text>NOME:</text>
+            <input class="texto" type="text"id="nome"value="<%=C[0].Nome%>">
+        </div>
+        <div class="column">
+            <text>CPF:</text>
+            <input class="texto" type="number"id="cpf"value="<%=C[0].Cpf%>">
+        </div>
+        <div class="column">
+                <text>Contato:</text>
+            <input class="texto" type="number"id="ctt"value="<%=C[0].Contato%>">
+        </div>
         </form>
         <div class="send" onclick="attCliente()">Atualizar</div>
     </div>

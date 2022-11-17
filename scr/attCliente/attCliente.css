@@ -15,8 +15,19 @@
     --switch_bg_color: #FFFFFF;
   }
 
+  .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+text{
+    color: var(--text_color);
+    font-weight: bold;
+}
 
 .cad{
+    margin-top: 40px;
     height: 55rem;
     display: flex;
     align-items: center;
@@ -42,7 +53,6 @@ form:hover input{
 }
 
 input{
-    position: relative;
     left: 50px;
     width: 250px;
     height: 32px;
@@ -59,7 +69,6 @@ input{
     margin-right: 3rem;
     background-color: rgb(255, 77, 77);
     cursor: pointer;
-    position: relative;
 }
 .remover_item::before{
     content: '';
