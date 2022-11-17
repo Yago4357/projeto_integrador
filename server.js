@@ -222,6 +222,14 @@ app.get("/CadastrarFuncionario", (req,res)=>{
         res.render('tela_cadastro',{Session:session,urid:session.userid})
     }
 })
+app.get("/valorAtt/:id", async(req,res)=>{
+    p = await banco.ProdutoPorId(req.params.id);
+    if(req.session.hasOwnProperty('userid') == false){
+        res.redirect('/');
+    } else{    
+        res.send(p[0])
+    }
+})
 
 app.post('/Venda', async(req,res)=>{
     const produtoV = await banco.Produto();
@@ -255,23 +263,23 @@ app.post('/Compra', async(req,res)=>{
     const produtoC = await banco.Produto();
     //cpfc = banco.Cliente();
     var codPCO = req.body.codPC;
-    var qtdV = req.body.qtdC;
-    var cliente = req.body.funcionario;
-    var bx;
+    var qtdC = req.body.qtdC;
+    var vC = req.body.vC;
+    var Fun = req.body.Fun;
+    var bxc;
 
     for(ProdutoC of produtoC){
-    if(codPO == ProdutoV.Idprod && qtdV <= ProdutoV.Quantidade){
+    if(codPCO == ProdutoC.Idprod && qtdC <= ProdutoC.Quantidade){
         bx=1;
-        valorT = ProdutoV.Valor * qtdV;
-        baixa =  ProdutoV.Quantidade - qtdV;
-        comV = valorT * 0.10;
+        valorT = ProdutoC.Valor * qtdC;
+        baixa =  ProdutoC.Quantidade + qtdC;
             
-     result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
-     baixaI = banco.bvenda(codPO,{Quantidade: baixa});
+     result = banco.relatorioCompra({ Produto: ProdutoC, qtdC: qtdC, vC: vC, Fun: Fun});
+     baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }
 }   if(bx==1){
-    res.send('Vendido')   
+    res.send('Comprado')   
 }else{
     res.send('falha')
 }   

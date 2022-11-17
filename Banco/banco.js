@@ -111,6 +111,25 @@ function connect(){
         const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.Cliente]
         return await conn.query(relatorioVenda,values);
     }
+    async function bcompra(Idprod,Produto){
+        const conn = await connect();
+        const baixap = 'UPDATE produto SET Quantidade=? WHERE Idprod=?';
+        const values = [Produto.Quantidade,Idprod]
+        return await conn.query(baixap,values); 
+    }
+    async function Compra(){
+        const conn = await connect();
+        const [rows]= ('SELECT * FROM rcompra');
+        return rows;
+    }
+    async function relatorioCompra(Compra){
+        const conn = await connect();
+        const relatorioCompra = 'INSERT INTO rcompra(Produto,qtdC,vC,Fun) VALUES (?,?,?,?);'
+        const values = [Compra.Produto,Compra.qtdC,Compra.vC,Compra.Fun]
+        return await conn.query(relatorioCompra,values);
+    }
     
-    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda,ProdutoPorId,ClientePorId,UsuarioPorId}
+    module.exports = {Usuario,Produto,insertProduto,deleteProduto,updateProduto,insertUsuario,deleteUser,
+    updateUser,Cliente,insertCliente,deleteCliente,updateCliente,relatorioVenda,Venda,bvenda,
+    ProdutoPorId,ClientePorId,UsuarioPorId,bcompra,Compra,relatorioCompra}
     

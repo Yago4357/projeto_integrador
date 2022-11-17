@@ -5,6 +5,7 @@ function Comprar(){
      
      codPC= t[i].value;
      qtdC = u[i].value;
+     vC = document.getElementById('labelValor').value;
      Fun = document.getElementById('Fun').value;
      if(codPC==null||codPC<1){
          alert("Código do produto não exite")
@@ -17,6 +18,7 @@ function Comprar(){
  
      console.log(JSON.stringify({
          codPC:codPC,
+         vC:vC,
          qtdC:qtdC,
          Fun:Fun,
      }));
@@ -27,6 +29,7 @@ function Comprar(){
      method:'POST',
      body: JSON.stringify({
         codPC:codPC,
+        vC:vC,
         qtdC:qtdC,
         Fun:Fun,
      }),
@@ -34,14 +37,14 @@ function Comprar(){
      }) 
      
      .then(async (r)=>{
-         var statusVenda = await r.text();
-         console.log(statusVenda)
-         if(statusVenda == 'Vendido'){
-             alert("Produtos vendidos")
-             location.href = 'visualizarVenda'
+         var statusCompra = await r.text();
+         console.log(statusCompra)
+         if(statusCompra == 'Comprado'){
+             alert("Produtos Comprados")
+             location.href = 'visualizarCompra'
          }else{
              alert("Dados incorretos!")
-             location.href = 'visualizarVenda'
+             location.href = 'visualizarCompra'
          }
       
       });

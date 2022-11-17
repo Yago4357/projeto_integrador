@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../add_item_venda.css">
-    <script src=""></script>    
+    <script src=""></script> 
+    <script src="./jquery-3.6.1.min.js"></script>   
     <title>Compra</title>
 </head>
 
@@ -19,25 +20,26 @@
     <span class="tit">Realizar Compra</span>
     <div class="cad" id="cadV">
         <form>
-                <select name="id" id="codPC">
-                        <option value="iden" id="cp">--</option>
+                <select name="id" id="codPC" onchange="valorAtt()">
+                        <option value="0" id="cp">--</option>
                             <% for(var i = 0; i< Produto.length; i++) {%>
-                                <h1><%=Produto[0].Valor%></h1>
+                                
                             <% if(Produto[i].Quantidade > 0) {%>
-                                <option value="<%= Produto[i].Idprod%>"><%= Produto[i].Nome%></option>    
+                                <option value="<%= Produto[i].Idprod%>" ><%= Produto[i].Nome%></option>
                             <%}%>
-                            <
                         <%}%>
                     </select>
         
                     <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdC">
                     
-                    <select name="cpf" id="Fun">
+                    <label for="" id='labelForn'>--</label>
+                    <!--<select name="cpf" id="Fun">
                         <option value="iden" id="cp">--</option>
                         <% for(var i = 0; i< Fun.length; i++) {%>
                             <option value="<%= Fun[i].Cpf%>"><%= Fun[i].Nome%></option>
                         <%}%>
-                    </select>
+                    </select>-->
+                    <label for=""id='labelValor'>--</label>
                     
             <!-- <div class="send" onclick="Vender()">Realizar venda</div>
                 <h1 class="add" onclick="Add()">+</h1> -->
@@ -54,6 +56,13 @@
     const node = document.getElementById('cadV');
     const clone = node.cloneNode(true);
     document.body.appendChild(clone);
+}
+function valorAtt(){
+    $.get( "/valorAtt/"+$('#codPC').val(), function( data ) {
+    $( "#labelValor" ).html( "R$ "+data.Valor );
+    $("#labelForn").html(data.Fornecedor);
+    });
+
 }
 </script>
 </body>
