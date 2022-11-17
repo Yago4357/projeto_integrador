@@ -5,6 +5,29 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ .tit{
+  cursor: default;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1919198e;
+  position: relative;
+  top: 20px;
+  left: 5%;
+}
+
+.tit:hover{
+  cursor: default;
+  color: #1919198e;
+}
+
+span{
+  font-size: 32px;
+  margin-top: 12px;
+  font-weight: lighter;
+  color: #FF984E;
+}   
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;

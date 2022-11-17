@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista vendas</title>
-    <link rel="stylesheet" href="/scr/tela_lista_vendas/tela_lista_vendas.css">
+
 </head>
 
 <% if(urid.Tipo=="ofoda"){ %>
@@ -13,7 +13,8 @@
     <% }else{%>
     <%- include('../views/navbarVendedor') -%>
     <% } %> 
-    
+   
+    <span class="tit">Lista de Vendas</span>
     <div id="center" class="center">
         <table id="table" class="scroll">
             <thead>

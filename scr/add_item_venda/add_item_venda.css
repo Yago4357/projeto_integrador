@@ -53,8 +53,15 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem; 
+    gap: 5rem; 
 }
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* form:hover{
     background-color: rgba(223, 223, 223, 0.295);
 }
@@ -62,7 +69,12 @@ form:hover input{
     background-color: rgba(223, 223, 223, 0);
 } */
 
-input{
+text{
+    color: var(--text_color);
+    font-weight: bold;
+}
+
+input, select{
     position: relative;
     left: 50px;
     width: 250px;
@@ -72,6 +84,7 @@ input{
     border: none;
     border-bottom: 2px solid #FF984E;
 }
+
 .remover_item{
     width: 50px;
     height: 50px;
