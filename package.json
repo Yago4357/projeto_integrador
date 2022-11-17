@@ -19,6 +19,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "node": "^19.0.1",
+    "paginate": "^0.2.0",
     "paginationjs": "^2.1.5",
     "promise": "^8.3.0",
     "sequelize": "^6.21.4"
