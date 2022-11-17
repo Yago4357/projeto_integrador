@@ -50,6 +50,10 @@
     background: rgb(233, 136, 67);
   }
 
+  .pagination-number:hover{
+    color: #686868;
+  }
+
   #next-button, #prev-button{
       color: #848484;
   }
