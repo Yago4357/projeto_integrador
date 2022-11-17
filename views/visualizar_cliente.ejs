@@ -18,7 +18,7 @@
   <body id="body">
       <span id="titu" class="tit">Visualizar Clientes</span>
     <div class="center">
-  <table id="table" class="scroll">
+  <table id="tabela" class="scroll">
     <thead>
     <tr class="cabeca">
         <th id="the" class="tb_ini">ID</th>
@@ -27,7 +27,6 @@
         <th id="the"class="tb_final"><span class="theee">Contato</span></th>
     </tr>
   </thead>
-  
   <tbody id="paginated-list" class="corpo">
     <% for(var i = 0; i< Cliente.length; i++) {%>
             <td id="td" class="tb_ini"><%= Cliente[i].idC%></td>
@@ -38,20 +37,16 @@
             <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> 
           </tr>
           <%}%>
+
+          <nav class="pagination-container">
+              <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                &lt;
+              </button>
+              <div id="pagination-numbers"></div>
+              <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                &gt;
+              </bubutton>
   </ul>
-
-  <nav class="pagination-container">
-    <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-      &lt;
-    </button>
-
-    <div id="pagination-numbers">
-
-    </div>
-
-    <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-      &gt;
-    </bubutton>
   </body>
   </html>
 
@@ -62,7 +57,7 @@ const listItems = paginatedList.querySelectorAll("td");
 const nextButton = document.getElementById("next-button");
 const prevButton = document.getElementById("prev-button");
 
-const paginationLimit = 45;
+const paginationLimit = 40;
 const pageCount = Math.ceil(listItems.length / paginationLimit);
 let currentPage = 1;
 

@@ -23,15 +23,13 @@
     border: none;
 }
 
-#table{
+#tabela{
     table-layout: fixed;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
-    width: 95%;
-    height: 55ch;
     border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
@@ -45,11 +43,11 @@
 
 .corpo{
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
-    height: 495px;
+    height: 438px;
 }
 
 #body {
@@ -185,7 +183,7 @@ body {
     align-items: center;
     position: absolute;
     bottom: 0;
-    padding: 1rem 0;
+    padding: 1.2rem;
     justify-content: center;
   }
   
