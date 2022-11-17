@@ -95,13 +95,13 @@ app.get("/compra", async(req,res)=>{
 app.get("/relatCompra", async(req,res)=>{
     const fun = banco.Cliente();    
     const produto = banco.Produto();
-    const V = banco.Venda();
+    const c = banco.Compra();
 
     console.log(req.session.hasOwnProperty('userid'))
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('tela_lis_compras',{v: await V ,Produto: await produto,Fun: await fun,Session:session,urid:session.userid})
+        res.render('tela_lis_compras',{v: await c ,Produto: await produto,Fun: await fun,Session:session,urid:session.userid})
     }
 })
 
