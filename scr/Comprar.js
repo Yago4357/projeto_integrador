@@ -6,7 +6,7 @@ function Comprar(){
      codPC= t[i].value;
      qtdC = u[i].value;
      vC = document.getElementById('labelValor').value;
-     Fun = document.getElementById('Fun').value;
+     Fun = document.getElementById('labelFun').value;
      if(codPC==null||codPC<1){
          alert("Código do produto não exite")
      }else if(qtdC==null||qtdC<1){
