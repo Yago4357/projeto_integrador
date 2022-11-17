@@ -81,7 +81,7 @@ app.get("/visualizarFun", async(req,res)=>{
 })
 
 app.get("/compra", async(req,res)=>{
-    const fun = banco.Cliente();    
+    const fun = banco.Usuario();    
     const produto = banco.Produto();
 
     console.log(req.session.hasOwnProperty('userid'))
@@ -232,6 +232,34 @@ app.post('/Venda', async(req,res)=>{
     var bx;
 
     for(ProdutoV of produtoV){
+    if(codPO == ProdutoV.Idprod && qtdV <= ProdutoV.Quantidade){
+        bx=1;
+        valorT = ProdutoV.Valor * qtdV;
+        baixa =  ProdutoV.Quantidade - qtdV;
+        comV = valorT * 0.10;
+            
+     result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, Cliente: cliente});
+     baixaI = banco.bvenda(codPO,{Quantidade: baixa});
+    
+     }
+}   if(bx==1){
+    res.send('Vendido')   
+}else{
+    res.send('falha')
+}   
+   
+
+})
+
+app.post('/Compra', async(req,res)=>{
+    const produtoC = await banco.Produto();
+    //cpfc = banco.Cliente();
+    var codPCO = req.body.codPC;
+    var qtdV = req.body.qtdC;
+    var cliente = req.body.funcionario;
+    var bx;
+
+    for(ProdutoC of produtoC){
     if(codPO == ProdutoV.Idprod && qtdV <= ProdutoV.Quantidade){
         bx=1;
         valorT = ProdutoV.Valor * qtdV;

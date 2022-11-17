@@ -19,23 +19,26 @@
     <span class="tit">Realizar Compra</span>
     <div class="cad" id="cadV">
         <form>
-                <select name="id" id="codP">
+                <select name="id" id="codPC">
                         <option value="iden" id="cp">--</option>
                             <% for(var i = 0; i< Produto.length; i++) {%>
+                                <h1><%=Produto[0].Valor%></h1>
                             <% if(Produto[i].Quantidade > 0) {%>
-                                <option value="<%= Produto[i].Idprod%>"><%= Produto[i].Nome%></option>
+                                <option value="<%= Produto[i].Idprod%>"><%= Produto[i].Nome%></option>    
                             <%}%>
+                            <
                         <%}%>
                     </select>
         
-                    <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdV">
+                    <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdC">
                     
-                    <select name="cpf" id="cliente">
+                    <select name="cpf" id="Fun">
                         <option value="iden" id="cp">--</option>
                         <% for(var i = 0; i< Fun.length; i++) {%>
                             <option value="<%= Fun[i].Cpf%>"><%= Fun[i].Nome%></option>
                         <%}%>
                     </select>
+                    
             <!-- <div class="send" onclick="Vender()">Realizar venda</div>
                 <h1 class="add" onclick="Add()">+</h1> -->
         </form>
@@ -44,7 +47,7 @@
     <div class="float_button">
             <input class="btns" id="f_but" type="checkbox">
             <div class="func_buttons" class="btns" id="add" onclick="Add()"><h1 id="t1">+</h1></div>
-            <div class="func_buttons" class="btns" id="confirm" onclick="Vender()"><h1 id="t1">✓</h1></div>
+            <div class="func_buttons" class="btns" id="confirm" onclick="Comprar()"><h1 id="t1">✓</h1></div>
     </div>
 
     <script> function Add(){
