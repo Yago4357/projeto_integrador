@@ -22,6 +22,7 @@
     "paginate": "^0.2.0",
     "paginationjs": "^2.1.5",
     "promise": "^8.3.0",
+    "promise-mysql": "^5.2.0",
     "sequelize": "^6.21.4"
   },
   "devDependencies": {

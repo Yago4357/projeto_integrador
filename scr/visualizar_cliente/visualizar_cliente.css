@@ -122,7 +122,6 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
     left: 84%;
     transform: translateY(0.5rem);
     transition: all 100ms;
@@ -138,7 +137,6 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
     left: 72%;
     transform: translateY(0.5rem);
     transition: all 100ms;
