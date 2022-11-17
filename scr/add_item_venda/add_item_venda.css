@@ -6,6 +6,12 @@
     outline: 0;
 }
 
+body{
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+}
+
 :root{
     --background: 180deg, #FFFFFF;
     --color_all: #FF984E;
@@ -250,11 +256,11 @@ select{
 
 #f_but:checked ~ #add{
     position: absolute;
-    top: 4rem;
+    top: -4rem;
 }
 #f_but:checked ~ #confirm{
     position: absolute;
-    top: 7rem;
+    top: -7rem;
 }
 /*  */
 
@@ -335,11 +341,7 @@ display: none;
         background-position: 50% 70%;
         border-radius: 50%;
     }
-    
-    #f_but:hover, #add:hover, #confirm:hover{
-        background-color: rgb(255, 135, 49);
-    }
-    
+
     #f_bu2t:hover, #add2:hover, #confirm2:hover{
         background-color: rgb(255, 135, 49);
     }
