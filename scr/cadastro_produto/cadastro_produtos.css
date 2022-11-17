@@ -15,6 +15,30 @@
     --switch_bg_color: #FFFFFF;
   }
 
+  .column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+text{
+    color: var(--text_color);
+    font-weight: bold;
+}
+
+.tit{
+    cursor: default;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1919198e;
+    position: relative;
+    top: 20px;
+    left: 5%;
+}
+.tit:hover{
+    cursor: default;
+    color: #1919198e;
+}
 
   .cad{
     transform: translateY(0%);
@@ -23,7 +47,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 40px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 form{
@@ -47,7 +71,7 @@ input{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    width: 25%;
+    width: 100%;
     font-size: 14px;
     font-weight: bold;
     border: none;
@@ -91,17 +115,8 @@ input{
     background-color: #fff;
 }
 
-span{
-    font-size: 3rem;
-    margin-top: 12rem;
-    margin-left: 4rem;
-    font-weight: lighter;
-    color: #FF984E;
-}
-span:hover{
-    cursor: pointer;
-    color: rgb(230, 125, 51);
-}
+
+
 
 .send{
     position: relative;
