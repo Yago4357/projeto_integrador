@@ -1,6 +1,10 @@
 function Vender(){
-    codP= document.getElementById('codP').value;
-    qtdV = document.getElementById('qtdV').value;
+   t=  $("[id^='codP']");
+   u= $("[id^='qtdV']");
+   for(var i = 0; i< t.length;i++){
+    
+    codP= t[i].value;
+    qtdV = u[i].value;
     cliente = document.getElementById('cliente').value;
     if(codP==null||codP<1){
         alert("Código do produto não exite")
@@ -33,7 +37,7 @@ function Vender(){
         var statusVenda = await r.text();
         console.log(statusVenda)
         if(statusVenda == 'Vendido'){
-            alert("Produto vendido")
+            alert("Produtos vendidos")
             location.href = 'visualizarVenda'
         }else{
             alert("Dados incorretos!")
@@ -41,5 +45,6 @@ function Vender(){
         }
      
      });
+}
 }
 }
