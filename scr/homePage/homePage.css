@@ -2,6 +2,10 @@
     margin-top: 2rem;
 }
 
+body{
+    overflow-y: hidden;
+}
+
 .card_fundo{
     widows: 500px;
     position: absolute;

@@ -21,6 +21,10 @@
   color: #1919198e;
 }
 
+body{
+  overflow-y: hidden;
+}
+
 #span{
   font-size: 32px;
   margin-top: 12px;
