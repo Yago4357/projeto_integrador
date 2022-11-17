@@ -1,6 +1,6 @@
 function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:28047814lw@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
@@ -119,13 +119,13 @@ function connect(){
     }
     async function Compra(){
         const conn = await connect();
-        const [rows]= ('SELECT * FROM rcompra');
+        const [rows]= await conn.query('SELECT * FROM rcompra');
         return rows;
     }
     async function relatorioCompra(Compra){
         const conn = await connect();
-        const relatorioCompra = 'INSERT INTO rcompra(Produto,qtdC,vC,Fun) VALUES (?,?,?,?);'
-        const values = [Compra.Produto,Compra.qtdC,Compra.vC,Compra.Fun]
+        const relatorioCompra = 'INSERT INTO rcompra(Produto,qtdC,vC,forn) VALUES (?,?,?,?);'
+        const values = [Compra.Produto,Compra.qtdC,Compra.vC,Compra.forn]
         return await conn.query(relatorioCompra,values);
     }
     

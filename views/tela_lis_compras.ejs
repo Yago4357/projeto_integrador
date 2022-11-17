@@ -18,8 +18,8 @@
         <table id="table" class="scroll">
             <thead>
                 <tr id class="cabeca">
-                    <th id="the" class="tb_ini">COD</th>
-                    <th id="the"><span class="the">ID</span></th>
+                    <th id="the" class="tb_ini">ID</th>
+                    <th id="the"><span class="the">Produto</span></th>
                     <th id="the"><span class="the">Quantidade</span></th>
                     <th id="the"><span class="thee">Valor Final</span></th>
                     <th id="the"><span class="the">Data</span></th>
@@ -29,10 +29,12 @@
             <tbody id="tbody" class="corpo">
             <% for(var i = 0; i< v.length; i++) {%>
             <tr>
-                <td id="td"><%=v[i].codV%></td>
-                <td id="td"><%=v[i].qtdV%></td>
+                <td id="td"><%=v[i].idC%></td>
+                <td id="td"><%=v[i].Produto%></td>
+                <td id="td"><%=v[i].qtdC%></td>
                 <td id="td"><%=v[i].vC%></td>
-                <td id="td"> <%=v[i].Forn%>
+                <td id="td"><%=v[i].dt%></td>
+                <td id="td"> <%=v[i].forn%>
                 </td>
             </tr>
             <%}%>

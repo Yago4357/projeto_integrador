@@ -261,24 +261,26 @@ app.post('/Venda', async(req,res)=>{
 
 app.post('/Compra', async(req,res)=>{
     const produtoC = await banco.Produto();
-    //cpfc = banco.Cliente();
+    var prod = req.body.prod;
     var codPCO = req.body.codPC;
     var qtdC = req.body.qtdC;
     var vC = req.body.vC;
-    var Fun = req.body.Fun;
+    var Forn = req.body.Fun;
     var bxc;
-
+    console.log('chegou');
     for(ProdutoC of produtoC){
     if(codPCO == ProdutoC.Idprod && qtdC <= ProdutoC.Quantidade){
-        bx=1;
+        bxc=1;
+        console.log('chegou');
+        ProdutoC.Valor = ProdutoC.Valor - 100;
         valorT = ProdutoC.Valor * qtdC;
         baixa =  ProdutoC.Quantidade + qtdC;
             
-     result = banco.relatorioCompra({ Produto: ProdutoC, qtdC: qtdC, vC: vC, Fun: Fun});
+     result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: vC, forn: Forn});
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }
-}   if(bx==1){
+}   if(bxc==1){
     res.send('Comprado')   
 }else{
     res.send('falha')
