@@ -32,7 +32,7 @@ app.get('/visualizarCliente', async(req, res,)=>{
     if(req.session.hasOwnProperty('userid') == false){
         res.redirect('/');
     } else{    
-        res.render('visualizar_Cliente',{Cliente: await Cliente,Session:session,urid:session.userid,$:$})
+        res.render('visualizar_cliente',{Cliente: await Cliente,Session:session,urid:session.userid,$:$})
     }
 })
 
