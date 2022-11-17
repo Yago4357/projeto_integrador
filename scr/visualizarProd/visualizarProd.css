@@ -36,21 +36,6 @@
     left: 20px;
 }
 
-#table{
-    table-layout: fixed;
-    table-layout: auto;
-    display: grid;
-    border-collapse: collapse;
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.15));
-    color: var(--text_color);
-    width: 95%;
-    height: 55ch;
-    border-radius: 2px;
-    background: var(--form_background);
-    margin: 20px;
-    overflow-x: auto;
-}
-
 *{
     font-size: 18px;
     font-family: "Poppins", sans-serif;
@@ -59,11 +44,6 @@
 #cabeca{
     text-decoration: underline;
     border-collapse: collapse;
-}
-
-#corpo{
-    overflow-y: auto;
-    overflow-x: auto;
 }
 
 #tbody{
@@ -231,3 +211,25 @@
   #next-button:hover, #prev-button:hover{
       color: var(--color_all);
   }
+
+  .corpo{
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(var(--background));
+    height: 438px;
+}
+
+#tabela{
+    table-layout: fixed;
+    table-layout: auto;
+    display: grid;
+    border-collapse: collapse;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
+    color: var(--text_color);
+    border-radius: 2px;
+    background: var(--form_background);
+    margin: 20px;
+    overflow: hidden;
+}

@@ -17,11 +17,9 @@
     <% } %> 
 
 <body id="body">
-    <input type="hidden" id="testes" value="4">
-  
         <span id="titu" class="tit">Visualizar Funcionários</span>
     <div class="center">
-        <table id="table" class="scroll">
+        <table id="tabela" class="scroll">
             <thead>
             <tr class="cabeca">
                 <th id="th"><span class="tb_ini">ID</span></th>
@@ -41,10 +39,10 @@
                     <button class="modify"  id=<%=Fun[i].IdFun%> onclick="window.location.href='/AtualizarFuncionario?id=<%=Fun[i].IdFun%>'"></button></td>
                 </tr>
             <%}%>
-</tbody>
-        </table>
-        
-  <%- include('../views/pagination') -%>
-                
+
+</table>
+        <%- include('../views/pagination') -%>
 </body>
+
 </html>
+
