@@ -156,24 +156,8 @@
     bottom: 5px;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.7;
-    font-size: 1.1rem;
-    margin: 0;
-    color: #27253d;
-    background: #e6f3f8;
-  }
-  
-  main {
-    position: relative;
-    padding: 1rem 1rem 3rem;
-    min-height: calc(100vh - 4rem);
-  }
-  
-  h1 {
-    margin-top: 0;
-  }
+
+ 
   
   .hidden {
     display: none;
@@ -222,3 +206,5 @@ body {
   #next-button:hover, #prev-button:hover{
       color: var(--color_all);
   }
+
+  
