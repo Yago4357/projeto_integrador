@@ -267,15 +267,16 @@ app.post('/Compra', async(req,res)=>{
     var vC = req.body.vC;
     var Forn = req.body.Fun;
     var bxc;
-    console.log('chegou');
+    
     for(ProdutoC of produtoC){
     if(codPCO == ProdutoC.Idprod && qtdC <= ProdutoC.Quantidade){
         bxc=1;
-        console.log('chegou');
+        
         ProdutoC.Valor = ProdutoC.Valor - 100;
         valorT = ProdutoC.Valor * qtdC;
-        baixa =  ProdutoC.Quantidade + qtdC;
-            
+        qtdCf = parseInt(qtdC);
+        baixa =  ProdutoC.Quantidade + qtdCf;
+
      result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: vC, forn: Forn});
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
