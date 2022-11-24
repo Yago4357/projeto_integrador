@@ -101,6 +101,7 @@ input, select{
     cursor: pointer;
     position: relative;
 }
+
 .remover_item::before{
     content: '';
     width: 25px;
@@ -110,6 +111,7 @@ input, select{
     left: 11px;
     transition: all 200ms;
 }
+
 .remover_item::after{
     content: '';
     width: 25px;
@@ -119,12 +121,15 @@ input, select{
     left: 11px;
     transition: all 200ms;
 }
+
 .remover_item:hover::before{
     transform: rotate(50deg);
 }
+
 .remover_item:hover::after{
     transform: rotate(-50deg);
 }
+
 .remover_item:hover{
     background-color: #fff;
 }
@@ -200,7 +205,6 @@ select{
     align-items: center;
     flex-direction: column;
     gap: 15px;
-
     position: fixed;
     right: 16px;
     bottom: 2rem;
@@ -276,247 +280,7 @@ top: 5px;
 display: none;
 }
 
-
-/* RESPONSIVE */
-@media only screen and (min-width: 769px) and (max-width: 1024px){
-    form{
+#column{
     display: flex;
     flex-direction: column;
-
-    height: 60%;
-    width: 60%;
-    
-    gap: 1rem;
-
-    position: relative; 
-    top: 1rem;
-    }
-
-    .texto{
-        position: relative;
-        left: 0px;
-    }
-    
-    #codP{
-        left: 0px;
-    }
-    
-    #cliente{
-        left: 0px;
-    }
-
-    .float_button{
-        display: none;
-    }
-
-    /* FLOAT BUTTON RES */
-    .float_button2{
-        z-index: 999;
-        width: fit-content;
-        height: fit-content;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: 15px;
-    
-        position: fixed;
-        right: 16px;
-        top: 4.8rem;
-    }
-    
-    .btns2{
-        position: relative;
-        left: 0%;
-        cursor: pointer;
-    
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: 60px;
-        height: 60px;
-        background-color: var(--color_all);
-        background-image: url(logo_white.png);
-        background-repeat: no-repeat;
-        background-size: 50px;
-        background-position: 50% 70%;
-        border-radius: 50%;
-    }
-
-    #f_bu2t:hover, #add2:hover, #confirm2:hover{
-        background-color: rgb(255, 135, 49);
-    }
-    
-    .func_buttons2{
-        width: 40px;
-        height: 40px;
-    
-        position: absolute;
-        top: 0;
-    
-        border-radius: 50%;
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        color: white;
-    
-        z-index: -1;
-        cursor: pointer;
-        background-color: var(--color_all);
-    
-        transition: all 350ms ease;
-        }
-    
-        #f_but2:checked ~ #add2{
-            position: absolute;
-            top: 4rem;
-        }
-        #f_but2:checked ~ #confirm2{
-            position: absolute;
-            top: 7rem;
-        }
-    }
-    
-    
-    /*  */
-
-
-
-@media only screen and (min-width: 481px) and (max-width: 768px){
-    form{
-    width: 60%;
-    height: 300px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 2rem;
-    }
-    .texto{
-        width: 150px;
-        position: relative;
-        left: 0;
-    }
-    
-    #cliente{
-        left: 0px;
-        width: 150px;
-    }
-    
-    #codP{
-        left: 0px;
-        width: 150px;
-    }
-    
-    .float_button{
-        display: none;
-    }
-    
-        /* FLOAT BUTTON RES */
-        .float_button2{
-            z-index: 999;
-            width: fit-content;
-            height: fit-content;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            gap: 15px;
-        
-            position: fixed;
-            right: 16px;
-            top: 4.8rem;
-        }
-        
-        .btns2{
-            position: relative;
-            left: 0%;
-            cursor: pointer;
-        
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            width: 60px;
-            height: 60px;
-            background-color: var(--color_all);
-            background-image: url(logo_white.png);
-            background-repeat: no-repeat;
-            background-size: 50px;
-            background-position: 50% 70%;
-            border-radius: 50%;
-        }
-        
-        #f_but:hover, #add:hover, #confirm:hover{
-            background-color: rgb(255, 135, 49);
-        }
-        
-        #f_bu2t:hover, #add2:hover, #confirm2:hover{
-            background-color: rgb(255, 135, 49);
-        }
-        
-        .func_buttons2{
-            width: 40px;
-            height: 40px;
-        
-            position: absolute;
-            top: 0;
-        
-            border-radius: 50%;
-        
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        
-            color: white;
-        
-            z-index: -1;
-            cursor: pointer;
-            background-color: var(--color_all);
-        
-            transition: all 350ms ease;
-        }
-        
-        #f_but2:checked ~ #add2{
-            position: absolute;
-            top: 4rem;
-        }
-        #f_but2:checked ~ #confirm2{
-            position: absolute;
-            top: 7rem;
-        }
-        /*  */
-    
 }
-@media only screen and (min-width:1025px){
-    form{
-        gap: 1.5rem;
-    }
-    
-    #cliente{
-        width: 150px;
-    }
-    #codP{
-        width: 200px;
-        left: -40px;
-    }
-    #cc{
-        position: relative;
-        left: -3rem;
-    }
-    #cc2{
-        position: relative;
-        left: -3rem;
-    }
-    .texto{
-        position: relative;
-        left: 0rem;
-        top: 5px;
-    }
-}
-
-
-
-
-

@@ -21,6 +21,7 @@
     <div class="cad" id="cadV">
         <form>
                 <div class="column">
+                <text href="">Produto:</text>
                 <select name="id" id="codPC" onchange="valorAtt()">
                         <option value="0" id="cp">--</option>
                             <% for(var i = 0; i< Produto.length; i++) {%>
@@ -32,17 +33,27 @@
                     </select>
                 </div>
 
-                    <input class="texto" type="number" placeholder="   QUANTIDADE" id="qtdC">
-                    
-                    <label for="" id='labelForn'></label>
+                <div class="column">
+                    <text href="">Quantidade:</text>
+                    <input class="texto" type="number" id="qtdC">
+                </div>    
+
+                <div class="column">
+                        <text href="">Fornecedor:</text>
+                    <label for="" id='labelForn'>Informe</label>
+                </div>   
+
+                    <div class="column">
+                            <text href="">Valor:</text>
                     <!--<select name="cpf" id="Fun">
                         <option value="iden" id="cp">--</option>
                         <% for(var i = 0; i< Fun.length; i++) {%>
                             <option value="<%= Fun[i].Cpf%>"><%= Fun[i].Nome%></option>
                         <%}%>
                     </select>-->
-                    <label for="">R$</label> <label for=""id='labelValor'></label> 
-                    
+                    <label for=""id='labelValor'>R$ 0</label> 
+                </div>    
+
             <!-- <div class="send" onclick="Vender()">Realizar venda</div>
                 <h1 class="add" onclick="Add()">+</h1> -->
                 <input type='hidden' id="nP"></input>
@@ -65,7 +76,7 @@ function valorAtt(){
     $( "#labelValor" ).html('Valor inexistente')
     $("#labelForn").html('Fonecedor inexistente');
     }else{
-    $("#labelValor").html( data.Valor )
+    $("#labelValor").html( "R$" + data.Valor )
     $("#labelForn").html(data.Fornecedor);
     $("#nP").html(data.Nome);
     }
