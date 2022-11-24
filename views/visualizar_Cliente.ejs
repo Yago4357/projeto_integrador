@@ -13,18 +13,8 @@
     <script src="./pagination.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-  </head>
 
+  </head>
   <% if(urid.Tipo=="ofoda"){ %>
     <%- include('../views/navbar') -%>
     <% }else{%>
@@ -32,8 +22,6 @@ $(document).ready(function(){
     <% } %> 
   <body id="body">
     <div class="center">
-      <input id="myInput" type="text" placeholder="Search..">
-<br><br>
         <table id="table" class="scroll"> <!-- tirei o  id="table" -->
             <thead>
             <tr id class="cabeca">

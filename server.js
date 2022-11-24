@@ -166,12 +166,12 @@ app.get("/TelaIniV", (req,res)=>{
     }
 })
 
-app.post('/login', (req,res) =>{
-    const r = banco.Usuario();
+app.post('/login', async(req,res) =>{
+     r = await banco.Usuario();
     var usuario = req.body.usuario
     var senha = req.body.senha
     var conectado;
-    for(var usuarios of usuariodb ){
+    for(var usuarios of r ){
         if(usuario == usuarios.Nome && senha == usuarios.Senha){
             conectado=true;
             session=req.session;
@@ -276,8 +276,11 @@ app.post('/Compra', async(req,res)=>{
         valorT = ProdutoC.Valor * qtdC;
         qtdCf = parseInt(qtdC);
         baixa =  ProdutoC.Quantidade + qtdCf;
+        var date = new Date('2012-12-12 15:00:00 UTC');
+        console.log(date.toString());
 
-     result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: valorT, forn: Forn});
+
+     result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: valorT, dt:date, forn: Forn});
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }
