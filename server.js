@@ -272,12 +272,12 @@ app.post('/Compra', async(req,res)=>{
     if(codPCO == ProdutoC.Idprod && qtdC <= ProdutoC.Quantidade){
         bxc=1;
         
-        ProdutoC.Valor = ProdutoC.Valor - 100;
+        ProdutoC.Valor = ProdutoC.Valor * 0.9;
         valorT = ProdutoC.Valor * qtdC;
         qtdCf = parseInt(qtdC);
         baixa =  ProdutoC.Quantidade + qtdCf;
 
-     result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: vC, forn: Forn});
+     result = banco.relatorioCompra({ Produto: prod, qtdC: qtdC, vC: valorT, forn: Forn});
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }
