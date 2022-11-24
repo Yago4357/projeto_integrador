@@ -1,0 +1,522 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+*:focus {
+    outline: 0;
+}
+
+body{
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+}
+
+:root{
+    --background: 180deg, #FFFFFF;
+    --color_all: #FF984E;
+    --text_color: #848484;
+    --form_background: #FFFFFF;
+    --border_color: none; 
+    --switch_bg_color: #FFFFFF;
+  }
+
+::-webkit-scrollbar {
+    width: 5px;
+
+    z-index: -999;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color_all); 
+    height: 5px;
+  }
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 121, 51); 
+  }
+
+.cad{
+    transform: translateY(10%);
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 20px;
+}
+
+form{
+    border: 2px solid var(--color_all);
+    height: 8rem;
+    width: 90%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; 
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* form:hover{
+    background-color: rgba(223, 223, 223, 0.295);
+}
+form:hover input{
+    background-color: rgba(223, 223, 223, 0);
+} */
+
+text{
+    color: var(--text_color);
+    font-weight: bold;
+}
+
+input, select{
+    position: relative;
+    left: 50px;
+    width: 250px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px solid #FF984E;
+}
+
+.remover_item{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 3rem;
+    background-color: rgb(255, 77, 77);
+    cursor: pointer;
+    position: relative;
+}
+.remover_item::before{
+    content: '';
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 11px;
+    transition: all 200ms;
+}
+.remover_item::after{
+    content: '';
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 11px;
+    transition: all 200ms;
+}
+.remover_item:hover::before{
+    transform: rotate(50deg);
+}
+.remover_item:hover::after{
+    transform: rotate(-50deg);
+}
+.remover_item:hover{
+    background-color: #fff;
+}
+
+span{
+    font-size: 32px;
+    margin-top: 12px;
+    font-weight: lighter;
+    color: #FF984E;
+}
+span:hover{
+    cursor: pointer;
+    color: rgb(230, 125, 51);
+}
+
+.send{
+    width: 200px;
+    height: 30px;
+    position: relative;
+    left: 2.5%;
+    border-radius: 2px;
+    background-color: #FF984E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 100ms;
+}
+.send:hover{
+    background-color: rgb(230, 125, 51);
+}
+
+.tit{
+    cursor: default;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1919198e;
+    position: relative;
+    top: 20px;
+    left: 5%;
+}
+.tit:hover{
+    cursor: default;
+    color: #1919198e;
+}
+
+.add{
+    cursor: pointer;
+    position: relative;
+    right: 1.5%;
+    top: 5px;
+}
+.add:hover{
+    color: #111111;
+}
+
+select{
+    border: none;
+    border-bottom: 2px solid var(--color_all);
+
+    position: relative;
+    top: 5px;
+}
+
+
+/* FLOAT BUTTON RES */
+.float_button{
+    z-index: 999;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+    position: fixed;
+    right: 16px;
+    bottom: 2rem;
+}
+
+.btns{
+    position: relative;
+    left: 0%;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color_all);
+    background-image: url(logo_white.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: 50% 70%;
+    border-radius: 50%;
+}
+
+#f_but:hover, #add:hover, #confirm:hover{
+    background-color: rgb(255, 135, 49);
+}
+
+#f_but:hover, #add:hover, #confirm:hover{
+    background-color: rgb(255, 135, 49);
+}
+
+.func_buttons{
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    z-index: -1;
+    cursor: pointer;
+    background-color: var(--color_all);
+
+    transition: all 350ms ease;
+}
+
+#f_but:checked ~ #add{
+    position: absolute;
+    top: -4rem;
+}
+#f_but:checked ~ #confirm{
+    position: absolute;
+    top: -7rem;
+}
+/*  */
+
+select{
+border: none;
+border-bottom: 2px solid var(--color_all);
+
+position: relative;
+top: 5px;
+}
+
+.float_button2{
+display: none;
+}
+
+
+/* RESPONSIVE */
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    form{
+    display: flex;
+    flex-direction: column;
+
+    height: 60%;
+    width: 60%;
+    
+    gap: 1rem;
+
+    position: relative; 
+    top: 1rem;
+    }
+
+    .texto{
+        position: relative;
+        left: 0px;
+    }
+    
+    #codP{
+        left: 0px;
+    }
+    
+    #cliente{
+        left: 0px;
+    }
+
+    .float_button{
+        display: none;
+    }
+
+    /* FLOAT BUTTON RES */
+    .float_button2{
+        z-index: 999;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    
+        position: fixed;
+        right: 16px;
+        top: 4.8rem;
+    }
+    
+    .btns2{
+        position: relative;
+        left: 0%;
+        cursor: pointer;
+    
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 60px;
+        height: 60px;
+        background-color: var(--color_all);
+        background-image: url(logo_white.png);
+        background-repeat: no-repeat;
+        background-size: 50px;
+        background-position: 50% 70%;
+        border-radius: 50%;
+    }
+
+    #f_bu2t:hover, #add2:hover, #confirm2:hover{
+        background-color: rgb(255, 135, 49);
+    }
+    
+    .func_buttons2{
+        width: 40px;
+        height: 40px;
+    
+        position: absolute;
+        top: 0;
+    
+        border-radius: 50%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+    
+        z-index: -1;
+        cursor: pointer;
+        background-color: var(--color_all);
+    
+        transition: all 350ms ease;
+        }
+    
+        #f_but2:checked ~ #add2{
+            position: absolute;
+            top: 4rem;
+        }
+        #f_but2:checked ~ #confirm2{
+            position: absolute;
+            top: 7rem;
+        }
+    }
+    
+    
+    /*  */
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    form{
+    width: 60%;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    }
+    .texto{
+        width: 150px;
+        position: relative;
+        left: 0;
+    }
+    
+    #cliente{
+        left: 0px;
+        width: 150px;
+    }
+    
+    #codP{
+        left: 0px;
+        width: 150px;
+    }
+    
+    .float_button{
+        display: none;
+    }
+    
+        /* FLOAT BUTTON RES */
+        .float_button2{
+            z-index: 999;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        
+            position: fixed;
+            right: 16px;
+            top: 4.8rem;
+        }
+        
+        .btns2{
+            position: relative;
+            left: 0%;
+            cursor: pointer;
+        
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color_all);
+            background-image: url(logo_white.png);
+            background-repeat: no-repeat;
+            background-size: 50px;
+            background-position: 50% 70%;
+            border-radius: 50%;
+        }
+        
+        #f_but:hover, #add:hover, #confirm:hover{
+            background-color: rgb(255, 135, 49);
+        }
+        
+        #f_bu2t:hover, #add2:hover, #confirm2:hover{
+            background-color: rgb(255, 135, 49);
+        }
+        
+        .func_buttons2{
+            width: 40px;
+            height: 40px;
+        
+            position: absolute;
+            top: 0;
+        
+            border-radius: 50%;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            color: white;
+        
+            z-index: -1;
+            cursor: pointer;
+            background-color: var(--color_all);
+        
+            transition: all 350ms ease;
+        }
+        
+        #f_but2:checked ~ #add2{
+            position: absolute;
+            top: 4rem;
+        }
+        #f_but2:checked ~ #confirm2{
+            position: absolute;
+            top: 7rem;
+        }
+        /*  */
+    
+}
+@media only screen and (min-width:1025px){
+    form{
+        gap: 1.5rem;
+    }
+    
+    #cliente{
+        width: 150px;
+    }
+    #codP{
+        width: 200px;
+        left: -40px;
+    }
+    #cc{
+        position: relative;
+        left: -3rem;
+    }
+    #cc2{
+        position: relative;
+        left: -3rem;
+    }
+    .texto{
+        position: relative;
+        left: 0rem;
+        top: 5px;
+    }
+}
+
+
+
+
+

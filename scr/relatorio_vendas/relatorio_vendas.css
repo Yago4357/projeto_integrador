@@ -22,7 +22,7 @@
     border: 1px solid --color_all(--color_all);
 }
 
-#table{
+#tabela{
     table-layout: fixed;
     table-layout: auto;
     display: grid;

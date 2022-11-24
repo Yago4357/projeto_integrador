@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./tela_lista_vendas/tela_lista_vendas.css">
     <title>Lista vendas</title>
 </head>
 
@@ -16,17 +17,17 @@
    
     <span id="titu" class="tit">Lista de Vendas</span>
     <div id="center" class="center">
-        <table id="table" class="scroll">
+        <table id="tabela" class="scroll">
             <thead>
                 <tr id class="cabeca">
                     <th id="the" class="tb_ini">COD</th>
-                    <th id="the">Comissão</th>
+                    <th id="the"><span class="the">Comissão</span></th>
                     <th id="the"><span class="the">Quantidade</span></th>
                     <th id="the"><span class="thee">Valor Final</span></th>
                     <th id="the" class="tb_final"><span class="theee">Cliente</span></th>
                 </tr>
             </thead>
-            <tbody id="tbody" class="corpo">
+            <tbody id="paginated-list" class="corpo">
             <% for(var i = 0; i< v.length; i++) {%>
             <tr>
                 <td id="td"><%=v[i].codV%></td>
@@ -37,8 +38,12 @@
                 </td>
             </tr>
             <%}%>
-    </tbody>
+            </tbody>
         </table>
     </div>
+
+    <%- include('../views/pagination') -%>
+
+
     
 </html>

@@ -21,8 +21,9 @@
     <%- include('../views/navbarVendedor') -%>
     <% } %> 
   <body id="body">
-    <div class="center">
-        <table id="table" class="scroll"> <!-- tirei o  id="table" -->
+    <span id="titu" class="tit">Lista de Clientes</span>
+    <div class="center" id="center">
+        <table id="tabela" class="scroll"> <!-- tirei o  id="table" -->
             <thead>
             <tr id class="cabeca">
                 <th id="the" class="tb_ini">ID</th>
@@ -31,7 +32,7 @@
                 <th id="the"class="tb_final"><span class="theee">Contato</span></th>
             </tr>
         </thead>
-        <tbody id="myTable" class="corpo">
+        <tbody id="paginated-list" class="corpo">
           <%=console.log(Cliente)%>
           
           <% for(var i = 0; i< Cliente.length; i++) {%>
@@ -39,12 +40,13 @@
                   <td id="td" class="tb_ini"><%= Cliente[i].idC%></td>
                   <td id="td" ><%= Cliente[i].Nome%></td>
                   <td id="td" ><%= Cliente[i].Cpf%></std>
-                  <td id="td" class="cont"><%= Cliente[i].Contato%></td>
-                   <td id="td"><button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
-                  <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> </td> 
+                  <td id="td" class="cont"><%= Cliente[i].Contato%>
+                  <button class="modify" onclick="window.location.href='AtualizarCliente?id=<%=Cliente[i].idC%>'"></button>
+                  <button class="delete" id=<%= Cliente[i].idC%> onclick="deleteCliente(this.id)"></button></td> 
                 </tr>
                 <%}%>
 </tbody>
+<%- include('../views/pagination') -%>
 </main>
 
 
