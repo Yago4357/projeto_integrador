@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: banco
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	5.7.20-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -16,12 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `rvenda`
+--
+
+DROP TABLE IF EXISTS `rvenda`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rvenda` (
+  `codV` int(11) NOT NULL AUTO_INCREMENT,
+  `comV` double NOT NULL,
+  `qtdV` int(11) NOT NULL,
+  `vF` double NOT NULL,
+  `Cliente` varchar(11) NOT NULL,
+  PRIMARY KEY (`codV`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `rvenda`
 --
 
 LOCK TABLES `rvenda` WRITE;
 /*!40000 ALTER TABLE `rvenda` DISABLE KEYS */;
-INSERT INTO `rvenda` VALUES (1,5,1,50,'12345678910'),(2,10,2,100,'12345678910'),(3,5,1,50,'12345678910'),(4,5,1,50,'12345678910'),(5,5,1,50,'12345678910'),(6,5,1,50,'12345678910'),(7,5,1,50,'12345678910'),(8,5,1,50,'12345678910'),(9,5,1,50,'12345678910'),(10,5,1,50,'12345678910'),(11,5,1,50,'12345678910'),(12,5,1,50,'12345678910'),(13,5,1,50,'12345678910'),(14,5,1,50,'12345678910'),(15,5,1,50,'12345678910'),(16,5,1,50,'12345678910'),(17,5,1,50,'12345678910'),(18,5,1,50,'12345678910'),(19,30,1,300,'12345678910'),(20,30,1,300,'12345678910'),(21,5,1,50,'12345678910'),(22,5,1,50,'12345678910'),(23,30,1,300,'12345678910');
 /*!40000 ALTER TABLE `rvenda` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -34,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-18 14:05:00
+-- Dump completed on 2022-11-24  7:42:55
