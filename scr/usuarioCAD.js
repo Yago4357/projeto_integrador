@@ -1,19 +1,18 @@
 function cadastrarUser(){
     console.log("cadastro");
-    var admin = document.getElementById('tipo').value;
+    var admin = document.getElementById('tipo');
     var nomeU = document.getElementById('usuario').value;
     var cpf = document.getElementById('cpf').value;
     var contato = document.getElementById('contato').value;
     var senha = document.getElementById('senha').value;
     var senhaC = document.getElementById('senhaC').value;
-    
-    if(admin=='admin'){
-        admin = "ofoda";
-    }else{
-        admin = "onoob";
-    }
+    var tipo;
 
-    console.log(admin);
+    if(admin.checked){
+        tipo = "ofoda"
+    }else{
+        tipo = "onoob"
+    }
     
     if(nomeU==''||nomeU>49){
         alert("Nome inválido")
@@ -32,10 +31,8 @@ function cadastrarUser(){
         contato:contato,
         senha:senha,
         senhaC:senhaC,
-        admin:admin
+        admin:tipo
      }));
-    
-     console.log("rock3");
     
     fetch("cadU",{
     method:'POST',
@@ -45,14 +42,13 @@ function cadastrarUser(){
         contato:contato,
         senha:senha,
         senhaC:senhaC,
-        admin:admin
+        admin:tipo
     }),
     headers: {"content-type" : "application/json"}
     }) 
     
     .then(async (respon)=>{
         var statususer = await respon.text();
-        console.log(statususer);
         if(statususer == 'Cadastrado'){
             alert("USUARIO CADASTRADO")
             location.href = 'index.html'

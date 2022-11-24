@@ -18,11 +18,38 @@
 .cad{
     margin-top: 5vh;
     width: 100%;
-    height: 88vh;
+    height: 76vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+}
+
+.send{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #FF984E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    transition: all 100ms;
+}
+.send:hover{
+    background-color: rgb(230, 125, 51);
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+text{
+    color: var(--text_color);
+    font-weight: bold;
 }
 
 form{
@@ -89,20 +116,4 @@ input{
 }
 .remover_item:hover{
     background-color: #fff;
-}
-
-.send{
-    width: 300px;
-    height: 50px;
-    border-radius: 20px;
-    background-color: #FF984E;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    cursor: pointer;
-    transition: all 100ms;
-}
-.send:hover{
-    background-color: rgb(230, 125, 51);
 }

@@ -9,9 +9,8 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
-#th, #td{
+#th, #td{   
     border: 2px solid var(--color_all);
-    text-align: center;
     width: 44rem;
     height: 3rem;
 }
@@ -23,20 +22,17 @@
     border: none;
 }
 
-#table{
+#tabela{
     table-layout: fixed;
     table-layout: auto;
     display: grid;
     border-collapse: collapse;
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.10));
     color: var(--text_color);
-    width: 95%;
-    height: 55ch;
     border-radius: 2px;
     background: var(--form_background);
     margin: 20px;
     overflow: hidden;
-    overflow-x: auto;
 }
 
 *{
@@ -46,11 +42,11 @@
 
 .corpo{
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     margin: 0px;
     padding: 0px;
     background: linear-gradient(var(--background));
-    height: 495px;
+    height: 438px;
 }
 
 #body {
@@ -122,11 +118,11 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
     left: 84%;
     transform: translateY(0.5rem);
     transition: all 100ms;
     z-index: 999;
+    margin-left: 10px;
 }
 .modify{
     width: 25px;
@@ -138,11 +134,11 @@
     background-size: 25px;
     background-repeat: no-repeat;
     background-color: transparent;
-    position: absolute;
     left: 72%;
     transform: translateY(0.5rem);
     transition: all 100ms;
     z-index: 999;
+    margin-left: 10px;
 }
 .delete:hover{
     background-image: url(../imagens/remove_filled.png);
@@ -158,3 +154,7 @@
     left: 20px;
     bottom: 5px;
 }
+
+
+ 
+  

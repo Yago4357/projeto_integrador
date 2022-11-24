@@ -16,13 +16,26 @@
     <% } %> 
    
 <body>
+    <span id="titu" class="tit">Atualizar Produto</span>
     <div class="cad">
         <form action="">
                 <input class="texto" type="hidden" id="id" value="<%=P[0].Idprod%>" >
+            <div class="column">
+                    <text>Nome:</text>
             <input class="texto" type="text" id="nome" value="<%=P[0].Nome%>" >
+        </div>
+        <div class="column">
+                <text>Fornecedor:</text>
             <input class="texto" type="text"  id="fornecedor" value="<%=P[0].Fornecedor%>" >
+        </div>
+        <div class="column">
+                <text>Valor:</text>
             <input class="texto" type="number"  id="valor" value="<%=P[0].Valor%>" >
+        </div>
+        <div class="column">
+            <text>Quantidade:</text>
             <input class="texto" type="number"  id="quantidade" value="<%=P[0].Quantidade%>">
+        </div>
         </form>
         <div class="send" onclick="updateProd()">Atualizar</div>
     </div>

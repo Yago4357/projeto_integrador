@@ -17,8 +17,9 @@
     <% } %> 
 
 <body id="body">
+        <span id="titu" class="tit">Visualizar Funcionários</span>
     <div class="center">
-        <table id="table" class="scroll">
+        <table id="tabela" class="scroll">
             <thead>
             <tr class="cabeca">
                 <th id="th"><span class="tb_ini">ID</span></th>
@@ -27,7 +28,7 @@
                 <th id="th"><span class="tb_final">Contato</span></th>
             </tr>
         </thead>
-        <tbody id="tbody" class="corpo">
+        <tbody id="paginated-list" class="corpo">
             <% for(var i = 0; i< Fun.length; i++) {%>
                 <tr>
                     <td id="td" ><%= Fun[i].IdFun%></td>
@@ -38,7 +39,10 @@
                     <button class="modify"  id=<%=Fun[i].IdFun%> onclick="window.location.href='/AtualizarFuncionario?id=<%=Fun[i].IdFun%>'"></button></td>
                 </tr>
             <%}%>
-</tbody>
-        </table>
+
+</table>
+        <%- include('../views/pagination') -%>
 </body>
+
 </html>
+

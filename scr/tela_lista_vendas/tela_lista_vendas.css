@@ -9,6 +9,10 @@
     --switch_bg_color_disabled: #9c9c9c;
   }
 
+body{
+    overflow-y: hidden;
+}
+
 #th, #td{
     border: 2px solid var(--color_all);
     text-align: center;
@@ -45,7 +49,6 @@
 }
 
 .corpo{
-    overflow-y: auto;
     overflow-x: auto;
     margin: 0px;
     padding: 0px;
@@ -128,6 +131,7 @@
     transition: all 100ms;
     z-index: 999;
 }
+
 .modify{
     width: 25px;
     height: 30px;
