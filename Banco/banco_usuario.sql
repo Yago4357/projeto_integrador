@@ -33,6 +33,9 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+INSERT INTO `usuario` VALUES (1,'Leandro','11111111111','47999229999','3031','ofoda')
+  ,(2,'RockFeller','22222222222','478888888','2022','obosta');
+
 --
 -- Dumping data for table `usuario`
 --
