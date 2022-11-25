@@ -35,7 +35,7 @@
 
                 <div class="column">
                     <text href="">Quantidade:</text>
-                    <input class="texto" type="number" id="qtdC">
+                    <input class="texto" type="number" onchange="valorAtt()" id="qtdC">
                 </div>    
 
                 <div class="column">
@@ -71,12 +71,13 @@
     document.body.appendChild(clone);
 }
 function valorAtt(){
+    qt = document.getElementById('qtdC').value;
     $.get( "/valorAtt/"+$('#codPC').val(), function( data ) {
     if(data.Valor<0){
     $( "#labelValor" ).html('Valor inexistente')
     $("#labelForn").html('Fonecedor inexistente');
     }else{
-    $("#labelValor").html( "R$" + data.Valor )
+    $("#labelValor").html( "R$" + data.Valor * qt );
     $("#labelForn").html(data.Fornecedor);
     $("#nP").html(data.Nome);
     }

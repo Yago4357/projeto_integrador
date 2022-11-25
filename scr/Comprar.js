@@ -41,7 +41,7 @@ function Comprar(){
          var statusCompra = await res.text();
          console.log(statusCompra)
          if(statusCompra == 'Comprado'){
-             alert("Produtos Comprados")
+             alert("Produtos Comprados c/ desconto de 10%")
              location.href = 'relatCompra'
          }else{
              alert("Dados incorretos!")
