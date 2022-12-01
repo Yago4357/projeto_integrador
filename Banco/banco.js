@@ -1,6 +1,6 @@
 function connect(){
         const mysql = require("mysql2/promise");
-        const connection = mysql.createConnection("mysql://root:28047814lw@localhost:3306/banco");
+        const connection = mysql.createConnection("mysql://root:aluno@localhost:3306/banco");
         global.connection = connection;
         return connection;
     }
@@ -104,13 +104,13 @@ function connect(){
     }
     async function Venda(){
         const conn = await connect();
-        const [rows]  = await conn.query('SELECT * FROM rvenda;');
+        const [rows]  = await conn.query('SELECT rvenda.*, produto.*, cliente.Nome as nomeCliente  FROM rvenda join produto on produto.Idprod = rvenda.idProd join cliente on cliente.idC = rvenda.idCliente;');
         return rows; 
     }
     async function relatorioVenda(Venda){
         const conn = await connect();
-        const relatorioVenda= 'INSERT INTO rvenda(comV,qtdV,vF,Cliente) VALUES (?,?,?,?);'
-        const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.Cliente]
+        const relatorioVenda= 'INSERT INTO rvenda(comV,qtdV,vF,idCliente,idProd) VALUES (?,?,?,?,?);'
+        const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.idCliente, Venda.idProd]
         return await conn.query(relatorioVenda,values);
     }
     async function bcompra(Idprod,Produto){
@@ -121,13 +121,13 @@ function connect(){
     }
     async function Compra(){
         const conn = await connect();
-        const [rows]= await conn.query('SELECT * FROM rcompra');
+        const [rows]= await conn.query('SELECT * FROM rcompra join produto on produto.Idprod = rcompra.idProd;');
         return rows;
     }
     async function relatorioCompra(Compra){
         const conn = await connect();
-        const relatorioCompra = 'INSERT INTO rcompra(Produto,qtdC,vC,forn) VALUES (?,?,?,?);'
-        const values = [Compra.Produto,Compra.qtdC,Compra.vC,Compra.forn]
+        const relatorioCompra = 'INSERT INTO rcompra(idProd,qtdC,vC,forn) VALUES (?,?,?,?);'
+        const values = [Compra.idProd,Compra.qtdC,Compra.vC,Compra.forn]
         return await conn.query(relatorioCompra,values);
     }
     
