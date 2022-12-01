@@ -126,7 +126,8 @@ function connect(){
     }
     async function relatorioCompra(Compra,Usuario){
         const conn = await connect();
-        const relatorioCompra = 'INSERT INTO rcompra(idProd,qtdC,vC,forn,idFun) VALUES (?,?,?,?,?);'
+        console.log(Usuario);
+        const relatorioCompra = 'INSERT INTO rcompra(idProd,qtdC,vC,dt,forn,idFun) VALUES (?,?,?,now(),?,?);'
         const values = [Compra.idProd,Compra.qtdC,Compra.vC,Compra.forn, Usuario.IdFun]
         return await conn.query(relatorioCompra,values);
     }

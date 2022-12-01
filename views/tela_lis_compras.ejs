@@ -26,7 +26,7 @@
                     <th id="the"><span class="thee">Valor Final</span></th>
                     <th id="the"><span class="the">Data</span></th>
                     <th id="the" class="tb_final"><span class="theee">Fornecedor</span></th>
-                </tr>join usuario on usuario.IdFun = rvenda.idUsuario;
+                </tr>
             </thead>
             <tbody id="paginated-list" class="corpo">
             <% for(var i = 0; i< v.length; i++) {%>
@@ -36,7 +36,7 @@
                 <td id="td"><%=v[i].nomeFun%></td>
                 <td id="td"><%=v[i].qtdC%></td>
                 <td id="td"><%=v[i].vC%></td>
-                <td id="td">01/12/2022 11:04</td>
+                <td id="td"><%=v[i].dt%></td>
                 <td id="td"> <%=v[i].forn%>
                 </td>
             </tr>
@@ -44,6 +44,6 @@
         </tbody>
         </table>
     </div>
-  <%- include('../views/pagination') -%>
+    <%- include('../views/pagination') -%>
     
 </html>

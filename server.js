@@ -246,7 +246,7 @@ app.post('/Venda', async(req,res)=>{
         valorT = ProdutoV.Valor * qtdV;
         baixa =  ProdutoV.Quantidade - qtdV;
         comV = valorT * 0.10;
-    console.log(session)        
+             
      result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, idCliente: codPO, idProd:codPO }, session.userid);
      baixaI = banco.bvenda(codPO,{Quantidade: baixa});
     
@@ -277,11 +277,8 @@ app.post('/Compra', async(req,res)=>{
         valorT = ProdutoC.Valor * qtdC;
         qtdCf = parseInt(qtdC);
         baixa =  ProdutoC.Quantidade + qtdCf;
-        var date = new Date('2012-12-12 15:00:00 UTC');
-        console.log(date.toString());
 
-
-     result = banco.relatorioCompra({ idProd: codPCO, qtdC: qtdC, vC: valorT, dt:date, forn: Forn}, session.userid);
+     result = banco.relatorioCompra({ idProd: codPCO, qtdC: qtdC, vC: valorT, forn: Forn}, session.userid);
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }
