@@ -27,9 +27,17 @@ CREATE TABLE `rvenda` (
   `comV` double NOT NULL,
   `qtdV` int(11) NOT NULL,
   `vF` double NOT NULL,
-  `Cliente` varchar(11) NOT NULL,
-  PRIMARY KEY (`codV`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idCliente` int(11) DEFAULT NULL,
+  `idProd` int(11) DEFAULT NULL,
+  `idUsuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codV`),
+  KEY `fkidProd_idx` (`idProd`),
+  KEY `fkidCliente_idx` (`idCliente`),
+  KEY `fkidUsuario_venda_idx` (`idUsuario`),
+  CONSTRAINT `fkidCliente` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idC`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkidProd` FOREIGN KEY (`idProd`) REFERENCES `produto` (`Idprod`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkidUsuario_venda` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`IdFun`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +46,7 @@ CREATE TABLE `rvenda` (
 
 LOCK TABLES `rvenda` WRITE;
 /*!40000 ALTER TABLE `rvenda` DISABLE KEYS */;
+INSERT INTO `rvenda` VALUES (12,15,1,150,1,1,1),(13,15,1,150,1,1,1);
 /*!40000 ALTER TABLE `rvenda` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-24  7:42:55
+-- Dump completed on 2022-12-01 11:06:50

@@ -24,13 +24,19 @@ DROP TABLE IF EXISTS `rcompra`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rcompra` (
   `idC` int(11) NOT NULL AUTO_INCREMENT,
-  `Produto` varchar(49) NOT NULL,
+  `idProd` int(11) NOT NULL,
   `qtdC` int(11) NOT NULL,
   `vC` double DEFAULT NULL,
   `dt` datetime DEFAULT NULL,
   `forn` varchar(49) NOT NULL,
-  PRIMARY KEY (`idC`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `idFun` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idC`),
+  KEY `fkidProd_idx` (`idProd`),
+  KEY `fkidProd_id_compra` (`idProd`),
+  KEY `fkidFun_compra_idx` (`idFun`),
+  CONSTRAINT `fkidFun_compra` FOREIGN KEY (`idFun`) REFERENCES `usuario` (`IdFun`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fkidProd_compra` FOREIGN KEY (`idProd`) REFERENCES `produto` (`Idprod`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +45,7 @@ CREATE TABLE `rcompra` (
 
 LOCK TABLES `rcompra` WRITE;
 /*!40000 ALTER TABLE `rcompra` DISABLE KEYS */;
-INSERT INTO `rcompra` VALUES (1,'Mouse',12,160,NULL,'Red dragon');
+INSERT INTO `rcompra` VALUES (4,2,1,270,NULL,'pichau',1);
 /*!40000 ALTER TABLE `rcompra` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-24  7:57:17
+-- Dump completed on 2022-12-01 11:06:50
