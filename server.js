@@ -281,7 +281,7 @@ app.post('/Compra', async(req,res)=>{
         console.log(date.toString());
 
 
-     result = banco.relatorioCompra({ idProd: codPCO, qtdC: qtdC, vC: valorT, dt:date, forn: Forn});
+     result = banco.relatorioCompra({ idProd: codPCO, qtdC: qtdC, vC: valorT, dt:date, forn: Forn}, session.userid);
      baixaI = banco.bcompra(codPCO,{Quantidade: baixa});
     
      }

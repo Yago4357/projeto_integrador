@@ -121,13 +121,13 @@ function connect(){
     }
     async function Compra(){
         const conn = await connect();
-        const [rows]= await conn.query('SELECT * FROM rcompra join produto on produto.Idprod = rcompra.idProd;');
+        const [rows]= await conn.query('SELECT rcompra.*,produto.Nome as nomeProd, usuario.Nome as nomeFun FROM rcompra join produto on produto.Idprod = rcompra.idProd join usuario on usuario.IdFun = rcompra.idFun;');
         return rows;
     }
-    async function relatorioCompra(Compra){
+    async function relatorioCompra(Compra,Usuario){
         const conn = await connect();
-        const relatorioCompra = 'INSERT INTO rcompra(idProd,qtdC,vC,forn) VALUES (?,?,?,?);'
-        const values = [Compra.idProd,Compra.qtdC,Compra.vC,Compra.forn]
+        const relatorioCompra = 'INSERT INTO rcompra(idProd,qtdC,vC,forn,idFun) VALUES (?,?,?,?,?);'
+        const values = [Compra.idProd,Compra.qtdC,Compra.vC,Compra.forn, Usuario.IdFun]
         return await conn.query(relatorioCompra,values);
     }
     
