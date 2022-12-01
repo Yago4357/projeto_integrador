@@ -246,8 +246,8 @@ app.post('/Venda', async(req,res)=>{
         valorT = ProdutoV.Valor * qtdV;
         baixa =  ProdutoV.Quantidade - qtdV;
         comV = valorT * 0.10;
-            
-     result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, idCliente: codPO, idProd:codPO });
+    console.log(session)        
+     result = banco.relatorioVenda({ comV: comV, qtdV: qtdV, vF: valorT, idCliente: codPO, idProd:codPO }, session.userid);
      baixaI = banco.bvenda(codPO,{Quantidade: baixa});
     
      }

@@ -104,13 +104,13 @@ function connect(){
     }
     async function Venda(){
         const conn = await connect();
-        const [rows]  = await conn.query('SELECT rvenda.*, produto.*, cliente.Nome as nomeCliente  FROM rvenda join produto on produto.Idprod = rvenda.idProd join cliente on cliente.idC = rvenda.idCliente;');
+        const [rows]  = await conn.query('SELECT rvenda.*, produto.*, cliente.Nome as nomeCliente, usuario.Nome as nomefun FROM rvenda join produto on produto.Idprod = rvenda.idProd join cliente on cliente.idC = rvenda.idCliente join usuario on usuario.IdFun = rvenda.idUsuario;');
         return rows; 
     }
-    async function relatorioVenda(Venda){
+    async function relatorioVenda(Venda,Usuario){
         const conn = await connect();
-        const relatorioVenda= 'INSERT INTO rvenda(comV,qtdV,vF,idCliente,idProd) VALUES (?,?,?,?,?);'
-        const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.idCliente, Venda.idProd]
+        const relatorioVenda= 'INSERT INTO rvenda(comV,qtdV,vF,idCliente,idProd,idUsuario) VALUES (?,?,?,?,?,?);'
+        const values = [Venda.comV, Venda.qtdV, Venda.vF, Venda.idCliente, Venda.idProd, Usuario.IdFun]
         return await conn.query(relatorioVenda,values);
     }
     async function bcompra(Idprod,Produto){
